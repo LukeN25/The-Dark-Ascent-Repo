@@ -3,13 +3,6 @@ using UnityEngine;
 
 public class LevelSection : MonoBehaviour
 {
-    Vector3 gridPosition;
-
-    private void Start()
-    {
-        CheckDirections();
-    }
-
     Dictionary<Vector3, bool> possibleDirections = new Dictionary<Vector3, bool>()
     {
         { Vector3.forward, true },
@@ -20,20 +13,18 @@ public class LevelSection : MonoBehaviour
 
     void CheckDirections()
     {
-        foreach (var direction in possibleDirections.Keys)
+        foreach (Vector3 direction in Directions.AllDirections)
         {
-            Ray ray = new Ray((direction * 10f) + new Vector3(0, 5, 0), Vector3.down);
+            Ray ray = new Ray(transform.position + (direction * 10f) + new Vector3(0, 5, 0), Vector3.down);
 
             if (Physics.Raycast(ray, out RaycastHit hit, 10f))
             {
                 possibleDirections[direction] = false;
             }
-            Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 100f);
-            Debug.Log(direction + ": " + possibleDirections[direction]);
         }
     }
 
-    public Vector3[] GetAvailableDirections()
+    public List<Vector3> GetAvailableDirections()
     {
         List<Vector3> availableDirections = new List<Vector3>();
         foreach (var direction in possibleDirections)
@@ -43,8 +34,48 @@ public class LevelSection : MonoBehaviour
                 availableDirections.Add(direction.Key);
             }
         }
-        return availableDirections.ToArray();
+        //shuffle result
+        for (int i = availableDirections.Count - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            Vector3 temp = availableDirections[i];
+            availableDirections[i] = availableDirections[j];
+            availableDirections[j] = temp;
+        }
+
+        return availableDirections;
     }
 
-    public Vector3 GetPosition => gridPosition;
+    public void SpawnNewSections(Transform prefab, int x)
+    {
+        Debug.Log(x + ": Spawning new sections");
+        CheckDirections();
+
+        List<Vector3> availableDirections = GetAvailableDirections();
+
+        Debug.Log(x + ": Available directions: " + availableDirections.Count);
+
+        int sectionsToSpawn;
+
+        sectionsToSpawn = Random.Range(1,  availableDirections.Count + 1);
+
+        for (int i = sectionsToSpawn; i > 0; i--)
+        {
+            Vector3 direction = availableDirections[i - 1];
+
+            Transform obj = Instantiate(prefab, transform.position + (direction * 10f), Quaternion.identity);
+            LevelSection section = obj.GetComponent<LevelSection>();
+            LevelGenerationManager.instance.AddSection(section);
+            section.SetSpawnerDirection(direction);
+
+            availableDirections.RemoveAt(i - 1);
+        }
+
+        LevelGenerationManager.instance.DecreaseNumberOfSections(sectionsToSpawn);
+    }
+
+    public void SetSpawnerDirection(Vector3 direction)
+    {
+        possibleDirections[-direction] = false;
+    }
 }
