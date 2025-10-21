@@ -6,9 +6,10 @@ public class MenuManager : MonoBehaviour
 
     [Header("References")]
     public MenuCameraController cameraController;
-    public GameObject uiCanvas;
+    public GameObject uiCanvas;                     
     public MutationDetailPanel detailPanel;
     public RemoveConfirmationPanel removePanel;
+    public CharacterIdleRotation characterIdleRotation;
 
     [Header("Settings")]
     public KeyCode toggleKey = KeyCode.Tab;
@@ -33,39 +34,51 @@ public class MenuManager : MonoBehaviour
     public void OpenMenu()
     {
         isOpen = true;
-        uiCanvas.SetActive(true);
-        cameraController.ReturnToDefault();
+        if (uiCanvas != null) uiCanvas.SetActive(true);
+        if (cameraController != null) cameraController.ReturnToDefault();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-       
+        if (characterIdleRotation != null) characterIdleRotation.SetActive(true);
+        
     }
 
     public void CloseMenu()
     {
         isOpen = false;
-        uiCanvas.SetActive(false);
-        cameraController.ReturnToDefault();
+        if (uiCanvas != null) uiCanvas.SetActive(false);
+        if (cameraController != null) cameraController.ReturnToDefault();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        detailPanel.ClosePanel();
-        removePanel.ClosePanel();
-        
+        if (detailPanel != null) detailPanel.ClosePanel();
+        if (removePanel != null) removePanel.ClosePanel();
+        if (characterIdleRotation != null) characterIdleRotation.SetActive(false);
+       
     }
 
-    public void OnPartClicked(MutationPart part)
+    
+    public void OnSlotClicked(MutationSlot slot)
     {
-        cameraController.FocusOn(part.focusPoint);
-        detailPanel.ShowDetails(part);
+        if (slot == null) return;
+
+        if (cameraController != null && slot.focusPoint != null)
+            cameraController.FocusOn(slot.focusPoint);
+
+        if (detailPanel != null) detailPanel.ShowDetails(slot);
+       
+        if (characterIdleRotation != null) characterIdleRotation.SetActive(false);
     }
 
-    public void RequestRemoveMutation(MutationPart part)
+    
+    public void RequestUnequip(MutationSlot slot)
     {
+        if (slot == null || removePanel == null) return;
+
         removePanel.ShowConfirmation(confirmed =>
         {
             if (confirmed)
             {
-                Debug.Log($"Removed mutation from {part.partName}");
-                detailPanel.ShowEmptySlot();
+                slot.UnequipMutation();
+                if (detailPanel != null) detailPanel.ShowEmptySlot(slot.partName);
             }
         });
     }

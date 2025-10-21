@@ -6,14 +6,13 @@ public class RemoveConfirmationPanel : MonoBehaviour
 {
     public Button confirmButton;
     public Button cancelButton;
-
     private Action<bool> resultCallback;
 
     void Awake()
     {
         gameObject.SetActive(false);
-        confirmButton.onClick.AddListener(() => { Confirm(true); });
-        cancelButton.onClick.AddListener(() => { Confirm(false); });
+        if (confirmButton != null) confirmButton.onClick.AddListener(() => Confirm(true));
+        if (cancelButton != null) cancelButton.onClick.AddListener(() => Confirm(false));
     }
 
     public void ShowConfirmation(Action<bool> callback)

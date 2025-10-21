@@ -2,43 +2,59 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
 public class MutationDetailPanel : MonoBehaviour
 {
     [Header("UI References")]
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI descriptionText;
-    public Button removeButton;
+    public Image iconImage;
+    public Button unequipButton;
 
-    private MutationPart currentPart;
+    private MutationSlot currentSlot;
 
     void Awake()
     {
         gameObject.SetActive(false);
-        removeButton.onClick.AddListener(OnRemoveClicked);
+        if (unequipButton != null) unequipButton.onClick.AddListener(OnUnequipClicked);
     }
 
-    public void ShowDetails(MutationPart part)
+    public void ShowDetails(MutationSlot slot)
     {
-        currentPart = part;
+        currentSlot = slot;
         gameObject.SetActive(true);
-        titleText.text = $"{part.partName} Mutation";
-        descriptionText.text = "Example mutation details go here...";
+
+        if (slot.equippedMutation != null)
+        {
+            var mut = slot.equippedMutation;
+            if (titleText != null) titleText.text = mut.mutationName;
+            if (descriptionText != null) descriptionText.text = mut.description;
+            if (iconImage != null) iconImage.sprite = mut.icon;
+            if (unequipButton != null) unequipButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            ShowEmptySlot(slot.partName);
+        }
     }
 
-    public void ShowEmptySlot()
+    public void ShowEmptySlot(string partName)
     {
-        titleText.text = $"{currentPart.partName} - Empty Slot";
-        descriptionText.text = "No mutation equipped.";
+        if (titleText != null) titleText.text = $"{partName} - Empty Slot";
+        if (descriptionText != null) descriptionText.text = "No mutation equipped.";
+        if (iconImage != null) iconImage.sprite = null;
+        if (unequipButton != null) unequipButton.gameObject.SetActive(false);
     }
 
     public void ClosePanel()
     {
         gameObject.SetActive(false);
+        currentSlot = null;
     }
 
-    void OnRemoveClicked()
+    void OnUnequipClicked()
     {
-        if (currentPart == null) return;
-        MenuManager.Instance.RequestRemoveMutation(currentPart);
+        if (currentSlot == null) return;
+        MenuManager.Instance.RequestUnequip(currentSlot);
     }
 }
