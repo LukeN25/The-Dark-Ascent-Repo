@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2579646320125828739}
   - component: {fileID: 7755827627156877316}
   - component: {fileID: 4118384218193718081}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 4234355181452000636}
   - component: {fileID: 6508192780349054498}
   - component: {fileID: 3713605289543583557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
