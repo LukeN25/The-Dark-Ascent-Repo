@@ -1,7 +1,5 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class LevelGenerationManager : MonoBehaviour
@@ -17,7 +15,7 @@ public class LevelGenerationManager : MonoBehaviour
         }
     }
 
-    [SerializeField] Transform sectionPrefab;
+    [SerializeField] Transform[] sectionPrefabs;
     [SerializeField] int numberOfSections = 10;
     [SerializeField] LevelSection startSection;
 
@@ -25,14 +23,27 @@ public class LevelGenerationManager : MonoBehaviour
 
     private void Start()
     {
-        startSection.SpawnNewSections(sectionPrefab, 1000);
+        GenerateLevel();
+    }
+
+    private void GenerateLevel()
+    {
+        startSection.SpawnNewSections(sectionPrefabs);
 
         int index = 0;
         while (numberOfSections > 0)
         {
-            Debug.Log(index);
-            placedSections[index].SpawnNewSections(sectionPrefab, index);
+            int r = Random.Range(0, sectionPrefabs.Length);
+
+            placedSections[index].SpawnNewSections(sectionPrefabs);
             index++;
+        }
+
+        Debug.Log("________________Finalizing Sections________________");
+        Debug.Log("___________________________________________________");
+        foreach (LevelSection section in placedSections)
+        {
+            section.FinalizeSection();
         }
     }
 
@@ -51,12 +62,33 @@ public class LevelGenerationManager : MonoBehaviour
         placedSections.Add(section);
     }
 
-   void Update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
         }
+    }
+
+    public Transform[] GetSectionPrefabs()
+    {
+        return sectionPrefabs;
+    }
+
+    public List<Transform> GetSectionPrefabsWithoutType(SectionType type)
+    {
+        List<Transform> filteredPrefabs = new List<Transform>();
+
+        foreach (Transform prefab in sectionPrefabs)
+        {
+            LevelSection section = prefab.GetComponent<LevelSection>();
+            if (section.GetSectionType() != type)
+            {
+                filteredPrefabs.Add(prefab);
+            }
+        }
+
+        return filteredPrefabs;
     }
 }
