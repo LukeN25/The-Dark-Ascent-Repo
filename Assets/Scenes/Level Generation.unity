@@ -156,8 +156,9 @@ MonoBehaviour:
   - {fileID: 3925649623356159636, guid: e9067d8267b18ce479475ee41224af98, type: 3}
   - {fileID: 854185073573683547, guid: c23a7e3f3deb200429c97b1ae385f02e, type: 3}
   - {fileID: 2588976895177888357, guid: 52aebf18b0a20db44aa527d8b057c63c, type: 3}
-  numberOfSections: 10
+  bossRoomPrefab: {fileID: 854185073573683547, guid: 07a70836379faa547a112ab1fce0a53d, type: 3}
   startSection: {fileID: 382680248}
+  numberOfSections: 10
 --- !u!4 &83377000
 Transform:
   m_ObjectHideFlags: 0

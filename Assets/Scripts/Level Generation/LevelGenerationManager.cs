@@ -16,8 +16,10 @@ public class LevelGenerationManager : MonoBehaviour
     }
 
     [SerializeField] Transform[] sectionPrefabs;
-    [SerializeField] int numberOfSections = 10;
+    [SerializeField] Transform bossRoomPrefab;
     [SerializeField] LevelSection startSection;
+
+    [SerializeField] int numberOfSections = 10;
 
     List<LevelSection> placedSections = new List<LevelSection>();
 
@@ -33,14 +35,12 @@ public class LevelGenerationManager : MonoBehaviour
         int index = 0;
         while (numberOfSections > 0)
         {
-            int r = Random.Range(0, sectionPrefabs.Length);
-
             placedSections[index].SpawnNewSections(sectionPrefabs);
             index++;
         }
 
-        Debug.Log("________________Finalizing Sections________________");
-        Debug.Log("___________________________________________________");
+        placedSections[index].SpawnSingleSection(bossRoomPrefab);
+
         foreach (LevelSection section in placedSections)
         {
             section.FinalizeSection();

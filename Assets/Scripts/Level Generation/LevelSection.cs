@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System.Threading;
+using System.Collections;
 
 public class LevelSection : MonoBehaviour
 {
@@ -58,7 +60,9 @@ public class LevelSection : MonoBehaviour
 
         for (int i = sectionsToSpawn; i > 0; i--)
         {
-            LevelSection section = SpawnSection(prefabs, availableDirections, i - 1);
+            int prefabIndex = UnityEngine.Random.Range(0, prefabs.Length);
+
+            LevelSection section = SpawnSection(prefabs[prefabIndex], availableDirections, i - 1);
 
             LevelGenerationManager.instance.AddSection(section);
             availableDirections.RemoveAt(i - 1);
@@ -66,13 +70,26 @@ public class LevelSection : MonoBehaviour
 
         LevelGenerationManager.instance.DecreaseNumberOfSections(sectionsToSpawn);
     }
+    public void SpawnSingleSection(Transform prefab)
+    {
+        List<Vector3> availableDirections = GetAvailableDirections();
 
-    protected LevelSection SpawnSection(Transform[] prefabs, List<Vector3> availableDirections, int i)
+        if (availableDirections.Count == 0)
+        {
+            return;
+        }
+
+        int sectionsToSpawn;
+        sectionsToSpawn = 1;
+
+        LevelSection section = SpawnSection(prefab, availableDirections, 0);
+
+        LevelGenerationManager.instance.DecreaseNumberOfSections(sectionsToSpawn);
+    }
+
+    protected LevelSection SpawnSection(Transform prefab, List<Vector3> availableDirections, int i)
     {
         Vector3 direction = availableDirections[i];
-
-        int prefabIndex = UnityEngine.Random.Range(0, prefabs.Length);
-        Transform prefab = prefabs[prefabIndex];
 
         Transform obj = Instantiate(prefab, transform.position + (direction * 10f), Quaternion.Euler(DetermineRotation(direction)));
 
