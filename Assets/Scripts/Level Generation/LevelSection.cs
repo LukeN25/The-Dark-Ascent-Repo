@@ -26,10 +26,15 @@ public class LevelSection : MonoBehaviour
 
         foreach (Vector3 direction in possibleDirections)
         {
-            Ray ray = new Ray(transform.position + (direction * 10f) + new Vector3(0, 5, 0), Vector3.down);
+            Ray ray = new Ray(transform.position + (direction * (10f * transform.localScale.y)) + new Vector3(0, 5, 0), Vector3.down);
             if (!Physics.Raycast(ray, out RaycastHit hit, 10f))
             {
+                Debug.DrawRay(transform.position + (direction * (10f * transform.localScale.y)) + new Vector3(0, 5, 0), Vector3.down * 10f, Color.green, 5f);
                 availableDirections.Add(direction);
+            }
+            else
+            {
+                Debug.DrawRay(transform.position + (direction * (10f * transform.localScale.y)) + new Vector3(0, 5, 0), Vector3.down * 10f, Color.red, 5f);
             }
         }
 
@@ -91,7 +96,7 @@ public class LevelSection : MonoBehaviour
     {
         Vector3 direction = availableDirections[i];
 
-        Transform obj = Instantiate(prefab, transform.position + (direction * 10f), Quaternion.Euler(DetermineRotation(direction)));
+        Transform obj = Instantiate(prefab, transform.position + (direction * (10f * transform.localScale.y)), Quaternion.Euler(DetermineRotation(direction)));
 
         LevelSection section = obj.GetComponent<LevelSection>();
 
