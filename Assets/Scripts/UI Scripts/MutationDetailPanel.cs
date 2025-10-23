@@ -6,55 +6,88 @@ using TMPro;
 public class MutationDetailPanel : MonoBehaviour
 {
     [Header("UI References")]
-    public TextMeshProUGUI titleText;
-    public TextMeshProUGUI descriptionText;
-    public Image iconImage;
+    public CanvasGroup canvasGroup;
+    public Image icon;
+    public TMP_Text nameText;
+    public TMP_Text descriptionText;
     public Button unequipButton;
 
     private MutationSlot currentSlot;
 
     void Awake()
     {
-        gameObject.SetActive(false);
-        if (unequipButton != null) unequipButton.onClick.AddListener(OnUnequipClicked);
+        HideInstantly();
+        if (unequipButton != null)
+            unequipButton.onClick.AddListener(OnUnequipClicked);
     }
 
     public void ShowDetails(MutationSlot slot)
     {
         currentSlot = slot;
-        gameObject.SetActive(true);
-
         if (slot.equippedMutation != null)
         {
-            var mut = slot.equippedMutation;
-            if (titleText != null) titleText.text = mut.mutationName;
-            if (descriptionText != null) descriptionText.text = mut.description;
-            if (iconImage != null) iconImage.sprite = mut.icon;
+            icon.sprite = slot.equippedMutation.icon;
+            nameText.text = slot.equippedMutation.mutationName;
+            descriptionText.text = slot.equippedMutation.description;
             if (unequipButton != null) unequipButton.gameObject.SetActive(true);
         }
         else
         {
             ShowEmptySlot(slot.partName);
         }
+
+       
+        gameObject.SetActive(false);
+        gameObject.SetActive(true);
+
+        
+        StopAllCoroutines();
+        ShowInstantly();
     }
 
     public void ShowEmptySlot(string partName)
     {
-        if (titleText != null) titleText.text = $"{partName} - Empty Slot";
-        if (descriptionText != null) descriptionText.text = "No mutation equipped.";
-        if (iconImage != null) iconImage.sprite = null;
+        if (icon != null) icon.sprite = null;
+        nameText.text = partName;
+        descriptionText.text = "No mutation equipped.";
         if (unequipButton != null) unequipButton.gameObject.SetActive(false);
+
+        StopAllCoroutines();
+        ShowInstantly();
     }
 
     public void ClosePanel()
     {
-        gameObject.SetActive(false);
         currentSlot = null;
+        StopAllCoroutines();
+        HideInstantly();
     }
 
-    void OnUnequipClicked()
+    private void OnUnequipClicked()
     {
-        if (currentSlot == null) return;
-        MenuManager.Instance.RequestUnequip(currentSlot);
+        if (currentSlot != null)
+        {
+            MenuManager.Instance.RequestUnequip(currentSlot);
+        }
+    }
+
+    private void ShowInstantly()
+    {
+        if (canvasGroup != null)
+        {
+            canvasGroup.alpha = 1f;
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
+        }
+    }
+
+    private void HideInstantly()
+    {
+        if (canvasGroup != null)
+        {
+            canvasGroup.alpha = 0f;
+            canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
+        }
     }
 }
