@@ -17,6 +17,9 @@ public class LevelSection : MonoBehaviour
         Vector3.right
     };
 
+    [SerializeField]
+    Vector3 gridPosition = Vector3.zero;
+
     protected Vector3 orientation = Vector3.forward;
     [SerializeField]
     SectionType sectionType;
@@ -29,12 +32,8 @@ public class LevelSection : MonoBehaviour
             Ray ray = new Ray(transform.position + (direction * (10f * transform.localScale.y)) + new Vector3(0, 5, 0), Vector3.down);
             if (!Physics.Raycast(ray, out RaycastHit hit, 10f))
             {
-                Debug.DrawRay(transform.position + (direction * (10f * transform.localScale.y)) + new Vector3(0, 5, 0), Vector3.down * 10f, Color.green, 5f);
+                //Debug.DrawRay(transform.position + (direction * (10f * transform.localScale.y)) + new Vector3(0, 5, 0), Vector3.down * 10f, Color.green, 5f);
                 availableDirections.Add(direction);
-            }
-            else
-            {
-                Debug.DrawRay(transform.position + (direction * (10f * transform.localScale.y)) + new Vector3(0, 5, 0), Vector3.down * 10f, Color.red, 5f);
             }
         }
 
@@ -50,8 +49,7 @@ public class LevelSection : MonoBehaviour
         return availableDirections;
     }
 
-
-    public void SpawnNewSections(Transform[] prefabs)
+    public virtual void SpawnNewSections(Transform[] prefabs)
     {
         List<Vector3> availableDirections = GetAvailableDirections();
 
@@ -70,11 +68,13 @@ public class LevelSection : MonoBehaviour
             LevelSection section = SpawnSection(prefabs[prefabIndex], availableDirections, i - 1);
 
             LevelGenerationManager.instance.AddSection(section);
+            LevelGenerationManager.instance.RegisterSectionInGrid(section);
             availableDirections.RemoveAt(i - 1);
         }
 
         LevelGenerationManager.instance.DecreaseNumberOfSections(sectionsToSpawn);
     }
+
     public void SpawnSingleSection(Transform prefab)
     {
         List<Vector3> availableDirections = GetAvailableDirections();
@@ -88,6 +88,7 @@ public class LevelSection : MonoBehaviour
         sectionsToSpawn = 1;
 
         LevelSection section = SpawnSection(prefab, availableDirections, 0);
+        section.FinalizeSection();
 
         LevelGenerationManager.instance.DecreaseNumberOfSections(sectionsToSpawn);
     }
@@ -99,6 +100,8 @@ public class LevelSection : MonoBehaviour
         Transform obj = Instantiate(prefab, transform.position + (direction * (10f * transform.localScale.y)), Quaternion.Euler(DetermineRotation(direction)));
 
         LevelSection section = obj.GetComponent<LevelSection>();
+
+        section.SetGridPosition(this.gridPosition + direction);
 
         section.SetDirection(direction);
         return section;
@@ -130,7 +133,15 @@ public class LevelSection : MonoBehaviour
 
     public virtual void FinalizeSection()
     {
-
+        foreach (Vector3 dir in possibleDirections)
+        {
+            if (!LevelGenerationManager.instance.IsGridPositionOccupied(gridPosition + dir))
+            {
+                //Debug.DrawRay(transform.position + (dir * (10f * transform.localScale.y)) + new Vector3(0, 5, 0), Vector3.down * 10f, Color.red, 10f);
+                //If there is no section in this direction, place a block to fill the gap
+                Transform block = Instantiate(LevelGenPrefabHolder.instance.GetBlockPrefab(), transform.position + (dir * (5f * transform.localScale.y)), Quaternion.Euler(DetermineRotation(dir * -1)));
+            }
+        }
     }
 
     public void SetDirection(Vector3 dir)
@@ -142,6 +153,15 @@ public class LevelSection : MonoBehaviour
     public SectionType GetSectionType()
     {
         return sectionType;
+    }
+
+    public Vector3 GetGridPosition()
+    {
+        return gridPosition;
+    }
+    public void SetGridPosition(Vector3 pos)
+    {
+        gridPosition = pos;
     }
 }
 

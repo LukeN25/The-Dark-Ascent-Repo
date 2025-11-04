@@ -7,6 +7,7 @@ public class HallwaySection : LevelSection
 {
     public override void FinalizeSection()
     {
+
         List<Transform> prefabsWithoutHallways = LevelGenerationManager.instance.GetSectionPrefabsWithoutType(SectionType.Hallway);
 
         FinalizeHalls(prefabsWithoutHallways.ToArray());
@@ -28,6 +29,7 @@ public class HallwaySection : LevelSection
         {
             int randomIndex = UnityEngine.Random.Range(0, prefabs.Length);
             LevelSection section = SpawnSection(prefabs[randomIndex], availableDirections, i - 1);
+            section.FinalizeSection();
 
             availableDirections.RemoveAt(i - 1);
         }

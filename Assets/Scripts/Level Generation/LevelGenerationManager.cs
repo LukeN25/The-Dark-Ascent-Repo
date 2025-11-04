@@ -23,6 +23,8 @@ public class LevelGenerationManager : MonoBehaviour
 
     List<LevelSection> placedSections = new List<LevelSection>();
 
+    Dictionary<Vector3, LevelSection> sectionGridDict = new Dictionary<Vector3, LevelSection>();
+
     private void Start()
     {
         GenerateLevel();
@@ -41,9 +43,9 @@ public class LevelGenerationManager : MonoBehaviour
 
         placedSections[index].SpawnSingleSection(bossRoomPrefab);
 
-        foreach (LevelSection section in placedSections)
+        for (int i = 0; i < placedSections.Count; i++)
         {
-            section.FinalizeSection();
+            placedSections[i].FinalizeSection();
         }
     }
 
@@ -91,4 +93,23 @@ public class LevelGenerationManager : MonoBehaviour
 
         return filteredPrefabs;
     }
+
+    public void RegisterSectionInGrid(LevelSection section)
+    {
+        sectionGridDict[section.GetGridPosition()] = section;
+    }
+
+    public bool IsGridPositionOccupied(Vector3 gridPosition)
+    {
+        return sectionGridDict.ContainsKey(gridPosition);
+    }
+
+    public LevelSection GetSectionAtGridPosition(Vector3 gridPosition)
+    {
+        if (sectionGridDict.TryGetValue(gridPosition, out LevelSection section))
+        {
+            return section;
+        }
+        return null;
+    }   
 }

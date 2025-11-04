@@ -179,7 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1976776072136849379}
-  - component: {fileID: 676519109864343642}
+  - component: {fileID: 8272056972207101001}
   m_Layer: 0
   m_Name: Spawn Room
   m_TagString: Untagged
@@ -207,7 +207,7 @@ Transform:
   - {fileID: 757815284620184603}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &676519109864343642
+--- !u!114 &8272056972207101001
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 971907726591148610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 244fe661a55da8242894ccbe17a0ad05, type: 3}
+  m_Script: {fileID: 11500000, guid: 2983a17d22118b74aa626a7093bd0c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   possibleDirections:
@@ -224,6 +224,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -1}
   - {x: -1, y: 0, z: 0}
   - {x: 1, y: 0, z: 0}
+  gridPosition: {x: 0, y: 0, z: 0}
   sectionType: 0
 --- !u!1 &1454534748127660953
 GameObject:
