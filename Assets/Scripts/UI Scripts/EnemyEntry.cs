@@ -1,50 +1,89 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
+using FOW.Logbook;
 
-
-public class EnemyEntry : MonoBehaviour
+namespace FOW.Logbook
 {
-    [Header("UI References")]
-    [SerializeField] private RawImage previewImage;
-    [SerializeField] private GameObject lockOverlay;
-    [SerializeField] private TMP_Text enemyNameText;
-    [SerializeField] private Button button; 
-
-    
-    private EnemyInfo enemyInfo;
-    private LogbookManager manager;
-    private bool unlocked;
-
-    
-    public void Init(EnemyInfo info, bool isUnlocked, LogbookManager logbook)
+    public class EnemyEntry : MonoBehaviour
     {
-        enemyInfo = info;
-        manager = logbook;
-        unlocked = isUnlocked;
+        [Header("UI References")]
+        public RawImage previewImage;
+        public GameObject lockOverlay;
+        public TextMeshProUGUI enemyNameText;
+        public Button button;
 
-        enemyNameText.text = isUnlocked ? info.enemyName : "???";
-        lockOverlay?.SetActive(!isUnlocked);
-        if (previewImage != null)
-            previewImage.enabled = isUnlocked;
+        [Header("3D Preview")]
+        public Transform previewPivot;
+        public Camera previewCamera;
+        public Vector3 modelOffset = Vector3.zero;
+        public Vector3 modelRotation = new Vector3(0, 180, 0);
+        public float rotationSpeed = 30f;
 
-       
-        if (button != null)
+        private EnemyInfo enemyInfo;
+        private bool unlocked;
+        private GameObject previewModel;
+        private RenderTexture rt;
+
+        public void Init(EnemyInfo info, bool isUnlocked)
         {
-            button.onClick.RemoveAllListeners();
-            button.onClick.AddListener(OnClick);
-            button.interactable = isUnlocked;
-        }
-    }
+            enemyInfo = info;
+            unlocked = isUnlocked;
 
-    
-    public void OnClick()
-    {
-        if (!unlocked) return;
-        if (manager != null)
-            manager.OpenMutationPanel(enemyInfo);
-        else
-            Debug.LogWarning("LogbookManager reference missing on EnemyEntry.");
+            enemyNameText.text = unlocked ? info.enemyName : "???";
+            lockOverlay.SetActive(!unlocked);
+
+            if (unlocked)
+            {
+                SetupPreview();
+                button.onClick.RemoveAllListeners();
+                button.onClick.AddListener(() => LogbookManager.Instance.OpenMutationPanel(enemyInfo));
+            }
+            else
+            {
+                previewImage.texture = null;
+                button.interactable = false;
+            }
+        }
+
+        private void SetupPreview()
+        {
+            if (previewCamera == null || previewPivot == null || enemyInfo.enemyModelPrefab == null)
+                return;
+
+            rt = new RenderTexture(512, 512, 16);
+            previewCamera.targetTexture = rt;
+            previewImage.texture = rt;
+
+            previewModel = Instantiate(enemyInfo.enemyModelPrefab, previewPivot);
+            previewModel.transform.localPosition = modelOffset;
+            previewModel.transform.localRotation = Quaternion.Euler(modelRotation);
+
+            SetLayerRecursively(previewModel, LayerMask.NameToLayer("LogbookPreview"));
+
+            previewCamera.cullingMask = 1 << LayerMask.NameToLayer("LogbookPreview");
+
+            var anim = previewModel.GetComponent<Animator>();
+            if (anim != null) anim.enabled = false;
+        }
+
+        void Update()
+        {
+            if (unlocked && previewPivot != null)
+                previewPivot.Rotate(Vector3.up * rotationSpeed * Time.deltaTime, Space.World);
+        }
+
+        private void OnDestroy()
+        {
+            if (previewModel != null) Destroy(previewModel);
+            if (rt != null) rt.Release();
+        }
+
+        private void SetLayerRecursively(GameObject obj, int layer)
+        {
+            obj.layer = layer;
+            foreach (Transform child in obj.transform)
+                SetLayerRecursively(child.gameObject, layer);
+        }
     }
 }

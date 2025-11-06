@@ -1,108 +1,48 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System.Collections.Generic;
+using UnityEngine;
+using FOW.Mutations; 
 
-public class LogbookManager : MonoBehaviour
+
+namespace FOW.Logbook
 {
-    public EnemyDatabase enemyDatabase;
-    public GameObject enemyPanel;
-    public GameObject mutationPanel;
-    public GameObject mutationDetailPanel;
-
-    private PlayerLogbookData playerData;
-    private EnemyInfo currentEnemy;
-    private MutationInfo currentMutation;
-
-    private bool isOpen = false;
-
-    void Start()
+    public class LogbookManager : MonoBehaviour
     {
-        playerData = LoadPlayerData();
-        CloseAllPanels();
-    }
+        public static LogbookManager Instance { get; private set; }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
+
+        [Header("Enemy Settings")]
+        public Transform enemyPreviewContainer; 
+        public GameObject enemyPreviewPrefab;  
+
+        [Header("Enemy List")]
+        public List<EnemyInfo> enemies = new List<EnemyInfo>();
+
+        private void Awake()
         {
-            if (isOpen)
-                CloseAllPanels();
-            else
-                OpenEnemyPanel();
+            Instance = this;
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape) && isOpen)
-            NavigateBack();
-    }
-
-    void OpenEnemyPanel()
-    {
-        isOpen = true;
-        enemyPanel.SetActive(true);
-        mutationPanel.SetActive(false);
-        mutationDetailPanel.SetActive(false);
-
-        
-        PopulateEnemyPanel();
-    }
-
-    public void OpenMutationPanel(EnemyInfo enemy)
-    {
-        currentEnemy = enemy;
-        enemyPanel.SetActive(false);
-        mutationPanel.SetActive(true);
-        mutationDetailPanel.SetActive(false);
-
-        PopulateMutationPanel(enemy);
-    }
-
-    public void OpenMutationDetail(MutationInfo mutation)
-    {
-        currentMutation = mutation;
-        mutationPanel.SetActive(false);
-        mutationDetailPanel.SetActive(true);
 
        
-    }
-
-    void NavigateBack()
-    {
-        if (mutationDetailPanel.activeSelf)
+        public void UnlockEnemy(string enemyName)
         {
-            mutationDetailPanel.SetActive(false);
-            mutationPanel.SetActive(true);
+            EnemyInfo enemy = enemies.Find(e => e.enemyName == enemyName);
+            if (enemy != null)
+                enemy.isUnlocked = true;
         }
-        else if (mutationPanel.activeSelf)
-        {
-            mutationPanel.SetActive(false);
-            enemyPanel.SetActive(true);
-        }
-        else
-        {
-            CloseAllPanels();
-        }
-    }
 
-    void CloseAllPanels()
-    {
-        isOpen = false;
-        enemyPanel.SetActive(false);
-        mutationPanel.SetActive(false);
-        mutationDetailPanel.SetActive(false);
-    }
-
-    void PopulateEnemyPanel()
-    {
-
-    }
-
-    void PopulateMutationPanel(EnemyInfo enemy)
-    {
        
-    }
+        public void OpenMutationPanel(EnemyInfo enemy)
+        {
+            if (!enemy.isUnlocked) return;
+            Debug.Log($"Opening mutation panel for {enemy.enemyName}");
+            // TODO: show mutation panel UI
+        }
 
-    PlayerLogbookData LoadPlayerData()
-    {
-        
-        return new PlayerLogbookData();
+      
+        public void OpenMutationDetail(MutationInfo mutation)
+        {
+            Debug.Log($"Opening details for mutation {mutation.mutationName}");
+            // TODO: show mutation details UI
+        }
     }
 }

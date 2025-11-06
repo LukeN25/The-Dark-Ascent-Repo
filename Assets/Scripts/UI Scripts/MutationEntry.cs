@@ -1,47 +1,45 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
+using FOW.Logbook;
+using FOW.Mutations;
 
-public class MutationEntry : MonoBehaviour
+
+namespace FOW.Mutations
 {
-    [Header("UI References")]
-    [SerializeField] private Image mutationIcon;
-    [SerializeField] private GameObject lockOverlay;
-    [SerializeField] private Button button; 
-
-    
-    private string enemyName;
-    private MutationInfo mutationInfo;
-    private LogbookManager manager;
-    private bool unlocked;
-
-    public void Init(string enemy, MutationInfo info, bool isUnlocked, LogbookManager logbook)
+    public class MutationEntry : MonoBehaviour
     {
-        enemyName = enemy;
-        mutationInfo = info;
-        unlocked = isUnlocked;
-        manager = logbook;
+        [Header("UI References")]
+        public Image mutationIcon;
+        public Button mutationButton;
+        public GameObject lockedOverlay;
+        public TextMeshProUGUI mutationNameText;
 
-        if (mutationIcon != null)
-            mutationIcon.sprite = isUnlocked ? info.mutationIcon : null;
+        private MutationInfo mutationInfo;
+        private bool isUnlocked;
 
-        lockOverlay?.SetActive(!isUnlocked);
-
-        if (button != null)
+        public void Initialize(MutationInfo info, bool unlocked)
         {
-            button.onClick.RemoveAllListeners();
-            button.onClick.AddListener(OnClick);
-            button.interactable = isUnlocked;
-        }
-    }
+            mutationInfo = info;
+            isUnlocked = unlocked;
 
-    public void OnClick()
-    {
-        if (!unlocked) return;
-        if (manager != null)
-            manager.OpenMutationDetail(mutationInfo);
-        else
-            Debug.LogWarning("LogbookManager reference missing on MutationEntry.");
+            mutationNameText.text = unlocked ? info.mutationName : "???";
+            mutationIcon.sprite = unlocked ? info.icon : null; 
+            mutationIcon.enabled = unlocked;
+            lockedOverlay.SetActive(!unlocked);
+
+            mutationButton.onClick.RemoveAllListeners();
+
+            if (unlocked)
+                mutationButton.onClick.AddListener(OpenMutationDetail);
+            else
+                mutationButton.interactable = false;
+        }
+
+        private void OpenMutationDetail()
+        {
+            if (mutationInfo != null)
+                LogbookManager.Instance.OpenMutationDetail(mutationInfo); 
+        }
     }
 }
