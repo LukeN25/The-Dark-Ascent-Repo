@@ -15,12 +15,11 @@ namespace FOW.Mutations
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player"))
-            {
-                MutationInventoryManager.Instance.AddMutation(mutationData);
-                Debug.Log($"Picked up mutation: {mutationData.mutationName}");
-                Destroy(gameObject);
-            }
+            if (!other.CompareTag("Player")) return;
+
+            MutationInventoryManager.Instance?.AddMutation(mutationData);
+            Debug.Log($"Picked up mutation: {mutationData.mutationName}");
+            Destroy(gameObject);
         }
     }
 }

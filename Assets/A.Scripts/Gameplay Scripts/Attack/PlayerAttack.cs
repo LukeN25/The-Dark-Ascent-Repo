@@ -1,37 +1,49 @@
 using System.Collections;
 using UnityEngine;
+using FOW.Mutations; 
 
 namespace FOW.Demos
 {
     public class PlayerAttack : MonoBehaviour
     {
-        [Header("Attack Settings")]
-        public GameObject slashPrefab;         
+        public GameObject slashPrefab;
         public float slashSpawnDistance = 1.2f;
+        public float baseDamage = 10f;
         public float attackCooldown = 0.5f;
 
         private bool canAttack = true;
+        private PlayerMutationHandler mutationHandler;
 
-        void Update()
+        private void Awake()
         {
-            if (Input.GetMouseButtonDown(0) && canAttack)
-            {
-                StartCoroutine(PerformSlash());
-            }
+            mutationHandler = GetComponent<PlayerMutationHandler>();
         }
 
-        IEnumerator PerformSlash()
+        private void Update()
+        {
+            if (Input.GetMouseButtonDown(0) && canAttack)
+                StartCoroutine(PerformSlash());
+        }
+
+        private IEnumerator PerformSlash()
         {
             canAttack = false;
 
-            
+            float dmgMult = mutationHandler ? mutationHandler.damageMultiplier : 1f;
+            float rangeMult = mutationHandler ? mutationHandler.rangeMultiplier : 1f;
+
+            float damage = baseDamage * dmgMult;
+
             Vector3 spawnPos = transform.position + transform.forward * slashSpawnDistance + Vector3.up * 0.5f;
             Quaternion spawnRot = Quaternion.LookRotation(transform.forward);
 
-            
-            GameObject slash = Instantiate(slashPrefab, spawnPos, spawnRot);
-            Destroy(slash, 0.4f); 
+            var slash = Instantiate(slashPrefab, spawnPos, spawnRot);
+            slash.transform.localScale *= rangeMult;
 
+            var s = slash.GetComponent<SlashAttack>();
+            if (s) s.damage = damage;
+
+            Destroy(slash, 0.4f);
             yield return new WaitForSeconds(attackCooldown);
             canAttack = true;
         }

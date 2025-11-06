@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using FOW.Logbook;
 
 namespace FOW.Logbook
 {
@@ -38,6 +37,7 @@ namespace FOW.Logbook
                 SetupPreview();
                 button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(() => LogbookManager.Instance.OpenMutationPanel(enemyInfo));
+                button.interactable = true;
             }
             else
             {
@@ -48,8 +48,7 @@ namespace FOW.Logbook
 
         private void SetupPreview()
         {
-            if (previewCamera == null || previewPivot == null || enemyInfo.enemyModelPrefab == null)
-                return;
+            if (previewCamera == null || previewPivot == null || enemyInfo.enemyModelPrefab == null) return;
 
             rt = new RenderTexture(512, 512, 16);
             previewCamera.targetTexture = rt;
@@ -60,14 +59,13 @@ namespace FOW.Logbook
             previewModel.transform.localRotation = Quaternion.Euler(modelRotation);
 
             SetLayerRecursively(previewModel, LayerMask.NameToLayer("LogbookPreview"));
-
             previewCamera.cullingMask = 1 << LayerMask.NameToLayer("LogbookPreview");
 
             var anim = previewModel.GetComponent<Animator>();
-            if (anim != null) anim.enabled = false;
+            if (anim) anim.enabled = false;
         }
 
-        void Update()
+        private void Update()
         {
             if (unlocked && previewPivot != null)
                 previewPivot.Rotate(Vector3.up * rotationSpeed * Time.deltaTime, Space.World);
@@ -75,7 +73,7 @@ namespace FOW.Logbook
 
         private void OnDestroy()
         {
-            if (previewModel != null) Destroy(previewModel);
+            if (previewModel) Destroy(previewModel);
             if (rt != null) rt.Release();
         }
 

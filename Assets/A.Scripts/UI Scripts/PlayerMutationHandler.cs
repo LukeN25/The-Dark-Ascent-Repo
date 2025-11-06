@@ -9,28 +9,26 @@ namespace FOW.Mutations
 
         private void Update()
         {
-            ApplyEquippedMutations();
+            Recalculate();
         }
 
-        private void ApplyEquippedMutations()
+        private void Recalculate()
         {
             damageMultiplier = 1f;
             rangeMultiplier = 1f;
 
-            foreach (var kvp in MutationInventoryManager.Instance.equippedMutations)
-            {
-                MutationInfo mutation = kvp.Value;
-                if (mutation == null) continue;
+            var inv = MutationInventoryManager.Instance;
+            if (inv == null) return;
 
-                switch (mutation.effectType)
-                {
-                    case MutationEffectType.DamageBoost:
-                        damageMultiplier *= mutation.damageMultiplier;
-                        break;
-                    case MutationEffectType.RangeBoost:
-                        rangeMultiplier *= mutation.slashRangeMultiplier;
-                        break;
-                }
+            foreach (var kv in inv.equippedMutations)
+            {
+                var m = kv.Value;
+                if (m == null) continue;
+
+                // Hook up when you add effect fields (e.g., damage boost/range boost).
+                // Example if you later add parameters:
+                // if (m.effectType == DamageBoost) damageMultiplier *= m.damageMultiplier;
+                // if (m.effectType == RangeBoost) rangeMultiplier *= m.slashRangeMultiplier;
             }
         }
     }
