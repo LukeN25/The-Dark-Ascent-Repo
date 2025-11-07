@@ -510,7 +510,7 @@ MonoBehaviour:
   m_CellSize: {x: 150, y: 150}
   m_Spacing: {x: 20, y: 20}
   m_Constraint: 1
-  m_ConstraintCount: 3
+  m_ConstraintCount: 6
 --- !u!1 &1105144790
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.37254903, g: 0.32156864, b: 0.32156864, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1264,7 +1264,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: 79}
+  m_AnchoredPosition: {x: 19, y: 224}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1490017493
@@ -1289,8 +1289,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ba7ba7a743282124dbdb38abce6a71b2, type: 2}
+  m_sharedMaterial: {fileID: 1032374703024874528, guid: ba7ba7a743282124dbdb38abce6a71b2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1856,7 +1856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.37254903, g: 0.32156864, b: 0.32156864, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2051,9 +2051,45 @@ MonoBehaviour:
     description: buctha
     isUnlocked: 0
     possibleMutations: []
-  enemyListPanel: {fileID: 0}
-  mutationPanel: {fileID: 0}
-  mutationDetailPanel: {fileID: 0}
+  - enemyName: po
+    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
+    enemyModelPrefab: {fileID: 5784646888754919878, guid: c89dfd8d4da467a4193327820c1d4d25, type: 3}
+    description: buctha
+    isUnlocked: 0
+    possibleMutations: []
+  - enemyName: po
+    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
+    enemyModelPrefab: {fileID: 5784646888754919878, guid: c89dfd8d4da467a4193327820c1d4d25, type: 3}
+    description: buctha
+    isUnlocked: 0
+    possibleMutations: []
+  - enemyName: po
+    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
+    enemyModelPrefab: {fileID: 5784646888754919878, guid: c89dfd8d4da467a4193327820c1d4d25, type: 3}
+    description: buctha
+    isUnlocked: 0
+    possibleMutations: []
+  - enemyName: po
+    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
+    enemyModelPrefab: {fileID: 5784646888754919878, guid: c89dfd8d4da467a4193327820c1d4d25, type: 3}
+    description: buctha
+    isUnlocked: 0
+    possibleMutations: []
+  - enemyName: po
+    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
+    enemyModelPrefab: {fileID: 5784646888754919878, guid: c89dfd8d4da467a4193327820c1d4d25, type: 3}
+    description: buctha
+    isUnlocked: 0
+    possibleMutations: []
+  - enemyName: po
+    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
+    enemyModelPrefab: {fileID: 5784646888754919878, guid: c89dfd8d4da467a4193327820c1d4d25, type: 3}
+    description: buctha
+    isUnlocked: 0
+    possibleMutations: []
+  enemyListPanel: {fileID: 2002661988}
+  mutationPanel: {fileID: 1227859257}
+  mutationDetailPanel: {fileID: 1752070900}
   mutationListPopulator: {fileID: 0}
   mutationDetailUI: {fileID: 0}
 --- !u!4 &1907059757
@@ -2193,14 +2229,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.37106913, g: 0.32322687, b: 0.32322687, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2665,10 +2701,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Details
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d1089b87e4013194ebf44e4ab68da25b, type: 2}
+  m_sharedMaterial: {fileID: 4378158619365503473, guid: d1089b87e4013194ebf44e4ab68da25b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2692,8 +2728,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2730,7 +2766,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -74.29203, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
