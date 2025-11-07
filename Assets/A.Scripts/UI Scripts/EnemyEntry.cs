@@ -6,7 +6,7 @@ namespace FOW.Logbook
 {
     public class EnemyEntry : MonoBehaviour
     {
-        [Header("UI References")]
+        [Header("UI")]
         public RawImage previewImage;
         public GameObject lockOverlay;
         public TextMeshProUGUI enemyNameText;
@@ -15,14 +15,14 @@ namespace FOW.Logbook
         [Header("3D Preview")]
         public Transform previewPivot;
         public Camera previewCamera;
+        public float rotationSpeed = 30f;
         public Vector3 modelOffset = Vector3.zero;
         public Vector3 modelRotation = new Vector3(0, 180, 0);
-        public float rotationSpeed = 30f;
 
         private EnemyInfo enemyInfo;
-        private bool unlocked;
         private GameObject previewModel;
         private RenderTexture rt;
+        private bool unlocked;
 
         public void Init(EnemyInfo info, bool isUnlocked)
         {
@@ -36,8 +36,9 @@ namespace FOW.Logbook
             {
                 SetupPreview();
                 button.onClick.RemoveAllListeners();
-                button.onClick.AddListener(() => LogbookManager.Instance.OpenMutationPanel(enemyInfo));
-                button.interactable = true;
+                button.onClick.AddListener(() =>
+                    LogbookManager.Instance.OpenMutationPanel(enemyInfo)
+                );
             }
             else
             {
@@ -48,7 +49,8 @@ namespace FOW.Logbook
 
         private void SetupPreview()
         {
-            if (previewCamera == null || previewPivot == null || enemyInfo.enemyModelPrefab == null) return;
+            if (previewCamera == null || previewPivot == null || enemyInfo.enemyModelPrefab == null)
+                return;
 
             rt = new RenderTexture(512, 512, 16);
             previewCamera.targetTexture = rt;
@@ -67,8 +69,8 @@ namespace FOW.Logbook
 
         private void Update()
         {
-            if (unlocked && previewPivot != null)
-                previewPivot.Rotate(Vector3.up * rotationSpeed * Time.deltaTime, Space.World);
+            if (unlocked)
+                previewPivot.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
         }
 
         private void OnDestroy()

@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using FOW.Logbook;    
-using FOW.Mutations;  
+using FOW.Logbook;
+using FOW.Mutations;
 
 
 namespace FOW.Mutations
 {
     public class MutationEntry : MonoBehaviour
     {
-        [Header("UI References")]
         public Image mutationIcon;
         public Button mutationButton;
         public GameObject lockedOverlay;
@@ -30,14 +29,14 @@ namespace FOW.Mutations
 
             mutationButton.onClick.RemoveAllListeners();
             mutationButton.interactable = unlocked;
+
             if (unlocked)
-                mutationButton.onClick.AddListener(OpenMutationDetail);
+                mutationButton.onClick.AddListener(OpenDetail);
         }
 
-        private void OpenMutationDetail()
+        private void OpenDetail()
         {
-            if (mutationInfo != null)
-                LogbookManager.Instance.OpenMutationDetail(mutationInfo);
+            LogbookManager.Instance.OpenMutationDetail(mutationInfo);
         }
     }
 }
