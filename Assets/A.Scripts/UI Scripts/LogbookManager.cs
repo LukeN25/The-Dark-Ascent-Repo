@@ -2,95 +2,121 @@
 using UnityEngine;
 using FOW.Mutations;
 
-
 namespace FOW.Logbook
 {
     public class LogbookManager : MonoBehaviour
     {
-        public static LogbookManager Instance { get; private set; }
+        public static LogbookManager Instance;
 
         [Header("Enemy Database")]
         public List<EnemyInfo> enemies = new List<EnemyInfo>();
 
         [Header("Panels")]
-        public GameObject enemyListPanel;       
-        public GameObject mutationPanel;        
-        public GameObject mutationDetailPanel;  
+        public GameObject enemyListPanel;
+        public GameObject mutationPanel;
+        public GameObject mutationDetailPanel;
 
         [Header("Mutation UI")]
         public MutationListPopulator mutationListPopulator;
-        public MutationDetailUI mutationDetailUI; 
+        public MutationDetailUI mutationDetailUI;
+
+        private bool logbookOpen = false;
 
         private void Awake()
         {
             Instance = this;
-            Debug.Log(" LogbookManager Awake() ran and instance was set.");
+        }
+
+        private void Update()
+        {
+            if (!logbookOpen) return;
+
+            
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (mutationDetailPanel != null && mutationDetailPanel.activeSelf)
+                {
+                    BackFromMutationDetail();
+                    return;
+                }
+
+                if (mutationPanel != null && mutationPanel.activeSelf)
+                {
+                    BackFromMutationPanel();
+                    return;
+                }
+
+                if (enemyListPanel != null && enemyListPanel.activeSelf)
+                {
+                    CloseLogbook();
+                    return;
+                }
+            }
         }
 
        
+
+        public void OpenLogbook()
+        {
+            logbookOpen = true;
+            OpenEnemyListPanel();
+        }
+
         public void OpenEnemyListPanel()
         {
             CloseAllPanels();
+            logbookOpen = true;
 
             if (enemyListPanel != null)
                 enemyListPanel.SetActive(true);
         }
 
-       
         public void OpenMutationPanel(EnemyInfo enemy)
         {
-            if (!enemy.isUnlocked)
-            {
-                Debug.LogWarning(" Tried to open mutation panel for locked enemy: " + enemy.enemyName);
-                return;
-            }
+            if (!enemy.isUnlocked) return;
 
             CloseAllPanels();
 
-            Debug.Log($" Opening mutation panel for: {enemy.enemyName}");
-
-            if (mutationPanel != null)
-                mutationPanel.SetActive(true);
-
-            if (mutationListPopulator != null)
-                mutationListPopulator.SetEnemy(enemy);
-            else
-                Debug.LogError(" MutationListPopulator is not assigned in LogbookManager.");
+            mutationPanel.SetActive(true);
+            mutationListPopulator.SetEnemy(enemy);
         }
 
-    
         public void OpenMutationDetail(MutationInfo mutation)
         {
-            if (mutation == null)
-            {
-                Debug.LogError(" MutationInfo was NULL when trying to open mutation detail.");
-                return;
-            }
+            if (mutation == null) return;
 
             CloseAllPanels();
+            mutationDetailPanel.SetActive(true);
+            mutationDetailUI.ShowMutation(mutation);
+        }
 
-            Debug.Log($" Opening mutation detail for: {mutation.mutationName}");
+       
 
-            if (mutationDetailPanel != null)
-                mutationDetailPanel.SetActive(true);
+        public void BackFromMutationPanel()
+        {
+            CloseAllPanels();
+            enemyListPanel.SetActive(true);
+        }
 
-            if (mutationDetailUI != null)
-                mutationDetailUI.ShowMutation(mutation);
-            else
-                Debug.LogWarning(" No MutationDetailUI script assigned, detail panel will not update.");
+        public void BackFromMutationDetail()
+        {
+            CloseAllPanels();
+            mutationPanel.SetActive(true);
+        }
+
+        public void CloseLogbook()
+        {
+            logbookOpen = false;
+            CloseAllPanels();
         }
 
         
+
         public void CloseAllPanels()
         {
-            if (enemyListPanel != null)
-                enemyListPanel.SetActive(false);
-
-            if (mutationPanel != null)
-                mutationPanel.SetActive(false);
-
-            if (mutationDetailPanel != null)
-                mutationDetailPanel.SetActive(false);
+            if (enemyListPanel != null) enemyListPanel.SetActive(false);
+            if (mutationPanel != null) mutationPanel.SetActive(false);
+            if (mutationDetailPanel != null) mutationDetailPanel.SetActive(false);
         }
     }
 }
