@@ -2303,7 +2303,7 @@ MonoBehaviour:
     enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
     enemyModelPrefab: {fileID: 5784646888754919878, guid: c89dfd8d4da467a4193327820c1d4d25, type: 3}
     description: buctha
-    isUnlocked: 0
+    isUnlocked: 1
     possibleMutations: []
   - enemyName: po
     enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
