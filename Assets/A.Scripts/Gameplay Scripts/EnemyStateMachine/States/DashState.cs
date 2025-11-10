@@ -10,13 +10,13 @@ namespace EnemyAI.UnityHFSM
             bool needsExitTime,
             Enemy Enemy,
             Action<State<EnemyState, StateEvent>> onEnter,
-            float ExitTime = 1f) : base(needsExitTime, Enemy, ExitTime, onEnter) { }
+            float ExitTime = 2.1f) : base(needsExitTime, Enemy, ExitTime, onEnter) { }
 
         public override void OnEnter()
         {
             Agent.isStopped = true;
             base.OnEnter();
-            //Animator.Play(stateName: "Dash");
+            Animator.Play(stateName: "Dash");
         }
 
         public override void OnLogic()

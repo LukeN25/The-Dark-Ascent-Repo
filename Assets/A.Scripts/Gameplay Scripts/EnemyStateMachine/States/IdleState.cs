@@ -10,7 +10,7 @@ namespace EnemyAI.UnityHFSM
         {
             base.OnEnter();
             Agent.isStopped = true;
-            //Animator.Play(stateName"Idle");
+            Animator.Play(stateName: "Idle");
         }
     }
 }

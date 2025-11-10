@@ -16,7 +16,7 @@ namespace EnemyAI.UnityHFSM
             base.OnEnter();
             Agent.enabled = true;
             Agent.isStopped = false;
-            //Animator.Play("Walk");
+            Animator.Play("Chase");
         }
 
         public override void OnLogic()

@@ -27,6 +27,7 @@ namespace EnemyAI.UnityHFSM
             Action<State<EnemyState, StateEvent>> onLogic = null,
             Action<State<EnemyState, StateEvent>> onExit = null,
             Func<State<EnemyState, StateEvent>, bool> canExit = null)
+            : base(onEnter, onLogic, onExit, canExit, needsExitTime)
         {
             this.Enemy = Enemy;
             this.onEnter = onEnter;
