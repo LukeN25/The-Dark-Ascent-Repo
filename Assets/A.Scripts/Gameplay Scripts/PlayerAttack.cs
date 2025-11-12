@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour, IAttacker
+public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] Animator playerAnimator;
 
@@ -21,10 +21,5 @@ public class PlayerAttack : MonoBehaviour, IAttacker
             playerAnimator.SetTrigger("Attacking");
             playerAnimator.SetBool("IsChargingAttack", isChargingAttack);
         }
-    }
-
-    public void Attack(IHittable target)
-    {
-        target.GetHit();
     }
 }

@@ -4,15 +4,15 @@ public class HittingCube : MonoBehaviour, IHittable
 {
     void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<Hitbox>(out Hitbox component))
+        if (other.TryGetComponent<IAttacker>(out IAttacker component))
         {
-            component.PassAttack(this);
+            GetHit(component.ReturnDamageInfo());
         }
     }
     
-    public void GetHit()
+    public void GetHit(DamageInfo damageInfo)
     {
-        Debug.Log("Hit");
-        Destroy(this.gameObject);
+        print("Cube got hit for " + damageInfo.GetDamage() + " damage.");
+        Destroy(gameObject);
     }
 }

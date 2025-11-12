@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IHittable
 {
-    void GetHit();
+    void GetHit(DamageInfo damageInfo);
 }

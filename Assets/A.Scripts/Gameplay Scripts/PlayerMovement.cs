@@ -3,27 +3,35 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public float WalkingSpeed = 5;
-    public float Acceleration = 25;
+    float WalkingSpeed = 5;
+    float Acceleration = 25;
 
     private CharacterController cc;
-    private bool CursorLocked;
     private void Awake()
     {
         cc = GetComponent<CharacterController>();
-        CursorLocked = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
+    private void Start()
+    {
+        WalkingSpeed = PlayerManager.Instance.GetMoveSpeed();
+        Acceleration = PlayerManager.Instance.GetAcceleration();
+    }
+
     void Update()
     {
         setInput();
         move();
     }
+
     Vector2 inputDirection = Vector2.zero;
     Vector2 velocityXZ = Vector2.zero;
     Vector3 velocity = Vector3.zero;
     float speedTarget;
+
+
     public void setInput()
     {
         bool[] inputs = new bool[]
