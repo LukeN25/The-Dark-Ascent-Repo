@@ -360,9 +360,9 @@ MonoBehaviour:
   - {fileID: 4100533160943384664, guid: 17d4d21da06099541a21cb263e3e74c0, type: 3}
   - {fileID: 4100533160943384664, guid: 17d4d21da06099541a21cb263e3e74c0, type: 3}
   - {fileID: 1710557656767020541, guid: a711d4742af9ddd4a9214b82081ee0a7, type: 3}
-  bossRoomPrefab: {fileID: 4100533160943384664, guid: 17d4d21da06099541a21cb263e3e74c0, type: 3}
+  bossRoomPrefab: {fileID: 5097418288675812253, guid: a532cbf64a2765e41b4116b664f64659, type: 3}
   startSection: {fileID: 1327570289}
-  numberOfSections: 5
+  numberOfSections: 10
 --- !u!4 &108134240
 Transform:
   m_ObjectHideFlags: 0

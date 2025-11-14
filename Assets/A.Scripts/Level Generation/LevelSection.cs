@@ -21,8 +21,12 @@ public class LevelSection : MonoBehaviour
     Vector3 gridPosition = Vector3.zero;
 
     protected Vector3 orientation = Vector3.forward;
+
     [SerializeField]
     SectionType sectionType;
+
+    bool isFinalized = false;
+
     public List<Vector3> GetAvailableDirections()
     {
         List<Vector3> availableDirections = new List<Vector3>();
@@ -137,11 +141,17 @@ public class LevelSection : MonoBehaviour
         {
             if (!LevelGenerationManager.instance.IsGridPositionOccupied(gridPosition + dir))
             {
-                //Debug.DrawRay(transform.position + (dir * (10f * transform.localScale.y)) + new Vector3(0, 5, 0), Vector3.down * 10f, Color.red, 10f);
                 //If there is no section in this direction, place a block to fill the gap
                 Transform block = Instantiate(LevelGenPrefabHolder.instance.GetBlockPrefab(), transform.position + (dir * (5f * transform.localScale.y)), Quaternion.Euler(DetermineRotation(dir * -1)));
             }
+            else if(!LevelGenerationManager.instance.DoRoomsConnect(gridPosition, gridPosition + dir))
+            {
+                //If there is a section in this direction but they don't connect, place a block to fill the gap
+                Transform block = Instantiate(LevelGenPrefabHolder.instance.GetBlockPrefab(), transform.position + (dir * (5f * transform.localScale.y)), Quaternion.Euler(DetermineRotation(dir * -1)));
+            }
         }
+
+        isFinalized = true;
     }
 
     public void SetDirection(Vector3 dir)
@@ -162,6 +172,14 @@ public class LevelSection : MonoBehaviour
     public void SetGridPosition(Vector3 pos)
     {
         gridPosition = pos;
+    }
+    public List<Vector3> GetPossibleDirections()
+    {
+        return possibleDirections;
+    }
+    public bool IsFinalized()
+    {
+        return isFinalized;
     }
 }
 

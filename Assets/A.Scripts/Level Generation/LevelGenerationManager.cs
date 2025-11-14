@@ -104,6 +104,24 @@ public class LevelGenerationManager : MonoBehaviour
         return sectionGridDict.ContainsKey(gridPosition);
     }
 
+    public bool DoRoomsConnect(Vector3 positionA, Vector3 positionB)
+    {
+        // 
+        LevelSection sectionB = GetSectionAtGridPosition(positionB);
+        if (sectionB == null)
+        {
+            return false;
+        }
+        foreach (Vector3 dir in sectionB.GetPossibleDirections())
+        {
+            if (positionB + dir == positionA)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public LevelSection GetSectionAtGridPosition(Vector3 gridPosition)
     {
         if (sectionGridDict.TryGetValue(gridPosition, out LevelSection section))
