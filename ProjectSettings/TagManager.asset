@@ -8,12 +8,12 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Hitbox
+  - 
   - Water
   - UI
   - Not Climbable
   - LogbookPreview
-  - 
+  - Hitbox
   - 
   - 
   - 
