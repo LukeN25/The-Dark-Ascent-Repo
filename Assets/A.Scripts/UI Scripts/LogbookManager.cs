@@ -11,7 +11,7 @@ namespace FOW.Logbook
         [Header("Enemy Database")]
         public List<EnemyInfo> enemies = new List<EnemyInfo>();
 
-        [Header("Panels")]
+        [Header("Logbook Panels")]
         public GameObject enemyListPanel;
         public GameObject mutationPanel;
         public GameObject mutationDetailPanel;
@@ -20,7 +20,15 @@ namespace FOW.Logbook
         public MutationListPopulator mutationListPopulator;
         public MutationDetailUI mutationDetailUI;
 
+        [Header("Mutation Inventory")]
+        public MutationInventoryUI mutationInventoryUI;
+
+        [Header("Root Canvases")]
+        public GameObject canvasLogbook;
+        public GameObject canvasMutationInventory;
+
         private bool logbookOpen = false;
+        private bool mutationInventoryOpen = false;
 
         private void Awake()
         {
@@ -29,16 +37,37 @@ namespace FOW.Logbook
 
         private void Update()
         {
+            HandleLogbookInput();
+            HandleInventoryInput();
+            HandleEscapeKey();
+        }
+
+       
+
+        private void HandleLogbookInput()
+        {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                if (!logbookOpen)
-                    OpenEnemyListPanel();
-                else
+                if (logbookOpen)
                     CloseLogbook();
+                else if (!mutationInventoryOpen)
+                    OpenLogbook();
             }
+        }
 
-            if (!logbookOpen) return;
+        private void HandleInventoryInput()
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                if (mutationInventoryOpen)
+                    CloseMutationInventory();
+                else if (!logbookOpen)
+                    OpenMutationInventory();
+            }
+        }
 
+        private void HandleEscapeKey()
+        {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (mutationDetailPanel.activeSelf)
@@ -53,16 +82,42 @@ namespace FOW.Logbook
                     return;
                 }
 
-                CloseLogbook();
+                if (logbookOpen)
+                {
+                    CloseLogbook();
+                    return;
+                }
+
+                if (mutationInventoryOpen)
+                {
+                    CloseMutationInventory();
+                    return;
+                }
             }
         }
 
-        public void OpenEnemyListPanel()
+        
+
+        public void OpenLogbook()
         {
             logbookOpen = true;
+            mutationInventoryOpen = false;
+
+            canvasMutationInventory.SetActive(false);
+            canvasLogbook.SetActive(true);
+
             CloseAllPanels();
             enemyListPanel.SetActive(true);
         }
+
+        public void CloseLogbook()
+        {
+            logbookOpen = false;
+            CloseAllPanels();
+            canvasLogbook.SetActive(false);
+        }
+
+        
 
         public void OpenMutationPanel(EnemyInfo enemy)
         {
@@ -92,11 +147,28 @@ namespace FOW.Logbook
             mutationPanel.SetActive(true);
         }
 
-        public void CloseLogbook()
+        
+
+        public void OpenMutationInventory()
         {
+            mutationInventoryOpen = true;
             logbookOpen = false;
-            CloseAllPanels();
+
+            canvasLogbook.SetActive(false);
+            canvasMutationInventory.SetActive(true);
+
+            mutationInventoryUI.Show();
         }
+
+        public void CloseMutationInventory()
+        {
+            mutationInventoryOpen = false;
+            mutationInventoryUI.Hide();
+
+            canvasMutationInventory.SetActive(false);
+        }
+
+        
 
         public void CloseAllPanels()
         {
