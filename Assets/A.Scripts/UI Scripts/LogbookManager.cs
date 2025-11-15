@@ -29,46 +29,39 @@ namespace FOW.Logbook
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (!logbookOpen)
+                    OpenEnemyListPanel();
+                else
+                    CloseLogbook();
+            }
+
             if (!logbookOpen) return;
 
-            
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (mutationDetailPanel != null && mutationDetailPanel.activeSelf)
+                if (mutationDetailPanel.activeSelf)
                 {
                     BackFromMutationDetail();
                     return;
                 }
 
-                if (mutationPanel != null && mutationPanel.activeSelf)
+                if (mutationPanel.activeSelf)
                 {
                     BackFromMutationPanel();
                     return;
                 }
 
-                if (enemyListPanel != null && enemyListPanel.activeSelf)
-                {
-                    CloseLogbook();
-                    return;
-                }
+                CloseLogbook();
             }
-        }
-
-       
-
-        public void OpenLogbook()
-        {
-            logbookOpen = true;
-            OpenEnemyListPanel();
         }
 
         public void OpenEnemyListPanel()
         {
-            CloseAllPanels();
             logbookOpen = true;
-
-            if (enemyListPanel != null)
-                enemyListPanel.SetActive(true);
+            CloseAllPanels();
+            enemyListPanel.SetActive(true);
         }
 
         public void OpenMutationPanel(EnemyInfo enemy)
@@ -76,21 +69,16 @@ namespace FOW.Logbook
             if (!enemy.isUnlocked) return;
 
             CloseAllPanels();
-
             mutationPanel.SetActive(true);
             mutationListPopulator.SetEnemy(enemy);
         }
 
         public void OpenMutationDetail(MutationInfo mutation)
         {
-            if (mutation == null) return;
-
             CloseAllPanels();
             mutationDetailPanel.SetActive(true);
             mutationDetailUI.ShowMutation(mutation);
         }
-
-       
 
         public void BackFromMutationPanel()
         {
@@ -110,13 +98,11 @@ namespace FOW.Logbook
             CloseAllPanels();
         }
 
-        
-
         public void CloseAllPanels()
         {
-            if (enemyListPanel != null) enemyListPanel.SetActive(false);
-            if (mutationPanel != null) mutationPanel.SetActive(false);
-            if (mutationDetailPanel != null) mutationDetailPanel.SetActive(false);
+            enemyListPanel.SetActive(false);
+            mutationPanel.SetActive(false);
+            mutationDetailPanel.SetActive(false);
         }
     }
 }
