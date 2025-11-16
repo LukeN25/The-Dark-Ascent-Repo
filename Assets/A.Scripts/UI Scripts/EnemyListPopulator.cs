@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using FOW.Logbook;
 
+
 public class EnemyListPopulator : MonoBehaviour
 {
     public Transform gridParent;
@@ -8,6 +9,12 @@ public class EnemyListPopulator : MonoBehaviour
 
     private void OnEnable()
     {
+        if (LogbookManager.Instance == null)
+        {
+            Debug.LogError(" LogbookManager.Instance is NULL!");
+            return;
+        }
+
         Populate();
     }
 
@@ -16,7 +23,15 @@ public class EnemyListPopulator : MonoBehaviour
         foreach (Transform child in gridParent)
             Destroy(child.gameObject);
 
-        foreach (var enemy in LogbookManager.Instance.enemies)
+        var list = LogbookManager.Instance.enemies;
+
+        if (list == null)
+        {
+            Debug.LogError(" LogbookManager.enemies is NULL. Wrong LogbookManager script loaded?");
+            return;
+        }
+
+        foreach (var enemy in list)
         {
             var entry = Instantiate(enemyEntryPrefab, gridParent);
             entry.GetComponent<EnemyEntry>().Init(enemy, enemy.isUnlocked);

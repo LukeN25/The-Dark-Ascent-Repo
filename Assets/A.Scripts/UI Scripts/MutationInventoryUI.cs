@@ -4,32 +4,13 @@ public class MutationInventoryUI : MonoBehaviour
 {
     public GameObject rootCanvas;
 
-    public bool IsOpen => rootCanvas.activeSelf;
-
-    private void Start()
+    public void Show()
     {
-        Hide();
+        rootCanvas.SetActive(true);
     }
 
-    private void Update()
+    public void Hide()
     {
-        
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (!IsOpen)
-                Show();
-            else
-                Hide();
-        }
-
-        
-        if (IsOpen && Input.GetKeyDown(KeyCode.Escape))
-        {
-            Hide();
-        }
+        rootCanvas.SetActive(false);
     }
-
-    public void Show() => rootCanvas.SetActive(true);
-
-    public void Hide() => rootCanvas.SetActive(false);
 }
