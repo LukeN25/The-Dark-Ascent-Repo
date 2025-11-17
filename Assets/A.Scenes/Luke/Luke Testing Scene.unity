@@ -1231,6 +1231,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5056502842874486159, guid: c89dfd8d4da467a4193327820c1d4d25, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5784646888754919878, guid: c89dfd8d4da467a4193327820c1d4d25, type: 3}
       propertyPath: m_Name
       value: Butcher Enemy
