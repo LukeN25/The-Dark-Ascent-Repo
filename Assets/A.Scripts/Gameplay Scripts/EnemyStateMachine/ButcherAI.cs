@@ -9,7 +9,7 @@ namespace EnemyAI.UnityHFSM
     public class ButcherAI : Enemy
     {
         [Header("References")]
-        [SerializeField] protected Player player;
+        [SerializeField] protected PlayerManager player;
 
         [Header("Sensors")]
         [SerializeField] protected PlayerSensor ChasePlayerSensor;

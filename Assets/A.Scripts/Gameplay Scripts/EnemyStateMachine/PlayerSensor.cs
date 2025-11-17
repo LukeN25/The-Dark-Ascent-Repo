@@ -16,9 +16,9 @@ namespace EnemyAI.UnityHFSM
 
         private void OnTriggerEnter(Collider other)
         {
-            if(other.TryGetComponent(out Player player))
+            if(other.gameObject.tag == "Player")
             {
-                OnPlayerEnter?.Invoke(player.transform);
+                OnPlayerEnter?.Invoke(other.GetComponent<Transform>());
             }
         }
 
