@@ -108,6 +108,7 @@ public class LevelSection : MonoBehaviour
         section.SetGridPosition(this.gridPosition + direction);
 
         section.SetDirection(direction);
+
         return section;
     }
 

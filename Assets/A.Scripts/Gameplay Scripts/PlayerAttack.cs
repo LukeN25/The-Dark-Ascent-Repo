@@ -3,23 +3,52 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] Animator playerAnimator;
+    [Tooltip("How long (seconds) the button must be held before we consider it a charged attack.")]
+    [SerializeField] float chargeThreshold = 0.5f;
 
-    bool isChargingAttack = false;
+    bool isHolding = false;
+    bool isCharging = false;
+    float holdTimer = 0f;
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        // Start press
+        if (Input.GetMouseButtonDown(0))
         {
-            // Attack is charged
-            isChargingAttack = true;
-            playerAnimator.SetBool("IsChargingAttack", isChargingAttack);
+            isHolding = true;
+            isCharging = false;
+            holdTimer = 0f;
         }
-        else if (isChargingAttack)
+
+        // While held, accumulate time and enter charging state when threshold reached
+        if (isHolding && Input.GetMouseButton(0))
         {
-            // Attack is released
-            isChargingAttack = false;
-            playerAnimator.SetTrigger("Attacking");
-            playerAnimator.SetBool("IsChargingAttack", isChargingAttack);
+            holdTimer += Time.deltaTime;
+            if (!isCharging && holdTimer >= chargeThreshold)
+            {
+                isCharging = true;
+                playerAnimator.SetBool("IsCharging", true);
+            }
+        }
+
+        // On release, decide quick vs charged attack, then reset state
+        if (isHolding && Input.GetMouseButtonUp(0))
+        {
+            if (isCharging)
+            {
+                // Charged attack
+                playerAnimator.SetBool("IsCharging", false);
+                playerAnimator.SetTrigger("Attack");
+            }
+            else
+            {
+                // Quick attack
+                playerAnimator.SetTrigger("Attack");
+            }
+
+            isHolding = false;
+            isCharging = false;
+            holdTimer = 0f;
         }
     }
 }

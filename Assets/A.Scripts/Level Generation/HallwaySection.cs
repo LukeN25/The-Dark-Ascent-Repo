@@ -7,10 +7,11 @@ public class HallwaySection : LevelSection
 {
     public override void FinalizeSection()
     {
-
         List<Transform> prefabsWithoutHallways = LevelGenerationManager.instance.GetSectionPrefabsWithoutType(SectionType.Hallway);
 
         FinalizeHalls(prefabsWithoutHallways.ToArray());
+
+        base.FinalizeSection();
     }
 
     public void FinalizeHalls(Transform[] prefabs)

@@ -860,7 +860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 0
   attackDamage: 10
-  moveSpeed: 5
+  moveSpeed: 4.5
   acceleration: 25
 --- !u!114 &5452136175788328676
 MonoBehaviour:
@@ -902,6 +902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 509701541497089890}
+  chargeThreshold: 0.1
 --- !u!143 &4284578096002865064
 CharacterController:
   m_ObjectHideFlags: 0

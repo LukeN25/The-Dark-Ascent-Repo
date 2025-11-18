@@ -41,8 +41,6 @@ public class LevelGenerationManager : MonoBehaviour
             index++;
         }
 
-        placedSections[index].SpawnSingleSection(bossRoomPrefab);
-
         for (int i = 0; i < placedSections.Count; i++)
         {
             placedSections[i].FinalizeSection();
@@ -106,7 +104,7 @@ public class LevelGenerationManager : MonoBehaviour
 
     public bool DoRoomsConnect(Vector3 positionA, Vector3 positionB)
     {
-        // 
+        //Returns true if section at positionA has a direction towards positionB and vice versa
         LevelSection sectionB = GetSectionAtGridPosition(positionB);
         if (sectionB == null)
         {
