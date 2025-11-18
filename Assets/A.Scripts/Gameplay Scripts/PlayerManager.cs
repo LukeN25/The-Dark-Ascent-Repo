@@ -27,6 +27,19 @@ public class PlayerManager : MonoBehaviour
     public void TakeDamage(DamageInfo damageInfo)
     {
         playerHealth -= damageInfo.GetDamage();
+
+        
+        if (playerHealth <= 0)
+        {
+            if (GameOverUI.Instance != null)
+            {
+                GameOverUI.Instance.ShowGameOver();
+            }
+            else
+            {
+                Debug.LogError("GameOverUI.Instance is NULL!");
+            }
+        }
     }
 
     public int GetAttackDamage() => attackDamage;
