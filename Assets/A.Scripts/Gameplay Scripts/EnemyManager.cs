@@ -6,6 +6,9 @@ public class EnemyManager : MonoBehaviour
 
     [SerializeField] int health = 3;
 
+    [SerializeField] private WeightedRandomList<Transform> lootTable;
+    [SerializeField] private Transform itemHolder; 
+
     public DamageInfo GetDamageInfo()
     {
         return new DamageInfo(damage);
@@ -22,6 +25,8 @@ public class EnemyManager : MonoBehaviour
 
     private void Die()
     {
+        Transform item = lootTable.GetRandom();
+        Instantiate(item, itemHolder);
         Destroy(gameObject);
     }
 }
