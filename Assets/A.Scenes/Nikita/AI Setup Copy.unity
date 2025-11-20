@@ -761,6 +761,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5370613511985212274, guid: c4c8905956e96c545ac1822bc996803c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5764630214608915652, guid: c4c8905956e96c545ac1822bc996803c, type: 3}
       propertyPath: m_Name
       value: Player
@@ -5776,8 +5780,7 @@ MonoBehaviour:
   IsInMeleeRange: 0
   IsInChaseRange: 0
   LastAttackTime: 0
-  LastDashTime: 0
-  AttackCooldown: 2
+  LeapCooldown: 10
 --- !u!1 &1083188457
 GameObject:
   m_ObjectHideFlags: 0
@@ -5890,7 +5893,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1136408048
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6738,7 +6741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1293488219
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7333,6 +7336,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &1474341853 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7829184656953933355, guid: c4c8905956e96c545ac1822bc996803c, type: 3}
+  m_PrefabInstance: {fileID: 143530175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1492690475
 GameObject:
   m_ObjectHideFlags: 0
@@ -8532,6 +8540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1632011201}
   - component: {fileID: 1632011200}
+  - component: {fileID: 1632011202}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -8575,6 +8584,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1632011202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632011199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2bc488fba982244ca46ff523b2af9c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameplayCamera: {fileID: 1474341853}
+  menuCamera: {fileID: 0}
+  logbookCamera: {fileID: 1688603524}
+  mutationInventoryCamera: {fileID: 1550583359}
 --- !u!1 &1671197390
 GameObject:
   m_ObjectHideFlags: 0
@@ -9366,7 +9391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1795291755
 Transform:
   m_ObjectHideFlags: 0
@@ -10400,6 +10425,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d18bd542634f360479cbfb885290196f, type: 3}
       propertyPath: m_Name
       value: Ui Skeleton
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d18bd542634f360479cbfb885290196f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
