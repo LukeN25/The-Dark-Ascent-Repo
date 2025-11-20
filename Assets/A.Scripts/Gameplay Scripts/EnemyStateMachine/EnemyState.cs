@@ -6,6 +6,7 @@ namespace EnemyAI.UnityHFSM
         Patrol,
         Chase,
         Attack,
-        Dash
+        Dash,
+        Leap
     }
 }

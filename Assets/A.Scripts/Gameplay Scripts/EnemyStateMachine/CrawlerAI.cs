@@ -9,7 +9,7 @@ namespace EnemyAI.UnityHFSM
     public class CrawlerAI : Enemy
     {
         [Header("References")]
-        [SerializeField] protected Player player;
+        [SerializeField] protected PlayerManager player;
 
         [Header("Sensors")]
         [SerializeField] protected PlayerSensor ChasePlayerSensor;
@@ -19,12 +19,12 @@ namespace EnemyAI.UnityHFSM
         [SerializeField] protected bool IsInMeleeRange;
         [SerializeField] protected bool IsInChaseRange;
         [SerializeField] protected float LastAttackTime;
-        [SerializeField] protected float LastDashTime;
+        //[SerializeField] protected float LastDashTime;
 
         [Header("Attack Config")]
         [SerializeField]
-        [Range(0.1f, 5f)]
-        protected float AttackCooldown = 2;
+        [Range(0.1f, 20f)]
+        protected float LeapCooldown = 10;
 
         private void Awake()
         {
@@ -36,7 +36,7 @@ namespace EnemyAI.UnityHFSM
             EnemyFSM.AddState(name: EnemyState.Idle, new IdleState(needsExitTime: false, Enemy: this));
             //EnemyFSM.AddState(name: EnemyState.Patrol, new PatrolState(needsExitTime: true, Enemy: this, player.transform));
             EnemyFSM.AddState(name: EnemyState.Chase, new ChaseState(needsExitTime: true, Enemy: this, player.transform));
-            //EnemyFSM.AddState(name: EnemyState.Attack, new AttackState(needsExitTime: true, Enemy: this, OnAttack));
+            EnemyFSM.AddState(name: EnemyState.Leap, new LeapState(needsExitTime: true, Enemy: this, OnLeap));
 
             // Transitions
 
@@ -52,6 +52,12 @@ namespace EnemyAI.UnityHFSM
                     || Vector3.Distance(a: player.transform.position, b: transform.position) <= Agent.stoppingDistance)
             );
 
+            //Leap
+            EnemyFSM.AddTransition(new Transition<EnemyState>(from: EnemyState.Chase, to: EnemyState.Leap, ShouldLeap, forceInstantly: true));
+            EnemyFSM.AddTransition(new Transition<EnemyState>(from: EnemyState.Idle, to: EnemyState.Leap, ShouldLeap, forceInstantly: true));
+            EnemyFSM.AddTransition(new Transition<EnemyState>(from: EnemyState.Leap, to: EnemyState.Chase, IsNotWithinIdleRange));
+            EnemyFSM.AddTransition(new Transition<EnemyState>(from: EnemyState.Leap, to: EnemyState.Idle, IsWithinIdleRange));
+
             EnemyFSM.SetStartState(name: EnemyState.Idle);
 
             EnemyFSM.Init();
@@ -61,7 +67,13 @@ namespace EnemyAI.UnityHFSM
         {
             ChasePlayerSensor.OnPlayerEnter += ChasePlayerSensor_OnPlayerEnter;
             ChasePlayerSensor.OnPlayerExit += ChasePlayerSensor_OnPlayerExit;
+            MeleeRangeSensor.OnPlayerEnter += MeleeRangeSensor_OnPlayerEnter;
+            MeleeRangeSensor.OnPlayerExit += MeleeRangeSensor_OnPlayerExit;
         }
+
+        private bool ShouldLeap(Transition<EnemyState> Transition) =>
+            LastAttackTime + LeapCooldown <= Time.time
+                   && IsInMeleeRange;
 
         private void ChasePlayerSensor_OnPlayerExit(Vector3 LastKnownPosition)
         {
@@ -80,6 +92,16 @@ namespace EnemyAI.UnityHFSM
 
         private bool IsNotWithinIdleRange(Transition<EnemyState> Transition) =>
             !IsWithinIdleRange(Transition);
+
+        private void OnLeap(State<EnemyState, StateEvent> state)
+        {
+            transform.LookAt(player.transform.position);
+            LastAttackTime = Time.time;
+        }
+
+        private void MeleeRangeSensor_OnPlayerExit(Vector3 LastKnownPosition) => IsInMeleeRange = false;
+
+        private void MeleeRangeSensor_OnPlayerEnter(Transform Player) => IsInMeleeRange = true;
 
         private void Update()
         {
