@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace FOW.Mutations
@@ -20,19 +20,27 @@ namespace FOW.Mutations
         {
             if (!collectedMutations.Contains(mutation))
                 collectedMutations.Add(mutation);
-
-         
         }
 
-        public void EquipMutation(MutationInfo mutation)
+        public void Equip(MutationSlotType slot, MutationInfo mutation)
         {
-            equippedMutations[mutation.slotType] = mutation;
+            equippedMutations[slot] = mutation;
         }
 
-        public void UnequipMutation(MutationSlotType slot)
+        public MutationInfo GetEquipped(MutationSlotType slot)
         {
-            if (equippedMutations.ContainsKey(slot))
-                equippedMutations.Remove(slot);
+            return equippedMutations.ContainsKey(slot)
+                ? equippedMutations[slot]
+                : null;
+        }
+
+        public bool CanEquipToSlot(MutationInfo m, MutationSlotType slot)
+        {
+            foreach (var s in m.allowedSlots)
+                if (s == slot)
+                    return true;
+
+            return false;
         }
     }
 }
