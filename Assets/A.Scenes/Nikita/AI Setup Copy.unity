@@ -691,7 +691,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 576993973}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FOW.Logbook.LogbookManager, Assembly-CSharp
         m_MethodName: BackFromMutationPanel
         m_Mode: 1
@@ -899,7 +899,7 @@ Transform:
   m_GameObject: {fileID: 178474897}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 407.1098, y: 226.07631, z: 407.2865}
+  m_LocalPosition: {x: 381.29, y: 226.07631, z: 407.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1109,52 +1109,6 @@ MonoBehaviour:
   m_Spacing: {x: 120, y: 75}
   m_Constraint: 1
   m_ConstraintCount: 4
---- !u!1 &240613679
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 240613681}
-  - component: {fileID: 240613680}
-  m_Layer: 0
-  m_Name: CanvasController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &240613680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240613679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1af4730285d272249b93b67b5f4c6b44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  logbookCanvas: {fileID: 1731773851}
-  mutationCanvas: {fileID: 40304060}
---- !u!4 &240613681
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240613679}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 465.55893, y: 191.43274, z: -2.7691083}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &247600519
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,7 +2089,7 @@ GameObject:
   - component: {fileID: 435519075}
   - component: {fileID: 435519074}
   m_Layer: 3
-  m_Name: Cube
+  m_Name: PickUp Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2514,112 +2468,6 @@ RectTransform:
   m_AnchoredPosition: {x: -383, y: 14}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &576993972
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 576993974}
-  - component: {fileID: 576993973}
-  m_Layer: 0
-  m_Name: LogBookManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &576993973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576993972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d3732f1c34e7b149a6954198c1788c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemies:
-  - enemyName: Butcher
-    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
-    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
-    description: buctha
-    isUnlocked: 1
-    possibleMutations:
-    - {fileID: 11400000, guid: 5ab2180f209f81946a0e5f0bf0503fdf, type: 2}
-    - {fileID: 11400000, guid: 5ab2180f209f81946a0e5f0bf0503fdf, type: 2}
-  - enemyName: Scissor Legs
-    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
-    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
-    description: buctha
-    isUnlocked: 1
-    possibleMutations: []
-  - enemyName: po
-    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
-    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
-    description: buctha
-    isUnlocked: 0
-    possibleMutations: []
-  - enemyName: po
-    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
-    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
-    description: buctha
-    isUnlocked: 0
-    possibleMutations: []
-  - enemyName: po
-    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
-    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
-    description: buctha
-    isUnlocked: 0
-    possibleMutations: []
-  - enemyName: po
-    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
-    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
-    description: buctha
-    isUnlocked: 0
-    possibleMutations: []
-  - enemyName: po
-    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
-    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
-    description: buctha
-    isUnlocked: 0
-    possibleMutations: []
-  - enemyName: po
-    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
-    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
-    description: buctha
-    isUnlocked: 1
-    possibleMutations: []
-  - enemyName: po
-    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
-    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
-    description: buctha
-    isUnlocked: 0
-    possibleMutations: []
-  enemyListPanel: {fileID: 1620579081}
-  mutationPanel: {fileID: 2123799094}
-  mutationDetailPanel: {fileID: 1136408047}
-  mutationListPopulator: {fileID: 2123799095}
-  mutationDetailUI: {fileID: 1136408049}
---- !u!4 &576993974
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576993972}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 486.416, y: 217.92484, z: -1.957286}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &602523814
 GameObject:
   m_ObjectHideFlags: 0
@@ -2980,7 +2828,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 576993973}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FOW.Logbook.LogbookManager, Assembly-CSharp
         m_MethodName: BackFromMutationDetail
         m_Mode: 1
@@ -3506,7 +3354,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 576993973}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FOW.Logbook.LogbookManager, Assembly-CSharp
         m_MethodName: BackFromMutationPanel
         m_Mode: 1
@@ -4412,7 +4260,7 @@ GameObject:
   - component: {fileID: 850846474}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7000,7 +6848,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: e1da52cca6c8a5649993fa897cbce251, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7290,52 +7138,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!1 &1449069005
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1449069007}
-  - component: {fileID: 1449069006}
-  m_Layer: 0
-  m_Name: SoundManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1449069006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449069005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9899bdc0a505212479920aab6108319b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoverSound: {fileID: 0}
-  clickSound: {fileID: 0}
---- !u!4 &1449069007
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449069005}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 383.28244, y: 200.29645, z: 86.80004}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1474341853 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 7829184656953933355, guid: c4c8905956e96c545ac1822bc996803c, type: 3}
@@ -8541,8 +8343,11 @@ GameObject:
   - component: {fileID: 1632011201}
   - component: {fileID: 1632011200}
   - component: {fileID: 1632011202}
+  - component: {fileID: 1632011203}
+  - component: {fileID: 1632011204}
+  - component: {fileID: 1632011205}
   m_Layer: 0
-  m_Name: MenuManager
+  m_Name: GlobalManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8600,6 +8405,108 @@ MonoBehaviour:
   menuCamera: {fileID: 0}
   logbookCamera: {fileID: 1688603524}
   mutationInventoryCamera: {fileID: 1550583359}
+--- !u!114 &1632011203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632011199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3732f1c34e7b149a6954198c1788c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - enemyName: Butcher
+    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
+    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
+    description: buctha
+    isUnlocked: 1
+    possibleMutations:
+    - {fileID: 11400000, guid: 5ab2180f209f81946a0e5f0bf0503fdf, type: 2}
+    - {fileID: 11400000, guid: 5ab2180f209f81946a0e5f0bf0503fdf, type: 2}
+  - enemyName: Scissor Legs
+    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
+    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
+    description: buctha
+    isUnlocked: 1
+    possibleMutations: []
+  - enemyName: po
+    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
+    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
+    description: buctha
+    isUnlocked: 0
+    possibleMutations: []
+  - enemyName: po
+    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
+    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
+    description: buctha
+    isUnlocked: 0
+    possibleMutations: []
+  - enemyName: po
+    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
+    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
+    description: buctha
+    isUnlocked: 0
+    possibleMutations: []
+  - enemyName: po
+    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
+    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
+    description: buctha
+    isUnlocked: 0
+    possibleMutations: []
+  - enemyName: po
+    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
+    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
+    description: buctha
+    isUnlocked: 0
+    possibleMutations: []
+  - enemyName: po
+    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
+    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
+    description: buctha
+    isUnlocked: 1
+    possibleMutations: []
+  - enemyName: po
+    enemyIcon: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
+    enemyModelPrefab: {fileID: 919132149155446097, guid: d55ddd0594f5a6243ae74356e770b88f, type: 3}
+    description: buctha
+    isUnlocked: 0
+    possibleMutations: []
+  enemyListPanel: {fileID: 1620579081}
+  mutationPanel: {fileID: 2123799094}
+  mutationDetailPanel: {fileID: 1136408047}
+  mutationListPopulator: {fileID: 2123799095}
+  mutationDetailUI: {fileID: 1136408049}
+--- !u!114 &1632011204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632011199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1af4730285d272249b93b67b5f4c6b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logbookCanvas: {fileID: 1731773851}
+  mutationCanvas: {fileID: 40304060}
+--- !u!114 &1632011205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632011199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9899bdc0a505212479920aab6108319b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 0}
+  clickSound: {fileID: 0}
 --- !u!1 &1671197390
 GameObject:
   m_ObjectHideFlags: 0
@@ -9376,37 +9283,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778105610}
   m_CullTransparentMesh: 1
---- !u!1 &1795291754
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1795291755}
-  m_Layer: 0
-  m_Name: MutationMenu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1795291755
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1795291754}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 407.1098, y: 226.07631, z: 407.2865}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1797781233
 GameObject:
   m_ObjectHideFlags: 0
@@ -10384,7 +10260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d18bd542634f360479cbfb885290196f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0052621
+      value: -25.825056
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d18bd542634f360479cbfb885290196f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10392,7 +10268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d18bd542634f360479cbfb885290196f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.10645
+      value: 0.10995952
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d18bd542634f360479cbfb885290196f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10906,19 +10782,15 @@ SceneRoots:
   - {fileID: 435519073}
   - {fileID: 143530175}
   - {fileID: 1159587259}
-  - {fileID: 930059371}
   - {fileID: 1271928919}
-  - {fileID: 1795291755}
-  - {fileID: 1449069007}
-  - {fileID: 1396787265}
-  - {fileID: 576993974}
-  - {fileID: 951102072}
   - {fileID: 1731773855}
-  - {fileID: 850846477}
-  - {fileID: 240613681}
-  - {fileID: 896036384}
-  - {fileID: 1632011201}
-  - {fileID: 2085599710}
   - {fileID: 40304064}
+  - {fileID: 850846477}
+  - {fileID: 896036384}
+  - {fileID: 2085599710}
   - {fileID: 178474898}
   - {fileID: 2107673498}
+  - {fileID: 1632011201}
+  - {fileID: 1396787265}
+  - {fileID: 951102072}
+  - {fileID: 930059371}

@@ -21,8 +21,8 @@ public class CameraManager : MonoBehaviour
     {
         if (gameplayCamera) gameplayCamera.enabled = false;
         if (menuCamera) menuCamera.enabled = false;
-        if (logbookCamera) logbookCamera.enabled = false;
-        if (mutationInventoryCamera) mutationInventoryCamera.enabled = false;
+        if (logbookCamera) logbookCamera.enabled = true;
+        if (mutationInventoryCamera) mutationInventoryCamera.enabled = true;
     }
 
     public void EnableGameplayCamera()
