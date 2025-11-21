@@ -1700,7 +1700,7 @@ Transform:
   m_GameObject: {fileID: 1471114394281579050}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0.065491796, z: -0.0010233521}
+  m_LocalPosition: {x: 0, y: 0.065491796, z: -0.001023352}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3538,7 +3538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8234108160835750142}
   m_Layer: 0
-  m_Name: main character model fixed
+  m_Name: Player Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
