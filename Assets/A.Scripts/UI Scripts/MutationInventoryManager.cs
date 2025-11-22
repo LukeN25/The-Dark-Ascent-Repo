@@ -9,7 +9,8 @@ namespace FOW.Mutations
 
         public List<MutationInfo> collectedMutations = new List<MutationInfo>();
 
-        public Dictionary<MutationSlotType, MutationInfo> equipped = new Dictionary<MutationSlotType, MutationInfo>();
+        public Dictionary<MutationSlotType, MutationInfo> equippedMutations =
+            new Dictionary<MutationSlotType, MutationInfo>();
 
         private void Awake()
         {
@@ -19,28 +20,75 @@ namespace FOW.Mutations
 
         public void AddMutation(MutationInfo mutation)
         {
+            if (mutation == null) return;
+
             if (!collectedMutations.Contains(mutation))
                 collectedMutations.Add(mutation);
+
+            AutoEquipIfPossible(mutation);
+
+            RecalculatePlayerStats();
         }
 
-        public void Equip(MutationInfo mutation)
+        void AutoEquipIfPossible(MutationInfo mutation)
         {
+            if (mutation.allowedSlots == null) return;
+
             foreach (var slot in mutation.allowedSlots)
             {
-                equipped[slot] = mutation;
-                Debug.Log($"Equipped {mutation.mutationName} in slot {slot}");
+                if (!equippedMutations.ContainsKey(slot))
+                {
+                    EquipMutationToSlot(mutation, slot);
+                }
+            }
+        }
+
+        public void EquipMutationToSlot(MutationInfo mutation, MutationSlotType slot)
+        {
+            if (mutation == null) return;
+
+            if (mutation.allowedSlots == null ||
+                System.Array.IndexOf(mutation.allowedSlots, slot) < 0)
+            {
+                Debug.LogWarning($"{mutation.mutationName} is not allowed in slot {slot}");
                 return;
             }
 
-            Debug.LogWarning("Mutation has no allowed slots defined.");
+            equippedMutations[slot] = mutation;
+            RecalculatePlayerStats();
+        }
+
+        public void UnequipMutationFromSlot(MutationSlotType slot)
+        {
+            if (equippedMutations.ContainsKey(slot))
+                equippedMutations.Remove(slot);
+
+            RecalculatePlayerStats();
         }
 
         public MutationInfo GetEquipped(MutationSlotType slot)
         {
-            if (equipped.ContainsKey(slot))
-                return equipped[slot];
+            if (equippedMutations.TryGetValue(slot, out var mutation))
+                return mutation;
 
             return null;
+        }
+
+        void RecalculatePlayerStats()
+        {
+
+            var handler = PlayerMutationHandler.Instance;
+            if (handler == null) return;
+
+            handler.ResetMutationEffects();
+
+            foreach (var kv in equippedMutations)
+            {
+                var mut = kv.Value;
+                if (mut == null) continue;
+
+                handler.ApplyMutation(mut);
+            }
         }
     }
 }

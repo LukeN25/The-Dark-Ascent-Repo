@@ -4,9 +4,16 @@ namespace FOW.Mutations
 {
     public class PlayerMutationHandler : MonoBehaviour
     {
-        
+        public static PlayerMutationHandler Instance;
+
         public float damageMultiplier = 1f;
         public float rangeMultiplier = 1f;
+
+        private void Awake()
+        {
+            if (Instance == null) Instance = this;
+            else Destroy(gameObject);
+        }
 
         public void ApplyMutation(MutationInfo mutation)
         {
@@ -15,7 +22,8 @@ namespace FOW.Mutations
             damageMultiplier *= mutation.damageMultiplier;
             rangeMultiplier *= mutation.rangeMultiplier;
 
-            Debug.Log("Applied mutation: " + mutation.mutationName);
+            Debug.Log($"Applied mutation: {mutation.mutationName}. " +
+                      $"Current damageMult={damageMultiplier}, rangeMult={rangeMultiplier}");
         }
 
         public void ResetMutationEffects()

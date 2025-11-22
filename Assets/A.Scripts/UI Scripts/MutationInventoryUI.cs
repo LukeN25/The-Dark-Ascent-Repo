@@ -5,7 +5,6 @@ public class MutationInventoryUI : MonoBehaviour
 {
     public GameObject rootCanvas;
 
-    
     public MutationSlotUI leftArmSlot;
     public MutationSlotUI rightArmSlot;
 
@@ -16,10 +15,13 @@ public class MutationInventoryUI : MonoBehaviour
 
     private void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (rootCanvas.activeSelf) Hide();
-            else Show();
+            if (rootCanvas.activeSelf)
+                Hide();
+            else
+                Show();
         }
     }
 
@@ -27,7 +29,6 @@ public class MutationInventoryUI : MonoBehaviour
     {
         RefreshSlots();
         rootCanvas.SetActive(true);
-
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -36,7 +37,6 @@ public class MutationInventoryUI : MonoBehaviour
     public void Hide()
     {
         rootCanvas.SetActive(false);
-
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -45,17 +45,11 @@ public class MutationInventoryUI : MonoBehaviour
     public void RefreshSlots()
     {
         var inv = MutationInventoryManager.Instance;
-        if (inv == null)
-        {
-            Debug.LogError("MutationInventoryManager is NULL!");
-            return;
-        }
+        if (inv == null) return;
 
-        
         if (leftArmSlot != null)
             leftArmSlot.SetSlot(inv.GetEquipped(MutationSlotType.LeftArm));
 
-        
         if (rightArmSlot != null)
             rightArmSlot.SetSlot(inv.GetEquipped(MutationSlotType.RightArm));
     }

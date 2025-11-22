@@ -1,19 +1,24 @@
 using UnityEngine;
-using FOW.Mutations;
 
-public class MutationPickup : MonoBehaviour
+namespace FOW.Mutations
 {
-    public MutationInfo mutation;
-
-    private void OnTriggerEnter(Collider other)
+    [RequireComponent(typeof(Collider))]
+    public class MutationPickup : MonoBehaviour
     {
-        var handler = other.GetComponent<PlayerMutationHandler>();
-        if (handler != null)
-        {
-            MutationInventoryManager.Instance.AddMutation(mutation);
-            handler.ApplyMutation(mutation);
+        public MutationInfo mutationData;
+        public float rotationSpeed = 50f;
 
-            Debug.Log("Player picked up: " + mutation.mutationName);
+        private void Update()
+        {
+            transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!other.CompareTag("Player")) return;
+
+            MutationInventoryManager.Instance?.AddMutation(mutationData);
+            Debug.Log($"Picked up mutation: {mutationData.mutationName}");
             Destroy(gameObject);
         }
     }
