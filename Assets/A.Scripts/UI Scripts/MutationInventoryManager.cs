@@ -14,8 +14,14 @@ namespace FOW.Mutations
 
         private void Awake()
         {
-            if (Instance == null) Instance = this;
-            else Destroy(gameObject);
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         public void AddMutation(MutationInfo mutation)
@@ -39,6 +45,7 @@ namespace FOW.Mutations
                 if (!equippedMutations.ContainsKey(slot))
                 {
                     EquipMutationToSlot(mutation, slot);
+
                 }
             }
         }
