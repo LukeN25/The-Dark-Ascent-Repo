@@ -17,8 +17,13 @@ namespace FOW.Mutations
         {
             if (!other.CompareTag("Player")) return;
 
-            MutationInventoryManager.Instance?.AddMutation(mutationData);
-            Debug.Log($"Picked up mutation: {mutationData.mutationName}");
+            var inv = MutationInventoryManager.Instance;
+
+            inv.AddMutation(mutationData);
+            inv.Equip(mutationData);
+
+            Debug.Log($"Picked up and equipped mutation: {mutationData.mutationName}");
+
             Destroy(gameObject);
         }
     }

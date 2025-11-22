@@ -1,11 +1,11 @@
-using UnityEngine;
-using UnityEngine.UI;
 using FOW.Mutations;
+using UnityEngine;
 
 public class MutationInventoryUI : MonoBehaviour
 {
     public GameObject rootCanvas;
 
+    
     public MutationSlotUI leftArmSlot;
     public MutationSlotUI rightArmSlot;
 
@@ -25,25 +25,38 @@ public class MutationInventoryUI : MonoBehaviour
 
     public void Show()
     {
-        rootCanvas.SetActive(true);
         RefreshSlots();
+        rootCanvas.SetActive(true);
+
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void Hide()
     {
         rootCanvas.SetActive(false);
+
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void RefreshSlots()
     {
         var inv = MutationInventoryManager.Instance;
+        if (inv == null)
+        {
+            Debug.LogError("MutationInventoryManager is NULL!");
+            return;
+        }
 
-        var left = inv.GetEquipped(MutationSlotType.LeftArm);
-        leftArmSlot.icon.sprite = left ? left.icon : null;
-        leftArmSlot.icon.enabled = left;
+        
+        if (leftArmSlot != null)
+            leftArmSlot.SetSlot(inv.GetEquipped(MutationSlotType.LeftArm));
 
-        var right = inv.GetEquipped(MutationSlotType.RightArm);
-        rightArmSlot.icon.sprite = right ? right.icon : null;
-        rightArmSlot.icon.enabled = right;
+        
+        if (rightArmSlot != null)
+            rightArmSlot.SetSlot(inv.GetEquipped(MutationSlotType.RightArm));
     }
 }

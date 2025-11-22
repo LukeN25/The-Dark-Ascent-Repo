@@ -8,7 +8,8 @@ namespace FOW.Mutations
         public static MutationInventoryManager Instance;
 
         public List<MutationInfo> collectedMutations = new List<MutationInfo>();
-        public Dictionary<MutationSlotType, MutationInfo> equippedMutations = new Dictionary<MutationSlotType, MutationInfo>();
+
+        public Dictionary<MutationSlotType, MutationInfo> equipped = new Dictionary<MutationSlotType, MutationInfo>();
 
         private void Awake()
         {
@@ -22,25 +23,24 @@ namespace FOW.Mutations
                 collectedMutations.Add(mutation);
         }
 
-        public void Equip(MutationSlotType slot, MutationInfo mutation)
+        public void Equip(MutationInfo mutation)
         {
-            equippedMutations[slot] = mutation;
+            foreach (var slot in mutation.allowedSlots)
+            {
+                equipped[slot] = mutation;
+                Debug.Log($"Equipped {mutation.mutationName} in slot {slot}");
+                return;
+            }
+
+            Debug.LogWarning("Mutation has no allowed slots defined.");
         }
 
         public MutationInfo GetEquipped(MutationSlotType slot)
         {
-            return equippedMutations.ContainsKey(slot)
-                ? equippedMutations[slot]
-                : null;
-        }
+            if (equipped.ContainsKey(slot))
+                return equipped[slot];
 
-        public bool CanEquipToSlot(MutationInfo m, MutationSlotType slot)
-        {
-            foreach (var s in m.allowedSlots)
-                if (s == slot)
-                    return true;
-
-            return false;
+            return null;
         }
     }
 }
