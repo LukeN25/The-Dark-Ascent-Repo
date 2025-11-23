@@ -3,41 +3,58 @@ using UnityEngine;
 
 public class MutationInventoryUI : MonoBehaviour
 {
+    [Header("Root")]
     public GameObject rootCanvas;
 
+    [Header("Slots")]
     public MutationSlotUI leftArmSlot;
     public MutationSlotUI rightArmSlot;
 
+    private bool isOpen = false;
+
     private void Start()
     {
-        Hide();
+
+        if (rootCanvas != null)
+            rootCanvas.SetActive(false);
+
+        isOpen = false;
     }
 
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && !isOpen)
         {
-            if (rootCanvas.activeSelf)
-                Hide();
-            else
-                Show();
+            Show();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && isOpen)
+        {
+            Hide();
         }
     }
 
     public void Show()
     {
+        isOpen = true;
+
         RefreshSlots();
-        rootCanvas.SetActive(true);
-        Time.timeScale = 0f;
+
+        if (rootCanvas != null)
+            rootCanvas.SetActive(true);
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
     public void Hide()
     {
-        rootCanvas.SetActive(false);
-        Time.timeScale = 1f;
+        isOpen = false;
+
+        if (rootCanvas != null)
+            rootCanvas.SetActive(false);
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

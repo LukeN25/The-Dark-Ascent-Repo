@@ -14,14 +14,8 @@ namespace FOW.Mutations
 
         private void Awake()
         {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+            if (Instance == null) Instance = this;
+            else Destroy(gameObject);
         }
 
         public void AddMutation(MutationInfo mutation)
@@ -38,7 +32,8 @@ namespace FOW.Mutations
 
         void AutoEquipIfPossible(MutationInfo mutation)
         {
-            if (mutation.allowedSlots == null) return;
+            if (mutation.allowedSlots == null || mutation.allowedSlots.Length == 0)
+                return;
 
             foreach (var slot in mutation.allowedSlots)
             {
@@ -46,6 +41,7 @@ namespace FOW.Mutations
                 {
                     EquipMutationToSlot(mutation, slot);
 
+                    break;
                 }
             }
         }
@@ -83,7 +79,7 @@ namespace FOW.Mutations
 
         void RecalculatePlayerStats()
         {
-
+            
             var handler = PlayerMutationHandler.Instance;
             if (handler == null) return;
 
