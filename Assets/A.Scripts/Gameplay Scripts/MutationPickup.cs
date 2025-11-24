@@ -1,5 +1,6 @@
 using UnityEngine;
-using TMPro;                
+using UnityEngine.UI;
+using TMPro;
 
 namespace FOW.Mutations
 {
@@ -11,25 +12,18 @@ namespace FOW.Mutations
         public float rotationSpeed = 50f;
 
         [Header("Prompt UI")]
-
-        public GameObject promptRoot;
-        public TextMeshProUGUI promptNameText;
-        public TextMeshProUGUI promptSlotText;
-        public string interactKeyText = "E";
+        public GameObject promptCanvas;        
+        public TextMeshProUGUI promptNameText; 
+        public TextMeshProUGUI promptSlotText; 
+        public TextMeshProUGUI pressEText;     
+        public Image promptIcon;               
 
         private bool playerInRange = false;
 
-        private void Reset()
-        {
-
-            var col = GetComponent<Collider>();
-            col.isTrigger = true;
-        }
-
         private void Start()
         {
-            if (promptRoot != null)
-                promptRoot.SetActive(false);
+            if (promptCanvas != null)
+                promptCanvas.SetActive(false);
         }
 
         private void Update()
@@ -37,11 +31,13 @@ namespace FOW.Mutations
 
             transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
 
-            if (!playerInRange) return;
-
-            if (Input.GetKeyDown(KeyCode.E))
+            if (playerInRange && Input.GetKeyDown(KeyCode.E))
             {
-                Pickup();
+                MutationInventoryManager.Instance?.AddMutation(mutationData);
+                Debug.Log($"Picked up mutation: {mutationData.mutationName}");
+
+                HidePrompt();
+                Destroy(gameObject);
             }
         }
 
@@ -63,47 +59,34 @@ namespace FOW.Mutations
 
         private void ShowPrompt()
         {
-            if (promptRoot == null) return;
+            if (promptCanvas == null) return;
 
-            promptRoot.SetActive(true);
+            promptCanvas.SetActive(true);
 
-            if (mutationData != null)
+            if (promptNameText != null)
+                promptNameText.text = mutationData.mutationName;
+
+            if (promptSlotText != null)
             {
-                if (promptNameText != null)
-                    promptNameText.text = mutationData.mutationName;
-
-                if (promptSlotText != null)
-                {
-                    string slotsText = "";
-                    if (mutationData.allowedSlots != null && mutationData.allowedSlots.Length > 0)
-                    {
-                        slotsText = string.Join(", ", mutationData.allowedSlots);
-                    }
-                    else
-                    {
-                        slotsText = "Any Slot";
-                    }
-
-                    promptSlotText.text = $"Slot: {slotsText}\nPress {interactKeyText} to pick up";
-                }
+                if (mutationData.allowedSlots != null && mutationData.allowedSlots.Length > 0)
+                    promptSlotText.text = mutationData.allowedSlots[0].ToString();
+                else
+                    promptSlotText.text = "Unknown Slot";
             }
+
+            
+            if (promptIcon != null)
+                promptIcon.sprite = mutationData.icon;
+
+            
+            if (pressEText != null)
+                pressEText.text = "Press E to pick up";
         }
 
         private void HidePrompt()
         {
-            if (promptRoot != null)
-                promptRoot.SetActive(false);
-        }
-
-        private void Pickup()
-        {
-            if (mutationData == null) return;
-
-            MutationInventoryManager.Instance?.AddMutation(mutationData);
-            Debug.Log($"Picked up mutation: {mutationData.mutationName}");
-
-            HidePrompt();
-            Destroy(gameObject);
+            if (promptCanvas != null)
+                promptCanvas.SetActive(false);
         }
     }
 }

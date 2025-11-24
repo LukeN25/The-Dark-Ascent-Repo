@@ -77,9 +77,9 @@ namespace FOW.Mutations
             return null;
         }
 
+      
         void RecalculatePlayerStats()
         {
-            
             var handler = PlayerMutationHandler.Instance;
             if (handler == null) return;
 
