@@ -14,11 +14,12 @@ public class MutationInventoryUI : MonoBehaviour
 
     private void Start()
     {
-
         if (rootCanvas != null)
             rootCanvas.SetActive(false);
 
         isOpen = false;
+
+        RefreshSlots();
     }
 
     private void Update()
