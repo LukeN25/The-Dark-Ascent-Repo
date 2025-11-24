@@ -40,7 +40,6 @@ namespace FOW.Mutations
                 if (!equippedMutations.ContainsKey(slot))
                 {
                     EquipMutationToSlot(mutation, slot);
-
                     break;
                 }
             }
@@ -79,18 +78,22 @@ namespace FOW.Mutations
 
         void RecalculatePlayerStats()
         {
-
             var handler = PlayerMutationHandler.Instance;
-            if (handler == null) return;
-
-            handler.ResetMutationEffects();
-
-            foreach (var kv in equippedMutations)
+            if (handler != null)
             {
-                var mut = kv.Value;
-                if (mut == null) continue;
+                handler.ResetMutationEffects();
 
-                handler.ApplyMutation(mut);
+                foreach (var kv in equippedMutations)
+                {
+                    var mut = kv.Value;
+                    if (mut == null) continue;
+                    handler.ApplyMutation(mut);
+                }
+            }
+
+            if (MutationInventoryUI.Instance != null)
+            {
+                MutationInventoryUI.Instance.RefreshSlots();
             }
         }
     }

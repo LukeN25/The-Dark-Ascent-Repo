@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class MutationInventoryUI : MonoBehaviour
 {
+    public static MutationInventoryUI Instance;
+
     [Header("Root")]
     public GameObject rootCanvas;
 
@@ -12,19 +14,27 @@ public class MutationInventoryUI : MonoBehaviour
 
     private bool isOpen = false;
 
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
+
     private void Start()
     {
         if (rootCanvas != null)
             rootCanvas.SetActive(false);
 
         isOpen = false;
+    }
 
+    private void OnEnable()
+    {
         RefreshSlots();
     }
 
     private void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Tab) && !isOpen)
         {
             Show();
