@@ -29,7 +29,6 @@ namespace FOW.Mutations
             RecalculatePlayerStats();
         }
 
-
         void AutoEquipIfPossible(MutationInfo mutation)
         {
             if (mutation.allowedSlots == null || mutation.allowedSlots.Length == 0)
@@ -40,7 +39,7 @@ namespace FOW.Mutations
                 if (!equippedMutations.ContainsKey(slot))
                 {
                     EquipMutationToSlot(mutation, slot);
-                    break;
+                    break; 
                 }
             }
         }
@@ -60,7 +59,6 @@ namespace FOW.Mutations
             RecalculatePlayerStats();
         }
 
-
         public void UnequipMutationFromSlot(MutationSlotType slot)
         {
             if (equippedMutations.ContainsKey(slot))
@@ -76,6 +74,7 @@ namespace FOW.Mutations
 
             return null;
         }
+
 
         void RecalculatePlayerStats()
         {
