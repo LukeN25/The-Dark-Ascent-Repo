@@ -9,7 +9,7 @@ namespace FOW.Logbook
         public static LogbookManager Instance;
 
         [Header("Enemy Database")]
-        public List<EnemyInfo> enemies = new List<EnemyInfo>();   
+        public List<EnemyInfo> enemies = new List<EnemyInfo>();
 
         [Header("Panels")]
         public GameObject enemyListPanel;

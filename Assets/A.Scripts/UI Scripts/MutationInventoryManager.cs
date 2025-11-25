@@ -39,7 +39,7 @@ namespace FOW.Mutations
                 if (!equippedMutations.ContainsKey(slot))
                 {
                     EquipMutationToSlot(mutation, slot);
-                    break; 
+                    break;
                 }
             }
         }
@@ -74,7 +74,6 @@ namespace FOW.Mutations
 
             return null;
         }
-
 
         void RecalculatePlayerStats()
         {

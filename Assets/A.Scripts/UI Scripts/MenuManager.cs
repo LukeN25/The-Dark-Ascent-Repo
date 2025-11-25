@@ -6,87 +6,117 @@ public class MenuManager : MonoBehaviour
     public static MenuManager Instance;
 
     [Header("Panels")]
-    public GameObject logbookPanel;
-    public GameObject mutationInventoryPanel;
-    public GameObject mutationDetailPanel;
+    public GameObject mutationInventoryPanel;  
+    public GameObject mutationDetailPanel;    
 
-    [Header("Detail UI")]
-    public MutationDetailUI mutationDetailUI;
+    [Header("Slot Containers")]
+    public GameObject slotContainer;          
 
-    private bool isLogbookOpen = false;
-    private bool isMutationInventoryOpen = false;
-    private bool isDetailOpen = false;
+    [Header("Skeleton Preview")]
+    public GameObject mutationSkeletonRoot;
+    public Camera mutationSkeletonCamera;
+
+    private MutationInventoryUI inventoryUI;
 
     private void Awake()
     {
         Instance = this;
     }
 
+    private void Start()
+    {
+        if (mutationInventoryPanel != null)
+            inventoryUI = mutationInventoryPanel.GetComponent<MutationInventoryUI>();
+
+        CloseAll();
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && !isMutationInventoryOpen && !isDetailOpen)
-            ToggleLogbook();
-
-        if (Input.GetKeyDown(KeyCode.Tab) && !isLogbookOpen && !isDetailOpen)
-            ToggleMutationInventory();
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (mutationInventoryPanel != null && !mutationInventoryPanel.activeSelf)
+                OpenMutationInventory();
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isDetailOpen) CloseDetail();
-            else if (isLogbookOpen) CloseLogbook();
-            else if (isMutationInventoryOpen) CloseMutationInventory();
+            if (mutationInventoryPanel != null && mutationInventoryPanel.activeSelf)
+            {
+                if (inventoryUI != null && mutationDetailPanel != null && mutationDetailPanel.activeSelf)
+                {
+                    inventoryUI.CloseDetail();
+                    return;
+                }
+
+                CloseMutationInventory();
+            }
         }
-    }
-
-    void ToggleLogbook()
-    {
-        if (isLogbookOpen) CloseLogbook();
-        else OpenLogbook();
-    }
-
-    public void OpenLogbook()
-    {
-        isLogbookOpen = true;
-        logbookPanel.SetActive(true);
-    }
-
-    public void CloseLogbook()
-    {
-        isLogbookOpen = false;
-        logbookPanel.SetActive(false);
-        CloseDetail();
-    }
-
-    void ToggleMutationInventory()
-    {
-        if (isMutationInventoryOpen) CloseMutationInventory();
-        else OpenMutationInventory();
     }
 
     public void OpenMutationInventory()
     {
-        isMutationInventoryOpen = true;
-        mutationInventoryPanel.SetActive(true);
+        if (mutationInventoryPanel != null)
+            mutationInventoryPanel.SetActive(true);
+
+        if (slotContainer != null)
+            slotContainer.SetActive(true);
+
+        if (mutationDetailPanel != null)
+            mutationDetailPanel.SetActive(false);
+
+        if (inventoryUI != null)
+            inventoryUI.Show();
+
+        if (mutationSkeletonRoot != null)
+            mutationSkeletonRoot.SetActive(true);
+
+        if (mutationSkeletonCamera != null)
+            mutationSkeletonCamera.enabled = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void CloseMutationInventory()
     {
-        isMutationInventoryOpen = false;
-        mutationInventoryPanel.SetActive(false);
-        CloseDetail();
+        if (inventoryUI != null)
+            inventoryUI.Hide();
+
+        if (mutationInventoryPanel != null)
+            mutationInventoryPanel.SetActive(false);
+
+        if (slotContainer != null)
+            slotContainer.SetActive(false);
+
+        if (mutationDetailPanel != null)
+            mutationDetailPanel.SetActive(false);
+
+        if (mutationSkeletonRoot != null)
+            mutationSkeletonRoot.SetActive(false);
+
+        if (mutationSkeletonCamera != null)
+            mutationSkeletonCamera.enabled = false;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    public void OpenMutationDetail(MutationInfo mutation)
+    public void CloseAll()
     {
-        isDetailOpen = true;
+        if (mutationInventoryPanel != null)
+            mutationInventoryPanel.SetActive(false);
 
-        mutationDetailPanel.SetActive(true);
-        mutationDetailUI.ShowMutation(mutation);
-    }
+        if (slotContainer != null)
+            slotContainer.SetActive(false);
 
-    public void CloseDetail()
-    {
-        isDetailOpen = false;
-        mutationDetailPanel.SetActive(false);
+        if (mutationDetailPanel != null)
+            mutationDetailPanel.SetActive(false);
+
+        if (mutationSkeletonRoot != null)
+            mutationSkeletonRoot.SetActive(false);
+
+        if (mutationSkeletonCamera != null)
+            mutationSkeletonCamera.enabled = false;
     }
 }

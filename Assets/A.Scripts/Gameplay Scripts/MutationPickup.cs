@@ -31,8 +31,10 @@ public class MutationPickup : MonoBehaviour
         {
             MutationInventoryManager.Instance?.AddMutation(mutationData);
             Debug.Log($"Picked up mutation: {mutationData.mutationName}");
+
             if (promptRoot != null)
                 promptRoot.SetActive(false);
+
             Destroy(gameObject);
         }
     }

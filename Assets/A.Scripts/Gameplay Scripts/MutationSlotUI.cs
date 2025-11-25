@@ -9,28 +9,32 @@ public class MutationSlotUI : MonoBehaviour
     public Sprite emptySprite;
 
     private MutationInfo currentMutation;
+    private MutationInventoryUI inventoryUI;
 
-    public void SetSlot(MutationInfo mutation)
+    public void SetInventoryUI(MutationInventoryUI ui)
+    {
+        inventoryUI = ui;
+    }
+
+    public void SetMutation(MutationInfo mutation)
     {
         currentMutation = mutation;
+
+        if (icon == null) return;
 
         if (mutation == null)
         {
             icon.sprite = emptySprite;
-            icon.color = Color.white;
         }
         else
         {
             icon.sprite = mutation.icon;
-            icon.color = Color.white;
         }
     }
 
     public void OnClick()
     {
-        if (currentMutation != null)
-            MenuManager.Instance.OpenMutationDetail(currentMutation);
-        else
-            Debug.Log("No mutation equipped.");
+        if (inventoryUI != null)
+            inventoryUI.OpenDetail(this);
     }
 }

@@ -4,14 +4,14 @@ namespace FOW.Mutations
 {
     public class PlayerMutationHandler : MonoBehaviour
     {
-        public static PlayerMutationHandler Instance;   
+        public static PlayerMutationHandler Instance;
 
         public float damageMultiplier = 1f;
         public float rangeMultiplier = 1f;
 
         private void Awake()
         {
-            Instance = this;  
+            Instance = this;
         }
 
         public void ApplyMutation(MutationInfo mutation)

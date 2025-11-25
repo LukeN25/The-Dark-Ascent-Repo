@@ -15,6 +15,6 @@ MonoBehaviour:
   mutationName: Power Arm
   icon: {fileID: 21300000, guid: 9a17dded245c3bc4580f8772ac2fee9f, type: 3}
   description: your arm is like crazy big brah
-  allowedSlots: 0000000001000000
+  allowedSlots: 0300000004000000
   damageMultiplier: 1.5
   rangeMultiplier: 1
