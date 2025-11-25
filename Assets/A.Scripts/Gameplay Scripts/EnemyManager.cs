@@ -25,8 +25,17 @@ public class EnemyManager : MonoBehaviour
 
     private void Die()
     {
+        if (lootTable != null && itemHolder != null)
+        {
+            DropLoot();
+        }
+
+        Destroy(gameObject);
+    }
+
+    private void DropLoot()
+    {
         Transform item = lootTable.GetRandom();
         Instantiate(item, itemHolder);
-        Destroy(gameObject);
     }
 }

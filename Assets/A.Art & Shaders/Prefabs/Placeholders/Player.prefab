@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 4846212027537949381}
   - component: {fileID: 8544967012398351646}
   - component: {fileID: 3838710266163649761}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,9 +423,9 @@ GameObject:
   - component: {fileID: 509701541497089890}
   - component: {fileID: 8173969950107285892}
   - component: {fileID: 2434531348570314296}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player Model
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -821,9 +821,10 @@ GameObject:
   - component: {fileID: 3941413657780452513}
   - component: {fileID: 6650287308825358553}
   - component: {fileID: 4284578096002865064}
-  m_Layer: 0
+  - component: {fileID: 142845086164304260}
+  m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -858,7 +859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7684874c1cd3b448a1bd9af42791e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 0
+  playerHealth: 100
   attackDamage: 10
   moveSpeed: 4.5
   acceleration: 25
@@ -928,6 +929,18 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &142845086164304260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5764630214608915652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fca1a3221be14c4b894f7e10d1b56e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7057042923139091892
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,9 +954,10 @@ GameObject:
   - component: {fileID: 1911304467752304730}
   - component: {fileID: 6056314234076310447}
   - component: {fileID: 4115407979774867502}
-  m_Layer: 0
-  m_Name: HurtBox
-  m_TagString: Untagged
+  - component: {fileID: 1283138442428300452}
+  m_Layer: 3
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1050,6 +1064,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerManager: {fileID: 1050495859935606993}
+--- !u!54 &1283138442428300452
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7057042923139091892}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7557401563606165843
 GameObject:
   m_ObjectHideFlags: 0
