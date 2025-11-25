@@ -13,7 +13,7 @@ public class MutationSlotUI : MonoBehaviour
 
     public void SetSlot(MutationInfo mutation)
     {
-        currentMutation = mutation;
+        currentMutation = mutation; 
 
         if (icon == null) return;
 
