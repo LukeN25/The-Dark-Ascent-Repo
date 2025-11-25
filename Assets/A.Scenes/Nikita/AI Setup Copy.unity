@@ -691,9 +691,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1632011199}
         m_TargetAssemblyTypeName: FOW.Logbook.LogbookManager, Assembly-CSharp
-        m_MethodName: BackFromMutationPanel
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2681,11 +2681,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02537c1f707e6f479fc6dfd55622a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partName: Heart
-  focusPoint: {fileID: 1083188458}
-  iconImage: {fileID: 0}
-  emptySlotSprite: {fileID: 0}
-  equippedMutation: {fileID: 0}
+  slotType: 0
+  icon: {fileID: 0}
+  emptySprite: {fileID: 0}
 --- !u!114 &610877723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4699,11 +4697,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02537c1f707e6f479fc6dfd55622a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partName: Chest
-  focusPoint: {fileID: 731562385}
-  iconImage: {fileID: 0}
-  emptySlotSprite: {fileID: 0}
-  equippedMutation: {fileID: 0}
+  slotType: 0
+  icon: {fileID: 0}
+  emptySprite: {fileID: 0}
 --- !u!114 &851937255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5228,7 +5224,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910677615}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa873ed781f3e2949bba5062222af1e5, type: 3}
   m_Name: 
@@ -5238,6 +5234,7 @@ MonoBehaviour:
   nameText: {fileID: 312026019}
   descriptionText: {fileID: 650037651}
   unequipButton: {fileID: 814914818}
+  currentSlot: {fileID: 0}
 --- !u!114 &910677619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7438,7 +7435,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1384725956}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1384725953}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1384725956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8089,11 +8098,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02537c1f707e6f479fc6dfd55622a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partName: Right Arm
-  focusPoint: {fileID: 1866268700}
-  iconImage: {fileID: 1548250361}
-  emptySlotSprite: {fileID: 21300000, guid: 45d6eec9f840cfc46877ba326958851e, type: 3}
-  equippedMutation: {fileID: 0}
+  slotType: 0
+  icon: {fileID: 0}
+  emptySprite: {fileID: 0}
 --- !u!114 &1548250360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9070,15 +9077,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c60d270735bdcb4db96d49c2fe5d6e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraController: {fileID: 1550583356}
-  uiCanvas: {fileID: 40304060}
-  slotPanel: {fileID: 1492690475}
-  backButton: {fileID: 1384725955}
-  detailPanel: {fileID: 910677618}
-  removePanel: {fileID: 1976066887}
-  characterIdleRotation: {fileID: 0}
-  toggleKey: 9
-  backKey: 27
+  logbookPanel: {fileID: 1731773851}
+  mutationInventoryPanel: {fileID: 40304060}
+  mutationDetailPanel: {fileID: 910677615}
+  mutationDetailUI: {fileID: 1136408049}
 --- !u!4 &1632011201
 Transform:
   m_ObjectHideFlags: 0
@@ -10596,11 +10598,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02537c1f707e6f479fc6dfd55622a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partName: Left Arm
-  focusPoint: {fileID: 2146571691}
-  iconImage: {fileID: 1959521366}
-  emptySlotSprite: {fileID: 21300000, guid: 45d6eec9f840cfc46877ba326958851e, type: 3}
-  equippedMutation: {fileID: 0}
+  slotType: 0
+  icon: {fileID: 1959521366}
+  emptySprite: {fileID: 21300000, guid: 45d6eec9f840cfc46877ba326958851e, type: 3}
 --- !u!114 &1959521365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10897,11 +10897,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02537c1f707e6f479fc6dfd55622a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partName: Right Leg
-  focusPoint: {fileID: 122098527}
-  iconImage: {fileID: 0}
-  emptySlotSprite: {fileID: 0}
-  equippedMutation: {fileID: 0}
+  slotType: 0
+  icon: {fileID: 0}
+  emptySprite: {fileID: 0}
 --- !u!114 &2001387307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11072,11 +11070,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02537c1f707e6f479fc6dfd55622a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partName: Head
-  focusPoint: {fileID: 740303137}
-  iconImage: {fileID: 0}
-  emptySlotSprite: {fileID: 21300000, guid: 76a0509b9efa72c45a1acb80fe18ce20, type: 3}
-  equippedMutation: {fileID: 0}
+  slotType: 0
+  icon: {fileID: 0}
+  emptySprite: {fileID: 0}
 --- !u!114 &2062153124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11606,11 +11602,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02537c1f707e6f479fc6dfd55622a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partName: Left Leg
-  focusPoint: {fileID: 2126685304}
-  iconImage: {fileID: 0}
-  emptySlotSprite: {fileID: 0}
-  equippedMutation: {fileID: 0}
+  slotType: 0
+  icon: {fileID: 0}
+  emptySprite: {fileID: 0}
 --- !u!114 &2142698018
 MonoBehaviour:
   m_ObjectHideFlags: 0

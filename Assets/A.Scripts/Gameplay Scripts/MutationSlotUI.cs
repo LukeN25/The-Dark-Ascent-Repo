@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using FOW.Mutations;
-using FOW.Logbook;
 
 public class MutationSlotUI : MonoBehaviour
 {
@@ -13,9 +12,7 @@ public class MutationSlotUI : MonoBehaviour
 
     public void SetSlot(MutationInfo mutation)
     {
-        currentMutation = mutation; 
-
-        if (icon == null) return;
+        currentMutation = mutation;
 
         if (mutation == null)
         {
@@ -32,12 +29,8 @@ public class MutationSlotUI : MonoBehaviour
     public void OnClick()
     {
         if (currentMutation != null)
-        {
-            LogbookManager.Instance.OpenMutationDetail(currentMutation);
-        }
+            MenuManager.Instance.OpenMutationDetail(currentMutation);
         else
-        {
-            Debug.Log($"Slot {slotType} is empty.");
-        }
+            Debug.Log("No mutation equipped.");
     }
 }

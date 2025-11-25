@@ -26,9 +26,9 @@ namespace FOW.Mutations
                 collectedMutations.Add(mutation);
 
             AutoEquipIfPossible(mutation);
-
             RecalculatePlayerStats();
         }
+
 
         void AutoEquipIfPossible(MutationInfo mutation)
         {
@@ -60,6 +60,7 @@ namespace FOW.Mutations
             RecalculatePlayerStats();
         }
 
+
         public void UnequipMutationFromSlot(MutationSlotType slot)
         {
             if (equippedMutations.ContainsKey(slot))
@@ -79,21 +80,14 @@ namespace FOW.Mutations
         void RecalculatePlayerStats()
         {
             var handler = PlayerMutationHandler.Instance;
-            if (handler != null)
-            {
-                handler.ResetMutationEffects();
+            if (handler == null) return;
 
-                foreach (var kv in equippedMutations)
-                {
-                    var mut = kv.Value;
-                    if (mut == null) continue;
-                    handler.ApplyMutation(mut);
-                }
-            }
+            handler.ResetMutationEffects();
 
-            if (MutationInventoryUI.Instance != null)
+            foreach (var kv in equippedMutations)
             {
-                MutationInventoryUI.Instance.RefreshSlots();
+                if (kv.Value != null)
+                    handler.ApplyMutation(kv.Value);
             }
         }
     }

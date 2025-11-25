@@ -13,8 +13,8 @@ public class MutationDetailUI : MonoBehaviour
     {
         if (mutation == null) return;
 
-        if (iconImage) iconImage.sprite = mutation.icon;
-        if (nameText) nameText.text = mutation.mutationName;
-        if (descriptionText) descriptionText.text = mutation.description;
+        iconImage.sprite = mutation.icon;
+        nameText.text = mutation.mutationName;
+        descriptionText.text = mutation.description;
     }
 }

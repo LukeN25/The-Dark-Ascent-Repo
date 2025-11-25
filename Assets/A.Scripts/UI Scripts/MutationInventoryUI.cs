@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class MutationInventoryUI : MonoBehaviour
 {
-    public static MutationInventoryUI Instance;
-
     [Header("Root")]
     public GameObject rootCanvas;
 
@@ -14,12 +12,6 @@ public class MutationInventoryUI : MonoBehaviour
 
     private bool isOpen = false;
 
-    private void Awake()
-    {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
-    }
-
     private void Start()
     {
         if (rootCanvas != null)
@@ -28,32 +20,21 @@ public class MutationInventoryUI : MonoBehaviour
         isOpen = false;
     }
 
-    private void OnEnable()
-    {
-        RefreshSlots();
-    }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab) && !isOpen)
-        {
             Show();
-        }
 
         if (Input.GetKeyDown(KeyCode.Escape) && isOpen)
-        {
             Hide();
-        }
     }
 
     public void Show()
     {
         isOpen = true;
-
         RefreshSlots();
 
-        if (rootCanvas != null)
-            rootCanvas.SetActive(true);
+        rootCanvas.SetActive(true);
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -62,9 +43,7 @@ public class MutationInventoryUI : MonoBehaviour
     public void Hide()
     {
         isOpen = false;
-
-        if (rootCanvas != null)
-            rootCanvas.SetActive(false);
+        rootCanvas.SetActive(false);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

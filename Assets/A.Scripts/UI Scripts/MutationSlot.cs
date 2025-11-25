@@ -1,55 +1,51 @@
 using UnityEngine;
 using UnityEngine.UI;
+using FOW.Mutations;
 
-
-[RequireComponent(typeof(Button))]
 public class MutationSlot : MonoBehaviour
 {
-    [Header("Slot Info")]
-    public string partName;
-    public Transform focusPoint;                
+    public MutationSlotType slotType;
+    public Image icon;
+    public Sprite emptySprite;
 
-    [Header("UI")]
-    public Image iconImage;                    
-    public Sprite emptySlotSprite;             
+    private MutationInfo currentMutation;
 
-    [Header("Mutation Data")]
-    public MutationData equippedMutation;       
-
-    private Button button;
-
-    void Awake()
+    public void SetSlot(MutationInfo mutation)
     {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(OnClick);
-        RefreshSlotVisual();
-    }
+        currentMutation = mutation;
 
-    public void EquipMutation(MutationData mutation)
-    {
-        equippedMutation = mutation;
-        RefreshSlotVisual();
-    }
+        if (icon == null) return;
 
-    public void UnequipMutation()
-    {
-        equippedMutation = null;
-        RefreshSlotVisual();
-    }
-
-    void OnClick()
-    {
-        if (!MenuManager.Instance) return;
-        MenuManager.Instance.OnSlotClicked(this);
-    }
-
-    public void RefreshSlotVisual()
-    {
-        if (iconImage == null) return;
-
-        if (equippedMutation != null && equippedMutation.icon != null)
-            iconImage.sprite = equippedMutation.icon;
+        if (mutation == null)
+        {
+            icon.sprite = emptySprite;
+            icon.color = Color.white;
+        }
         else
-            iconImage.sprite = emptySlotSprite;
+        {
+            icon.sprite = mutation.icon;
+            icon.color = Color.white;
+        }
+    }
+
+    public void OnClick()
+    {
+        if (currentMutation == null)
+        {
+            Debug.Log("No mutation equipped in: " + slotType);
+            return;
+        }
+
+        MenuManager manager = FindObjectOfType<MenuManager>();
+
+        if (manager != null && manager.mutationDetailUI != null)
+        {
+            manager.mutationDetailUI.gameObject.SetActive(true);
+            manager.mutationDetailUI.ShowMutation(currentMutation);
+        }
+        else
+        {
+            Debug.LogWarning("MenuManager or MutationDetailUI missing from scene!");
+        }
     }
 }
