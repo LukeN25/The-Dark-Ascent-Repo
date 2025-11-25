@@ -551,6 +551,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 5452136175788328676, guid: c4c8905956e96c545ac1822bc996803c, type: 3}
+      propertyPath: dashDistance
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5764630214608915652, guid: c4c8905956e96c545ac1822bc996803c, type: 3}
       propertyPath: m_Name
       value: Player
