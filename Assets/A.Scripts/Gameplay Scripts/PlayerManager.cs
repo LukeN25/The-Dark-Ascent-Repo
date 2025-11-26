@@ -16,19 +16,24 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    [Header("Player Stats")]
     [SerializeField] private int playerHealth = 5;
 
     [SerializeField] private int attackDamage;
-
     [SerializeField] private float moveSpeed;
-
     [SerializeField] private float acceleration;
+
+    [Header("Audio")]
+    public AudioSource damageAudio;     
 
     public void TakeDamage(DamageInfo damageInfo)
     {
+
+        if (damageAudio != null)
+            damageAudio.Play();
+
         playerHealth -= damageInfo.GetDamage();
 
-        
         if (playerHealth <= 0)
         {
             if (GameOverUI.Instance != null)

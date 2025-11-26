@@ -5,11 +5,17 @@ using UnityEngine.UI;
 public class HealthUIManager : MonoBehaviour
 {
     public PlayerManager player;
-    public GameObject heartPrefab;
+
+    [Header("Prefabs & Containers")]
+    public GameObject heartPrefab;      
+    public GameObject greyHeartPrefab;   
     public Transform heartContainer;
 
-    private List<Image> heartImages = new List<Image>();
+    private List<Image> redHearts = new List<Image>();
+    private List<Image> greyHearts = new List<Image>();
+
     private int lastHealth = -1;
+    private int lastMaxHealth = -1;
 
     private void Start()
     {
@@ -23,55 +29,75 @@ public class HealthUIManager : MonoBehaviour
     {
         if (player == null) return;
 
-        if (playerHealthChanged())
+        if (HealthChanged())
         {
             RefreshHearts();
         }
     }
 
-    bool playerHealthChanged()
+    bool HealthChanged()
     {
-        int current = playerHealth();
-        if (current != lastHealth)
+        int cur = GetCurrentHealth();
+        int max = GetMaxHealth();
+
+        if (cur != lastHealth || max != lastMaxHealth)
         {
-            lastHealth = current;
+            lastHealth = cur;
+            lastMaxHealth = max;
             return true;
         }
+
         return false;
     }
 
-    int playerHealth()
+    int GetCurrentHealth()
     {
         var field = typeof(PlayerManager).GetField("playerHealth",
             System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
 
         int hp = (int)field.GetValue(player);
+        return Mathf.Max(0, hp);
+    }
 
-        
-        if (hp < 0) hp = 0;
+    int GetMaxHealth()
+    {
 
-        return hp;
+        return 5; 
     }
 
     void RefreshHearts()
     {
-        int heartsNeeded = playerHealth();
+        int current = GetCurrentHealth();
+        int max = GetMaxHealth();
 
-        
-        heartsNeeded = Mathf.Max(0, heartsNeeded);
-
-        
-        while (heartImages.Count < heartsNeeded)
+        while (greyHearts.Count < max)
         {
-            var newHeart = Instantiate(heartPrefab, heartContainer);
-            heartImages.Add(newHeart.GetComponent<Image>());
+            var newGrey = Instantiate(greyHeartPrefab, heartContainer);
+            greyHearts.Add(newGrey.GetComponent<Image>());
         }
 
-        
-        while (heartImages.Count > heartsNeeded)
+        while (greyHearts.Count > max)
         {
-            Destroy(heartImages[heartImages.Count - 1].gameObject);
-            heartImages.RemoveAt(heartImages.Count - 1);
+            Destroy(greyHearts[greyHearts.Count - 1].gameObject);
+            greyHearts.RemoveAt(greyHearts.Count - 1);
         }
+
+        while (redHearts.Count < current)
+        {
+            var newRed = Instantiate(heartPrefab, heartContainer);
+            redHearts.Add(newRed.GetComponent<Image>());
+        }
+
+        while (redHearts.Count > current)
+        {
+            Destroy(redHearts[redHearts.Count - 1].gameObject);
+            redHearts.RemoveAt(redHearts.Count - 1);
+        }
+
+        for (int i = 0; i < greyHearts.Count; i++)
+            greyHearts[i].transform.SetSiblingIndex(i);
+
+        for (int i = 0; i < redHearts.Count; i++)
+            redHearts[i].transform.SetSiblingIndex(i);
     }
 }
