@@ -21,6 +21,7 @@ namespace EnemyAI.UnityHFSM
         [Header("Debug Info")]
         [SerializeField] protected bool IsInProjectileRange;
         [SerializeField] protected bool IsInChaseRange;
+        [SerializeField] private bool CanThrow;
         [SerializeField] protected float LastAttackTime;
 
         [Header("Attack Config")]
@@ -39,6 +40,7 @@ namespace EnemyAI.UnityHFSM
             EnemyFSM.AddState(name: EnemyState.Patrol, new PatrolState(needsExitTime: true, Enemy: this, player.transform));
             EnemyFSM.AddState(name: EnemyState.Chase, new ChaseState(needsExitTime: true, Enemy: this, player.transform));
             EnemyFSM.AddState(name: EnemyState.Spore, new SporeState(needsExitTime: true, Enemy: this, SporePrefab, OnAttack));
+            EnemyFSM.AddState(name: EnemyState.Gather, new GatherState(needsExitTime: true, Enemy: this, OnGather));
 
             // Transitions
 
@@ -53,6 +55,13 @@ namespace EnemyAI.UnityHFSM
                 condition: (transition) => !IsInChaseRange
                     || Vector3.Distance(a: player.transform.position, b: transform.position) <= Agent.stoppingDistance)
             );
+
+            //Spore Gather
+
+            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Chase, EnemyState.Gather, ShouldGather, forceInstantly: true));
+            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Idle, EnemyState.Gather, ShouldGather, forceInstantly: true));
+            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Gather, EnemyState.Chase, IsNotWithinIdleRange));
+            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Gather, EnemyState.Idle, IsWithinIdleRange));
 
             //Spore Throw
             EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Chase, EnemyState.Spore, ShouldShoot, forceInstantly: true));
@@ -73,9 +82,12 @@ namespace EnemyAI.UnityHFSM
             ProjectileRangeSensor.OnPlayerExit += ProjectileRangeSensor_OnPlayerExit;
         }
 
+        private bool ShouldGather(Transition<EnemyState> Transition) =>
+            !CanThrow;
+
         private bool ShouldShoot(Transition<EnemyState> Transition) =>
             LastAttackTime + AttackCooldown <= Time.time
-                   && IsInProjectileRange;
+                   && IsInProjectileRange && CanThrow;
 
         private void ChasePlayerSensor_OnPlayerExit(Vector3 LastKnownPosition)
         {
@@ -95,10 +107,16 @@ namespace EnemyAI.UnityHFSM
         private bool IsNotWithinIdleRange(Transition<EnemyState> Transition) =>
             !IsWithinIdleRange(Transition);
 
+        private void OnGather(State<EnemyState, StateEvent> state)
+        {
+            CanThrow = true;
+        }
+
         private void OnAttack(State<EnemyState, StateEvent> state)
         {
             transform.LookAt(player.transform.position);
             LastAttackTime = Time.time;
+            CanThrow = false;
         }
 
         private void ProjectileRangeSensor_OnPlayerExit(Vector3 LastKnownPosition) => IsInProjectileRange = false;
