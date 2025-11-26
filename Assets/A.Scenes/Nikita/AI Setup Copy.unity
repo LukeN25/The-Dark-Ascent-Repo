@@ -6762,8 +6762,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1215290946}
-  heartPrefab: {fileID: 7786663099241272654, guid: a049c77f69c151a429b651ea78aeb2ba, type: 3}
-  greyHeartPrefab: {fileID: 7786663099241272654, guid: 673eeec4ef0460a409157c80aee90427, type: 3}
+  fullHeartPrefab: {fileID: 7786663099241272654, guid: a049c77f69c151a429b651ea78aeb2ba, type: 3}
+  emptyHeartPrefab: {fileID: 7786663099241272654, guid: 673eeec4ef0460a409157c80aee90427, type: 3}
   heartContainer: {fileID: 1201668478}
 --- !u!114 &1201668480
 MonoBehaviour:
