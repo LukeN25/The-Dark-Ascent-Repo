@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UnityHFSM;
+using System;
+using System.Collections;
 
 namespace EnemyAI.UnityHFSM
 {
@@ -29,6 +31,11 @@ namespace EnemyAI.UnityHFSM
         private void Update()
         {
             EnemyFSM.OnLogic();
+        }
+
+        public Coroutine RunCoroutine(IEnumerator routine)
+        {
+            return StartCoroutine(routine);
         }
     }
 }

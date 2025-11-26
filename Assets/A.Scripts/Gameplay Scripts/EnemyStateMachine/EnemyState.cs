@@ -7,6 +7,7 @@ namespace EnemyAI.UnityHFSM
         Chase,
         Attack,
         Dash,
-        Leap
+        Leap,
+        Spore
     }
 }
