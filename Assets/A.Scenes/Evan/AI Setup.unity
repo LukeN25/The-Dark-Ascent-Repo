@@ -667,7 +667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &517566875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1131,7 +1131,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 10
+  m_Radius: 7
   m_Center: {x: 0, y: 5, z: 0}
 --- !u!114 &828002447
 MonoBehaviour:
@@ -1343,6 +1343,10 @@ PrefabInstance:
     - target: {fileID: 5784646888754919878, guid: c89dfd8d4da467a4193327820c1d4d25, type: 3}
       propertyPath: m_Name
       value: Butcher Enemy 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784646888754919878, guid: c89dfd8d4da467a4193327820c1d4d25, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6673230021869793576, guid: c89dfd8d4da467a4193327820c1d4d25, type: 3}
       propertyPath: player
@@ -1749,7 +1753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -10.72
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1757,7 +1761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.88
+      value: 5.79
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1797,7 +1801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1831,17 +1835,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7684874c1cd3b448a1bd9af42791e4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1215290948 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 142845086164304260, guid: c4c8905956e96c545ac1822bc996803c, type: 3}
-  m_PrefabInstance: {fileID: 143530175}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fca1a3221be14c4b894f7e10d1b56e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1235994792
@@ -2224,7 +2217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a23b63b4736325438b6a91b8120acdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1215290948}
+  player: {fileID: 1215290946}
   ChasePlayerSensor: {fileID: 247600522}
   MeleeRangeSensor: {fileID: 828002447}
   DashRangeSensor: {fileID: 1353692401}
@@ -2233,8 +2226,8 @@ MonoBehaviour:
   IsInChaseRange: 0
   LastAttackTime: 0
   LastDashTime: 0
-  AttackCooldown: 2
-  DashCooldown: 20
+  AttackCooldown: 3
+  DashCooldown: 12
 --- !u!195 &1440327586
 NavMeshAgent:
   m_ObjectHideFlags: 0

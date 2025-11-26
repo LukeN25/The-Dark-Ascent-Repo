@@ -24,7 +24,7 @@ namespace EnemyAI.UnityHFSM
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.TryGetComponent(out Player player))
+            if (other.gameObject.tag == "Player")
             {
                 OnPlayerExit?.Invoke(other.transform.position);
             }

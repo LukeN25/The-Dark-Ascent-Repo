@@ -9,7 +9,7 @@ namespace EnemyAI.UnityHFSM
     public class BladelegsAI : Enemy
     {
         [Header("References")]
-        [SerializeField] protected Player player;
+        [SerializeField] protected PlayerManager player;
 
         [Header("Sensors")]
         [SerializeField] protected PlayerSensor ChasePlayerSensor;
@@ -26,10 +26,10 @@ namespace EnemyAI.UnityHFSM
         [Header("Attack Config")]
         [SerializeField]
         [Range(0.1f, 5f)]
-        protected float AttackCooldown = 2;
+        protected float AttackCooldown = 3;
         [SerializeField]
         [Range(1, 20f)]
-        protected float DashCooldown = 21;
+        protected float DashCooldown = 12;
 
         private void Awake()
         {
@@ -41,7 +41,7 @@ namespace EnemyAI.UnityHFSM
             EnemyFSM.AddState(name: EnemyState.Idle, new IdleState(needsExitTime: false, Enemy: this));
             EnemyFSM.AddState(name: EnemyState.Patrol, new PatrolState(needsExitTime: true, Enemy: this, player.transform));
             EnemyFSM.AddState(name: EnemyState.Chase, new ChaseState(needsExitTime: true, Enemy: this, player.transform));
-            EnemyFSM.AddState(name: EnemyState.Attack, new AttackState(needsExitTime: true, Enemy: this, OnAttack));
+            EnemyFSM.AddState(name: EnemyState.LegAttack, new LegAttackState(needsExitTime: true, Enemy: this, OnAttack));
             EnemyFSM.AddState(name: EnemyState.Dash, new DashState(needsExitTime: true, Enemy: this, OnDash));
 
             // Transitions
@@ -65,10 +65,10 @@ namespace EnemyAI.UnityHFSM
             EnemyFSM.AddTransition(new Transition<EnemyState>(from: EnemyState.Dash, to: EnemyState.Idle, IsWithinIdleRange));
 
             // Attack
-            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Chase, EnemyState.Attack, ShouldMelee, forceInstantly: true));
-            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Idle, EnemyState.Attack, ShouldMelee, forceInstantly: true));
-            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Attack, EnemyState.Chase, IsNotWithinIdleRange));
-            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Attack, EnemyState.Idle, IsWithinIdleRange));
+            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Chase, EnemyState.LegAttack, ShouldMelee, forceInstantly: true));
+            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Idle, EnemyState.LegAttack, ShouldMelee, forceInstantly: true));
+            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.LegAttack, EnemyState.Chase, IsNotWithinIdleRange));
+            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.LegAttack, EnemyState.Idle, IsWithinIdleRange));
 
             EnemyFSM.SetStartState(name: EnemyState.Idle);
 
