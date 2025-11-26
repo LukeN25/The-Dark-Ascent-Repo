@@ -4,12 +4,15 @@ using FOW.Mutations;
 
 public class MutationSlotUI : MonoBehaviour
 {
+    [Header("Slot Setup")]
     public MutationSlotType slotType;
     public Image icon;
     public Sprite emptySprite;
 
     private MutationInfo currentMutation;
     private MutationInventoryUI inventoryUI;
+
+    public MutationInfo CurrentMutation => currentMutation;
 
     public void SetInventoryUI(MutationInventoryUI ui)
     {
@@ -20,21 +23,29 @@ public class MutationSlotUI : MonoBehaviour
     {
         currentMutation = mutation;
 
-        if (icon == null) return;
+        if (icon == null)
+            return;
 
-        if (mutation == null)
+        if (mutation != null && mutation.icon != null)
         {
-            icon.sprite = emptySprite;
+            icon.sprite = mutation.icon;
+            icon.color = Color.white;
         }
         else
         {
-            icon.sprite = mutation.icon;
+            icon.sprite = emptySprite;
+            icon.color = Color.white;
         }
     }
 
     public void OnClick()
     {
-        if (inventoryUI != null)
-            inventoryUI.OpenDetail(this);
+        if (inventoryUI == null)
+        {
+            Debug.LogWarning($"MutationSlotUI.OnClick on {name}, but inventoryUI is NULL.");
+            return;
+        }
+
+        inventoryUI.OpenDetail(this);
     }
 }

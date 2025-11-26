@@ -5,13 +5,13 @@ namespace FOW.Mutations
     public class MutationInventoryUI : MonoBehaviour
     {
         [Header("Root Panels")]
-        [Tooltip("The main mutation inventory panel (the whole UI for mutations).")]
+        [Tooltip("Whole mutation inventory canvas/panel.")]
         public GameObject rootPanel;
 
-        [Tooltip("Container holding all the mutation slots (the skeleton UI with limb buttons).")]
+        [Tooltip("Panel that shows all the slots (skeleton).")]
         public GameObject slotsRoot;
 
-        [Tooltip("The panel that shows when you click a mutation slot (name, description, icon, etc.).")]
+        [Tooltip("Panel that shows when you click a slot (details).")]
         public GameObject detailPanelRoot;
 
         [Header("Slot UIs")]
@@ -169,33 +169,29 @@ namespace FOW.Mutations
 
             switch (slotType)
             {
-                case MutationSlotType.Head:
-                    target = headFocusPoint;
-                    break;
-                case MutationSlotType.Chest:
-                    target = chestFocusPoint;
-                    break;
-                case MutationSlotType.Heart:
-                    target = heartFocusPoint;
-                    break;
-                case MutationSlotType.LeftArm:
-                    target = leftArmFocusPoint;
-                    break;
-                case MutationSlotType.RightArm:
-                    target = rightArmFocusPoint;
-                    break;
-                case MutationSlotType.LeftLeg:
-                    target = leftLegFocusPoint;
-                    break;
-                case MutationSlotType.RightLeg:
-                    target = rightLegFocusPoint;
-                    break;
+                case MutationSlotType.Head: target = headFocusPoint; break;
+                case MutationSlotType.Chest: target = chestFocusPoint; break;
+                case MutationSlotType.Heart: target = heartFocusPoint; break;
+                case MutationSlotType.LeftArm: target = leftArmFocusPoint; break;
+                case MutationSlotType.RightArm: target = rightArmFocusPoint; break;
+                case MutationSlotType.LeftLeg: target = leftLegFocusPoint; break;
+                case MutationSlotType.RightLeg: target = rightLegFocusPoint; break;
             }
 
             if (target != null)
                 cam.FocusOn(target);
             else
                 cam.ReturnToDefault();
+        }
+
+        public void OnBackFromDetailButton()
+        {
+            CloseDetail();
+        }
+
+        public void OnBackFromSlotsButton()
+        {
+            Hide();
         }
     }
 }

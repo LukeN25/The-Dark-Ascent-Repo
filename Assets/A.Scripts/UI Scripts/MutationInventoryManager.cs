@@ -14,13 +14,20 @@ namespace FOW.Mutations
 
         private void Awake()
         {
-            if (Instance == null) Instance = this;
-            else Destroy(gameObject);
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         public void AddMutation(MutationInfo mutation)
         {
-            if (mutation == null) return;
+            if (mutation == null)
+                return;
 
             if (!collectedMutations.Contains(mutation))
                 collectedMutations.Add(mutation);
@@ -29,7 +36,7 @@ namespace FOW.Mutations
             RecalculatePlayerStats();
         }
 
-        void AutoEquipIfPossible(MutationInfo mutation)
+        private void AutoEquipIfPossible(MutationInfo mutation)
         {
             if (mutation.allowedSlots == null || mutation.allowedSlots.Length == 0)
                 return;
@@ -46,7 +53,8 @@ namespace FOW.Mutations
 
         public void EquipMutationToSlot(MutationInfo mutation, MutationSlotType slot)
         {
-            if (mutation == null) return;
+            if (mutation == null)
+                return;
 
             if (mutation.allowedSlots == null ||
                 System.Array.IndexOf(mutation.allowedSlots, slot) < 0)
@@ -75,10 +83,11 @@ namespace FOW.Mutations
             return null;
         }
 
-        void RecalculatePlayerStats()
+        private void RecalculatePlayerStats()
         {
             var handler = PlayerMutationHandler.Instance;
-            if (handler == null) return;
+            if (handler == null)
+                return;
 
             handler.ResetMutationEffects();
 
