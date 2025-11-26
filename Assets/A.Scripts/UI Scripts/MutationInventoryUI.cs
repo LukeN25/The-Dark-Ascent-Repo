@@ -40,6 +40,7 @@ namespace FOW.Mutations
 
         private void Awake()
         {
+
             if (headSlot != null) headSlot.SetInventoryUI(this);
             if (chestSlot != null) chestSlot.SetInventoryUI(this);
             if (heartSlot != null) heartSlot.SetInventoryUI(this);
@@ -126,11 +127,10 @@ namespace FOW.Mutations
 
             currentMutation = inv.GetEquipped(slotUI.slotType);
 
-            if (detailPanelRoot != null)
-                detailPanelRoot.SetActive(true);
-
             if (slotsRoot != null)
                 slotsRoot.SetActive(false);
+            if (detailPanelRoot != null)
+                detailPanelRoot.SetActive(true);
 
             if (detailUI != null)
             {
