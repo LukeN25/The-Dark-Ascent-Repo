@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityHFSM;
 using System;
+using System.Collections;
 
 namespace EnemyAI.UnityHFSM
 {
@@ -10,7 +11,7 @@ namespace EnemyAI.UnityHFSM
             bool needsExitTime,
             Enemy Enemy,
             Action<State<EnemyState, StateEvent>> onEnter,
-            float ExitTime = 4f) : base(needsExitTime, Enemy, ExitTime, onEnter) { }
+            float ExitTime = 2.6f) : base(needsExitTime, Enemy, ExitTime, onEnter) { }
 
         public override void OnEnter()
         {
@@ -21,8 +22,14 @@ namespace EnemyAI.UnityHFSM
 
         public override void OnLogic()
         {
-            Agent.Move(offset: 1.5f * Agent.speed * Time.deltaTime * Agent.transform.forward);
+            Enemy.RunCoroutine(LeapDelay());
             base.OnLogic();
+        }
+
+        private IEnumerator LeapDelay()
+        {
+            yield return new WaitForSeconds(0.66f);
+            Agent.Move(offset: 1.5f * Agent.speed * Time.deltaTime * Agent.transform.forward);
         }
     }
 }
