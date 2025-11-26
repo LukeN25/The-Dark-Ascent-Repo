@@ -6,78 +6,123 @@ public class MenuManager : MonoBehaviour
     public static MenuManager Instance;
 
     [Header("Panels")]
-    [Tooltip("Root panel for the mutation inventory UI (same as MutationInventoryUI.rootPanel).")]
+    [Tooltip("Root object for the logbook UI (CanvasLogbook or similar).")]
+    public GameObject logbookPanel;
+
+    [Tooltip("Root object for the mutation inventory UI (MutationCanvas root).")]
     public GameObject mutationInventoryPanel;
 
-    [Header("Skeleton Preview")]
-    public GameObject mutationSkeletonRoot;
-    public Camera mutationSkeletonCamera;
+    [Header("Mutation Inventory UI")]
+    [Tooltip("The MutationInventoryUI script on your mutation inventory root.")]
+    public MutationInventoryUI mutationInventoryUI;
 
-    private MutationInventoryUI mutationInventoryUI;
+    [Header("Logbook Mutation Detail (optional)")]
+    [Tooltip("Detail panel used by the LOGBOOK (not the mutation inventory).")]
+    public GameObject mutationDetailPanel;
+    public MutationDetailUI mutationDetailUI;
+
+    private bool isLogbookOpen = false;
+    private bool isMutationInventoryOpen = false;
 
     private void Awake()
     {
         Instance = this;
-        if (mutationInventoryPanel != null)
-            mutationInventoryUI = mutationInventoryPanel.GetComponent<MutationInventoryUI>();
-    }
-
-    private void Start()
-    {
-        CloseMutationInventory();
     }
 
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Q) && !isMutationInventoryOpen)
         {
-            if (!mutationInventoryPanel.activeSelf)
-                OpenMutationInventory();
+            ToggleLogbook();
         }
 
+        if (Input.GetKeyDown(KeyCode.Tab) && !isLogbookOpen && !isMutationInventoryOpen)
+        {
+            OpenMutationInventory();
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (mutationInventoryPanel.activeSelf)
+            if (isMutationInventoryOpen)
+            {
                 CloseMutationInventory();
+            }
+            else if (isLogbookOpen)
+            {
+                CloseLogbook();
+            }
         }
     }
 
+
+    private void ToggleLogbook()
+    {
+        if (isLogbookOpen) CloseLogbook();
+        else OpenLogbook();
+    }
+
+    public void OpenLogbook()
+    {
+        isLogbookOpen = true;
+
+        if (logbookPanel != null)
+            logbookPanel.SetActive(true);
+    }
+
+    public void CloseLogbook()
+    {
+        isLogbookOpen = false;
+
+        if (logbookPanel != null)
+            logbookPanel.SetActive(false);
+
+        if (mutationDetailPanel != null)
+            mutationDetailPanel.SetActive(false);
+    }
+
+
     public void OpenMutationInventory()
     {
+        isMutationInventoryOpen = true;
 
         if (mutationInventoryUI != null)
+        {
             mutationInventoryUI.Show();
+        }
         else if (mutationInventoryPanel != null)
+        {
             mutationInventoryPanel.SetActive(true);
+        }
 
-        if (mutationSkeletonRoot != null)
-            mutationSkeletonRoot.SetActive(true);
-
-        if (mutationSkeletonCamera != null)
-            mutationSkeletonCamera.enabled = true;
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        Time.timeScale = 0f;
     }
 
     public void CloseMutationInventory()
     {
+        isMutationInventoryOpen = false;
+
         if (mutationInventoryUI != null)
+        {
             mutationInventoryUI.Hide();
+        }
         else if (mutationInventoryPanel != null)
+        {
             mutationInventoryPanel.SetActive(false);
+        }
+    }
 
-        if (mutationSkeletonRoot != null)
-            mutationSkeletonRoot.SetActive(false);
 
-        if (mutationSkeletonCamera != null)
-            mutationSkeletonCamera.enabled = false;
+    public void OpenMutationDetail(MutationInfo mutation)
+    {
+        if (mutationDetailPanel != null)
+            mutationDetailPanel.SetActive(true);
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        Time.timeScale = 1f;
+        if (mutationDetailUI != null)
+            mutationDetailUI.ShowMutation(mutation);
+    }
+
+    public void CloseDetail()
+    {
+        if (mutationDetailPanel != null)
+            mutationDetailPanel.SetActive(false);
     }
 }

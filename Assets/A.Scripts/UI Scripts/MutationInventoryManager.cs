@@ -14,22 +14,33 @@ namespace FOW.Mutations
 
         private void Awake()
         {
-            if (Instance == null) Instance = this;
-            else Destroy(gameObject);
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         public void AddMutation(MutationInfo mutation)
         {
-            if (mutation == null) return;
+            if (mutation == null)
+                return;
 
             if (!collectedMutations.Contains(mutation))
                 collectedMutations.Add(mutation);
 
             AutoEquipIfPossible(mutation);
             RecalculatePlayerStats();
+
+            MutationInventoryUI ui = FindObjectOfType<MutationInventoryUI>();
+            if (ui != null)
+                ui.RefreshSlots();
         }
 
-        void AutoEquipIfPossible(MutationInfo mutation)
+        private void AutoEquipIfPossible(MutationInfo mutation)
         {
             if (mutation.allowedSlots == null || mutation.allowedSlots.Length == 0)
                 return;
@@ -39,24 +50,28 @@ namespace FOW.Mutations
                 if (!equippedMutations.ContainsKey(slot))
                 {
                     EquipMutationToSlot(mutation, slot);
-                    break;
+                    return;
                 }
             }
         }
 
         public void EquipMutationToSlot(MutationInfo mutation, MutationSlotType slot)
         {
-            if (mutation == null) return;
+            if (mutation == null)
+                return;
 
-            if (mutation.allowedSlots == null ||
-                System.Array.IndexOf(mutation.allowedSlots, slot) < 0)
+            if (System.Array.IndexOf(mutation.allowedSlots, slot) < 0)
             {
-                Debug.LogWarning($"{mutation.mutationName} is not allowed in slot {slot}");
+                Debug.LogWarning($"{mutation.mutationName} cannot be equipped in {slot}");
                 return;
             }
 
             equippedMutations[slot] = mutation;
             RecalculatePlayerStats();
+
+            MutationInventoryUI ui = FindObjectOfType<MutationInventoryUI>();
+            if (ui != null)
+                ui.RefreshSlots();
         }
 
         public void UnequipMutationFromSlot(MutationSlotType slot)
@@ -65,20 +80,25 @@ namespace FOW.Mutations
                 equippedMutations.Remove(slot);
 
             RecalculatePlayerStats();
+
+            MutationInventoryUI ui = FindObjectOfType<MutationInventoryUI>();
+            if (ui != null)
+                ui.RefreshSlots();
         }
 
         public MutationInfo GetEquipped(MutationSlotType slot)
         {
-            if (equippedMutations.TryGetValue(slot, out var mutation))
-                return mutation;
+            if (equippedMutations.TryGetValue(slot, out var m))
+                return m;
 
             return null;
         }
 
-        void RecalculatePlayerStats()
+        private void RecalculatePlayerStats()
         {
             var handler = PlayerMutationHandler.Instance;
-            if (handler == null) return;
+            if (handler == null)
+                return;
 
             handler.ResetMutationEffects();
 
