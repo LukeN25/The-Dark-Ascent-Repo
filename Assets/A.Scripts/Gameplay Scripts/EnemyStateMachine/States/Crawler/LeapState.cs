@@ -29,7 +29,8 @@ namespace EnemyAI.UnityHFSM
         private IEnumerator LeapDelay()
         {
             yield return new WaitForSeconds(0.66f);
-            Agent.Move(offset: 1.5f * Agent.speed * Time.deltaTime * Agent.transform.forward);
+            //Agent.Move(offset: 1.5f * Agent.speed * Time.deltaTime * Agent.transform.forward);
+            Agent.isStopped = false;
         }
     }
 }
