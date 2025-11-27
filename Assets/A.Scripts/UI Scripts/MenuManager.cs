@@ -1,128 +1,138 @@
 using UnityEngine;
-using FOW.Mutations;
 
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
 
     [Header("Panels")]
-    [Tooltip("Root object for the logbook UI (CanvasLogbook or similar).")]
-    public GameObject logbookPanel;
+    public GameObject logbookCanvas;
+    public GameObject mutationInventoryCanvas;
 
-    [Tooltip("Root object for the mutation inventory UI (MutationCanvas root).")]
-    public GameObject mutationInventoryPanel;
-
-    [Header("Mutation Inventory UI")]
-    [Tooltip("The MutationInventoryUI script on your mutation inventory root.")]
-    public MutationInventoryUI mutationInventoryUI;
-
-    [Header("Logbook Mutation Detail (optional)")]
-    [Tooltip("Detail panel used by the LOGBOOK (not the mutation inventory).")]
+    [Header("Slot Panel + Detail Panel")]
+    public GameObject mutationSlotPanel;
     public GameObject mutationDetailPanel;
-    public MutationDetailUI mutationDetailUI;
 
-    private bool isLogbookOpen = false;
-    private bool isMutationInventoryOpen = false;
+    private bool logbookOpen = false;
+    private bool mutationInventoryOpen = false;
 
     private void Awake()
     {
         Instance = this;
+        CloseAll();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && !isMutationInventoryOpen)
+        // OPEN LOGBOOK
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            ToggleLogbook();
+            if (!logbookOpen && !mutationInventoryOpen)
+                OpenLogbook();
+            else if (logbookOpen)
+                CloseLogbook();
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab) && !isLogbookOpen && !isMutationInventoryOpen)
+        // OPEN MUTATION INVENTORY
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            OpenMutationInventory();
+            if (!mutationInventoryOpen && !logbookOpen)
+                OpenMutationInventory();
+            else if (mutationInventoryOpen)
+                CloseMutationInventory();
         }
 
+        // ESCAPE handling
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isMutationInventoryOpen)
+            if (mutationDetailPanel.activeSelf)
+            {
+                CloseMutationDetail();
+                return;
+            }
+
+            if (mutationInventoryOpen)
             {
                 CloseMutationInventory();
+                return;
             }
-            else if (isLogbookOpen)
+
+            if (logbookOpen)
             {
                 CloseLogbook();
+                return;
             }
         }
     }
 
-
-    private void ToggleLogbook()
-    {
-        if (isLogbookOpen) CloseLogbook();
-        else OpenLogbook();
-    }
-
+    // ============================================================
+    // LOGBOOK
+    // ============================================================
     public void OpenLogbook()
     {
-        isLogbookOpen = true;
+        CloseAll();
+        logbookOpen = true;
 
-        if (logbookPanel != null)
-            logbookPanel.SetActive(true);
+        logbookCanvas.SetActive(true);
+        ShowCursor(true);
     }
 
     public void CloseLogbook()
     {
-        isLogbookOpen = false;
-
-        if (logbookPanel != null)
-            logbookPanel.SetActive(false);
-
-        if (mutationDetailPanel != null)
-            mutationDetailPanel.SetActive(false);
+        logbookOpen = false;
+        logbookCanvas.SetActive(false);
+        ShowCursor(false);
     }
 
-
+    // ============================================================
+    // MUTATION INVENTORY
+    // ============================================================
     public void OpenMutationInventory()
     {
-        isMutationInventoryOpen = true;
+        CloseAll();
+        mutationInventoryOpen = true;
 
-        if (mutationInventoryUI != null)
-        {
-            mutationInventoryUI.Show();
-        }
-        else if (mutationInventoryPanel != null)
-        {
-            mutationInventoryPanel.SetActive(true);
-        }
+        mutationInventoryCanvas.SetActive(true);
+        mutationSlotPanel.SetActive(true);
+        mutationDetailPanel.SetActive(false);
 
+        ShowCursor(true);
     }
 
     public void CloseMutationInventory()
     {
-        isMutationInventoryOpen = false;
+        mutationInventoryOpen = false;
+        mutationInventoryCanvas.SetActive(false);
+        mutationSlotPanel.SetActive(false);
+        mutationDetailPanel.SetActive(false);
 
-        if (mutationInventoryUI != null)
-        {
-            mutationInventoryUI.Hide();
-        }
-        else if (mutationInventoryPanel != null)
-        {
-            mutationInventoryPanel.SetActive(false);
-        }
+        ShowCursor(false);
     }
 
-
-    public void OpenMutationDetail(MutationInfo mutation)
+    public void CloseMutationDetail()
     {
-        if (mutationDetailPanel != null)
-            mutationDetailPanel.SetActive(true);
+        mutationDetailPanel.SetActive(false);
+        mutationSlotPanel.SetActive(true);
 
-        if (mutationDetailUI != null)
-            mutationDetailUI.ShowMutation(mutation);
+        // Return camera to default
+        var cam = FindObjectOfType<MenuCameraController>();
+        if (cam != null)
+            cam.ReturnToDefault();
     }
 
-    public void CloseDetail()
+    // ============================================================
+    // HELPERS
+    // ============================================================
+    public void CloseAll()
     {
-        if (mutationDetailPanel != null)
-            mutationDetailPanel.SetActive(false);
+        logbookCanvas.SetActive(false);
+        mutationInventoryCanvas.SetActive(false);
+        mutationSlotPanel.SetActive(false);
+        mutationDetailPanel.SetActive(false);
+    }
+
+    private void ShowCursor(bool show)
+    {
+        Cursor.visible = show;
+        Cursor.lockState = show ? CursorLockMode.None : CursorLockMode.Locked;
     }
 }

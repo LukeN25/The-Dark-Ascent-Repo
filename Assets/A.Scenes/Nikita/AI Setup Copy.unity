@@ -6391,7 +6391,7 @@ GameObject:
   - component: {fileID: 1159587257}
   - component: {fileID: 1159587256}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Health Ui
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6686,7 +6686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7968,7 +7968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a23b63b4736325438b6a91b8120acdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1215290948}
+  player: {fileID: 0}
   ChasePlayerSensor: {fileID: 247600522}
   MeleeRangeSensor: {fileID: 828002447}
   DashRangeSensor: {fileID: 1353692401}
@@ -9329,11 +9329,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c60d270735bdcb4db96d49c2fe5d6e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logbookPanel: {fileID: 0}
-  mutationInventoryPanel: {fileID: 1492690475}
-  mutationInventoryUI: {fileID: 0}
-  mutationDetailPanel: {fileID: 0}
-  mutationDetailUI: {fileID: 0}
+  logbookCanvas: {fileID: 1731773851}
+  mutationInventoryCanvas: {fileID: 40304060}
+  mutationSlotPanel: {fileID: 1492690475}
+  mutationDetailPanel: {fileID: 910677615}
 --- !u!4 &1632011201
 Transform:
   m_ObjectHideFlags: 0
@@ -9824,7 +9823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1731773852
 MonoBehaviour:
   m_ObjectHideFlags: 0
