@@ -12,6 +12,7 @@ namespace FOW.Logbook
         public List<EnemyInfo> enemies = new List<EnemyInfo>();
 
         [Header("Panels")]
+        public GameObject logbookCanvas;   
         public GameObject enemyListPanel;
         public GameObject mutationPanel;
         public GameObject mutationDetailPanel;
@@ -29,12 +30,13 @@ namespace FOW.Logbook
 
         private void Update()
         {
+
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 if (!logbookOpen)
+                {
                     OpenEnemyListPanel();
-                else
-                    CloseLogbook();
+                }
             }
 
             if (!logbookOpen) return;
@@ -60,6 +62,7 @@ namespace FOW.Logbook
         public void OpenEnemyListPanel()
         {
             logbookOpen = true;
+            logbookCanvas.SetActive(true);          
             CloseAllPanels();
             enemyListPanel.SetActive(true);
         }
@@ -80,22 +83,28 @@ namespace FOW.Logbook
             mutationDetailUI.ShowMutation(mutation);
         }
 
-        public void BackFromMutationPanel()
-        {
-            CloseAllPanels();
-            enemyListPanel.SetActive(true);
-        }
-
         public void BackFromMutationDetail()
         {
             CloseAllPanels();
             mutationPanel.SetActive(true);
         }
 
+        public void BackFromMutationPanel()
+        {
+            CloseAllPanels();
+            enemyListPanel.SetActive(true);
+        }
+
+        public void BackFromEnemyList()
+        {
+            CloseLogbook();
+        }
+
         public void CloseLogbook()
         {
             logbookOpen = false;
             CloseAllPanels();
+            logbookCanvas.SetActive(false);    
         }
 
         public void CloseAllPanels()

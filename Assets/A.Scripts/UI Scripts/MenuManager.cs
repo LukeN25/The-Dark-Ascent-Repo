@@ -23,25 +23,19 @@ public class MenuManager : MonoBehaviour
 
     private void Update()
     {
-        // OPEN LOGBOOK
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if (!logbookOpen && !mutationInventoryOpen)
                 OpenLogbook();
-            else if (logbookOpen)
-                CloseLogbook();
         }
 
-        // OPEN MUTATION INVENTORY
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (!mutationInventoryOpen && !logbookOpen)
                 OpenMutationInventory();
-            else if (mutationInventoryOpen)
-                CloseMutationInventory();
         }
 
-        // ESCAPE handling
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (mutationDetailPanel.activeSelf)
@@ -64,9 +58,6 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    // ============================================================
-    // LOGBOOK
-    // ============================================================
     public void OpenLogbook()
     {
         CloseAll();
@@ -83,9 +74,6 @@ public class MenuManager : MonoBehaviour
         ShowCursor(false);
     }
 
-    // ============================================================
-    // MUTATION INVENTORY
-    // ============================================================
     public void OpenMutationInventory()
     {
         CloseAll();
@@ -101,6 +89,7 @@ public class MenuManager : MonoBehaviour
     public void CloseMutationInventory()
     {
         mutationInventoryOpen = false;
+
         mutationInventoryCanvas.SetActive(false);
         mutationSlotPanel.SetActive(false);
         mutationDetailPanel.SetActive(false);
@@ -113,15 +102,11 @@ public class MenuManager : MonoBehaviour
         mutationDetailPanel.SetActive(false);
         mutationSlotPanel.SetActive(true);
 
-        // Return camera to default
         var cam = FindObjectOfType<MenuCameraController>();
         if (cam != null)
             cam.ReturnToDefault();
     }
 
-    // ============================================================
-    // HELPERS
-    // ============================================================
     public void CloseAll()
     {
         logbookCanvas.SetActive(false);

@@ -5,13 +5,8 @@ namespace FOW.Mutations
     public class MutationInventoryUI : MonoBehaviour
     {
         [Header("Root Panels")]
-        [Tooltip("Whole mutation inventory canvas/panel.")]
         public GameObject rootPanel;
-
-        [Tooltip("Panel that shows all the slots (skeleton).")]
         public GameObject slotsRoot;
-
-        [Tooltip("Panel that shows when you click a slot (details).")]
         public GameObject detailPanelRoot;
 
         [Header("Slot UIs")]
@@ -38,160 +33,132 @@ namespace FOW.Mutations
         private MutationSlotUI currentSlot;
         private MutationInfo currentMutation;
 
+        private bool inventoryOpen = false;
+
         private void Awake()
         {
+            headSlot?.SetInventoryUI(this);
+            chestSlot?.SetInventoryUI(this);
+            heartSlot?.SetInventoryUI(this);
+            leftArmSlot?.SetInventoryUI(this);
+            rightArmSlot?.SetInventoryUI(this);
+            leftLegSlot?.SetInventoryUI(this);
+            rightLegSlot?.SetInventoryUI(this);
+        }
 
-            if (headSlot != null) headSlot.SetInventoryUI(this);
-            if (chestSlot != null) chestSlot.SetInventoryUI(this);
-            if (heartSlot != null) heartSlot.SetInventoryUI(this);
-            if (leftArmSlot != null) leftArmSlot.SetInventoryUI(this);
-            if (rightArmSlot != null) rightArmSlot.SetInventoryUI(this);
-            if (leftLegSlot != null) leftLegSlot.SetInventoryUI(this);
-            if (rightLegSlot != null) rightLegSlot.SetInventoryUI(this);
+        private void Update()
+        {
+
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                if (!inventoryOpen)
+                    Show();
+            }
+
+            if (!inventoryOpen)
+                return;
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Hide();
+            }
         }
 
         public void Show()
         {
-            if (rootPanel != null)
-                rootPanel.SetActive(true);
+            inventoryOpen = true;
 
-            if (slotsRoot != null)
-                slotsRoot.SetActive(true);
-
-            if (detailPanelRoot != null)
-                detailPanelRoot.SetActive(false);
+            rootPanel?.SetActive(true);
+            slotsRoot?.SetActive(true);
+            detailPanelRoot?.SetActive(false);
 
             RefreshSlots();
 
             var cam = FindObjectOfType<MenuCameraController>();
-            if (cam != null)
-                cam.ReturnToDefault();
+            cam?.ReturnToDefault();
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
 
         public void Hide()
         {
-            if (rootPanel != null)
-                rootPanel.SetActive(false);
+            inventoryOpen = false;
 
-            CloseDetail();
+            rootPanel?.SetActive(false);
+            detailPanelRoot?.SetActive(false);
+            slotsRoot?.SetActive(false);
 
             var cam = FindObjectOfType<MenuCameraController>();
-            if (cam != null)
-                cam.ReturnToDefault();
+            cam?.ReturnToDefault();
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         public void RefreshSlots()
         {
             var inv = MutationInventoryManager.Instance;
-            if (inv == null)
-            {
-                Debug.LogWarning("MutationInventoryManager.Instance is NULL in RefreshSlots.");
-                return;
-            }
+            if (inv == null) return;
 
-            if (headSlot != null)
-                headSlot.SetMutation(inv.GetEquipped(MutationSlotType.Head));
-
-            if (chestSlot != null)
-                chestSlot.SetMutation(inv.GetEquipped(MutationSlotType.Chest));
-
-            if (heartSlot != null)
-                heartSlot.SetMutation(inv.GetEquipped(MutationSlotType.Heart));
-
-            if (leftArmSlot != null)
-                leftArmSlot.SetMutation(inv.GetEquipped(MutationSlotType.LeftArm));
-
-            if (rightArmSlot != null)
-                rightArmSlot.SetMutation(inv.GetEquipped(MutationSlotType.RightArm));
-
-            if (leftLegSlot != null)
-                leftLegSlot.SetMutation(inv.GetEquipped(MutationSlotType.LeftLeg));
-
-            if (rightLegSlot != null)
-                rightLegSlot.SetMutation(inv.GetEquipped(MutationSlotType.RightLeg));
+            headSlot?.SetMutation(inv.GetEquipped(MutationSlotType.Head));
+            chestSlot?.SetMutation(inv.GetEquipped(MutationSlotType.Chest));
+            heartSlot?.SetMutation(inv.GetEquipped(MutationSlotType.Heart));
+            leftArmSlot?.SetMutation(inv.GetEquipped(MutationSlotType.LeftArm));
+            rightArmSlot?.SetMutation(inv.GetEquipped(MutationSlotType.RightArm));
+            leftLegSlot?.SetMutation(inv.GetEquipped(MutationSlotType.LeftLeg));
+            rightLegSlot?.SetMutation(inv.GetEquipped(MutationSlotType.RightLeg));
         }
 
         public void OpenDetail(MutationSlotUI slotUI)
         {
-            if (slotUI == null)
-                return;
-
             currentSlot = slotUI;
 
             var inv = MutationInventoryManager.Instance;
-            if (inv == null)
-            {
-                Debug.LogWarning("MutationInventoryManager.Instance is NULL in OpenDetail.");
-                return;
-            }
-
             currentMutation = inv.GetEquipped(slotUI.slotType);
 
-            if (slotsRoot != null)
-                slotsRoot.SetActive(false);
-            if (detailPanelRoot != null)
-                detailPanelRoot.SetActive(true);
+            slotsRoot?.SetActive(false);
+            detailPanelRoot?.SetActive(true);
 
-            if (detailUI != null)
-            {
-                if (currentMutation != null)
-                    detailUI.ShowMutation(currentMutation);
-                else
-                    detailUI.ShowEmpty();
-            }
+            if (currentMutation != null)
+                detailUI.ShowMutation(currentMutation);
+            else
+                detailUI.ShowEmpty();
 
             FocusCameraOnSlot(slotUI.slotType);
         }
 
         public void CloseDetail()
         {
-            if (detailPanelRoot != null)
-                detailPanelRoot.SetActive(false);
-
-            if (slotsRoot != null)
-                slotsRoot.SetActive(true);
-
-            currentSlot = null;
-            currentMutation = null;
+            detailPanelRoot?.SetActive(false);
+            slotsRoot?.SetActive(true);
 
             var cam = FindObjectOfType<MenuCameraController>();
-            if (cam != null)
-                cam.ReturnToDefault();
+            cam?.ReturnToDefault();
         }
 
         private void FocusCameraOnSlot(MutationSlotType slotType)
         {
             var cam = FindObjectOfType<MenuCameraController>();
-            if (cam == null)
-                return;
+            if (cam == null) return;
 
-            Transform target = null;
-
-            switch (slotType)
+            Transform target = slotType switch
             {
-                case MutationSlotType.Head: target = headFocusPoint; break;
-                case MutationSlotType.Chest: target = chestFocusPoint; break;
-                case MutationSlotType.Heart: target = heartFocusPoint; break;
-                case MutationSlotType.LeftArm: target = leftArmFocusPoint; break;
-                case MutationSlotType.RightArm: target = rightArmFocusPoint; break;
-                case MutationSlotType.LeftLeg: target = leftLegFocusPoint; break;
-                case MutationSlotType.RightLeg: target = rightLegFocusPoint; break;
-            }
+                MutationSlotType.Head => headFocusPoint,
+                MutationSlotType.Chest => chestFocusPoint,
+                MutationSlotType.Heart => heartFocusPoint,
+                MutationSlotType.LeftArm => leftArmFocusPoint,
+                MutationSlotType.RightArm => rightArmFocusPoint,
+                MutationSlotType.LeftLeg => leftLegFocusPoint,
+                MutationSlotType.RightLeg => rightLegFocusPoint,
+                _ => null
+            };
 
-            if (target != null)
-                cam.FocusOn(target);
-            else
-                cam.ReturnToDefault();
+            if (target != null) cam.FocusOn(target);
         }
 
-        public void OnBackFromDetailButton()
-        {
-            CloseDetail();
-        }
+        public void OnBackFromDetailButton() => CloseDetail();
 
-        public void OnBackFromSlotsButton()
-        {
-            Hide();
-        }
+        public void OnBackFromSlotsButton() => Hide();
     }
 }
