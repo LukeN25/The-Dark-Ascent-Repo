@@ -638,6 +638,9 @@ GameObject:
   - component: {fileID: 6957837875121629905}
   - component: {fileID: 5055577437266587378}
   - component: {fileID: 6625455034474747213}
+  - component: {fileID: 4991372113674716798}
+  - component: {fileID: 3534299640013340162}
+  - component: {fileID: 8517498099461456093}
   m_Layer: 0
   m_Name: Mushroom Enemy
   m_TagString: Untagged
@@ -777,6 +780,57 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.5, y: 16, z: 3.5}
   m_Center: {x: 0, y: 8, z: 0}
+--- !u!65 &4991372113674716798
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7231561571359708260}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7.5, y: 16, z: 3.5}
+  m_Center: {x: 0, y: 8, z: 0}
+--- !u!114 &3534299640013340162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7231561571359708260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a47feb300171840a7f6c08cec5d43d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  health: 3
+  lootTable:
+    list: []
+  itemHolder: {fileID: 0}
+--- !u!114 &8517498099461456093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7231561571359708260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca3797c7d3743a49a55e613b283803d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyManager: {fileID: 3534299640013340162}
 --- !u!1 &7424140476309255775
 GameObject:
   m_ObjectHideFlags: 0

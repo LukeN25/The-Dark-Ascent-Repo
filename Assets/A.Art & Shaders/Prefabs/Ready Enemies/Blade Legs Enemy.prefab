@@ -298,6 +298,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5125001214790596728}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7696558304806870766}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4598217650137680766}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6138899680982277946}
   m_SourcePrefab: {fileID: 100100000, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
 --- !u!4 &4664755633075390524 stripped
 Transform:
@@ -424,3 +433,54 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.5, y: 9, z: 2}
   m_Center: {x: 0, y: 4.5, z: 0.1}
+--- !u!65 &7696558304806870766
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5473942983089214086}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.5, y: 9, z: 2}
+  m_Center: {x: 0, y: 4.5, z: 0.1}
+--- !u!114 &4598217650137680766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5473942983089214086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a47feb300171840a7f6c08cec5d43d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  health: 3
+  lootTable:
+    list: []
+  itemHolder: {fileID: 0}
+--- !u!114 &6138899680982277946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5473942983089214086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca3797c7d3743a49a55e613b283803d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyManager: {fileID: 4598217650137680766}

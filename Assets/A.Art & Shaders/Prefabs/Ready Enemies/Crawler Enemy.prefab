@@ -142,6 +142,9 @@ GameObject:
   - component: {fileID: 3454040624458654784}
   - component: {fileID: 1589180756081565751}
   - component: {fileID: 334576755336106361}
+  - component: {fileID: 254416219704757531}
+  - component: {fileID: 7616867991479099394}
+  - component: {fileID: 7475678559034782582}
   m_Layer: 0
   m_Name: Crawler Enemy
   m_TagString: Untagged
@@ -279,6 +282,57 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4, y: 3, z: 4}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!65 &254416219704757531
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445378099590311750}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4, y: 3, z: 4}
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &7616867991479099394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445378099590311750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca3797c7d3743a49a55e613b283803d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyManager: {fileID: 7475678559034782582}
+--- !u!114 &7475678559034782582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445378099590311750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a47feb300171840a7f6c08cec5d43d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  health: 3
+  lootTable:
+    list: []
+  itemHolder: {fileID: 0}
 --- !u!1 &1541957269903567254
 GameObject:
   m_ObjectHideFlags: 0

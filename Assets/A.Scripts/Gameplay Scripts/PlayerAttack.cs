@@ -2,13 +2,18 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] Animator playerAnimator;
+    private Animator playerAnimator;
     [Tooltip("How long (seconds) the button must be held before we consider it a charged attack.")]
     [SerializeField] float chargeThreshold = 0.5f;
 
     bool isHolding = false;
     bool isCharging = false;
     float holdTimer = 0f;
+
+    void Awake()
+    {
+        playerAnimator = GetComponentInChildren<Animator>();
+    }
 
     void Update()
     {

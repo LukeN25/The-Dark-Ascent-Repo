@@ -14,9 +14,12 @@ public class PlayerMovement : MonoBehaviour
     bool isDashing = false;
 
     private CharacterController cc;
+    private Animator Animator;
+
     private void Awake()
     {
         cc = GetComponent<CharacterController>();
+        Animator = GetComponentInChildren<Animator>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -39,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Dash();
         }
+        Animator.SetFloat("Speed", speedTarget);
+        
     }
 
     Vector2 inputDirection = Vector2.zero;
@@ -83,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
         if (inputs[4] && canDash && speedTarget > 0 && !inputs[0])
         {
             isDashing = true;
+            Animator.SetBool("isDashing", true);
             canDash = false;
             speedTarget = WalkingSpeed;
         }
@@ -127,6 +133,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // If we hit something, stop dashing
             isDashing = false;
+            Animator.SetBool("isDashing", false);
             return;
         }
 
@@ -135,6 +142,7 @@ public class PlayerMovement : MonoBehaviour
         if (Vector3.Distance(transform.position, dashDestination) < 0.1f)
         {
             isDashing = false;
+            Animator.SetBool("isDashing", false);
         }
     }
 
