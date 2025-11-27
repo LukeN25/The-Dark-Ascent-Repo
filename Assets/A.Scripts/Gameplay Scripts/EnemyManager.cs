@@ -36,6 +36,6 @@ public class EnemyManager : MonoBehaviour
     private void DropLoot()
     {
         Transform item = lootTable.GetRandom();
-        Instantiate(item, itemHolder);
+        Instantiate(item, itemHolder.position, itemHolder.rotation);
     }
 }

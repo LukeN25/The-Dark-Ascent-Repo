@@ -394,7 +394,6 @@ GameObject:
   - component: {fileID: 2023485422064736012}
   - component: {fileID: 927735129627493579}
   - component: {fileID: 1467622469598430073}
-  - component: {fileID: 7421229454152803666}
   m_Layer: 0
   m_Name: 'Butcher Enemy '
   m_TagString: Untagged
@@ -416,7 +415,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7220255970475896733}
-  - {fileID: 7477094370973003966}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &927735129627493579
@@ -437,7 +435,7 @@ MonoBehaviour:
     list:
     - item: {fileID: 3654389266343195070, guid: 9f2cf952d7d52a244a8fc1ee497fdb4a, type: 3}
       weight: 1
-  itemHolder: {fileID: 7477094370973003966}
+  itemHolder: {fileID: 8575116367088077087}
 --- !u!114 &1467622469598430073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,27 +449,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 927735129627493579}
---- !u!65 &7421229454152803666
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1857011601673404949}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.75, y: 3, z: 2}
-  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &2046683656006022462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,6 +1366,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4338720907462948224}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6309994124674089536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8575116367088077087}
+  m_Layer: 0
+  m_Name: LootHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8575116367088077087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309994124674089536}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7220255970475896733}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6353196277191416828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,6 +1693,7 @@ Transform:
   - {fileID: 4567361501619291747}
   - {fileID: 6433256421897951459}
   - {fileID: 5956364763903930337}
+  - {fileID: 8575116367088077087}
   m_Father: {fileID: 2023485422064736012}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &9146754435659081065
@@ -2016,35 +2025,4 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4556481816735863195}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8937499764288851379
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7477094370973003966}
-  m_Layer: 0
-  m_Name: Item Holder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7477094370973003966
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8937499764288851379}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2023485422064736012}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
