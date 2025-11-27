@@ -10,4 +10,13 @@ public class HealthPickup : MonoBehaviour
         Player = GameObject.FindWithTag("Player");
         PlayerManager = Player.GetComponent<PlayerManager>();
     }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if(col.tag == "Player")
+        {
+            PlayerManager.playerHealth++;
+            Destroy(gameObject);
+        }
+    }
 }
