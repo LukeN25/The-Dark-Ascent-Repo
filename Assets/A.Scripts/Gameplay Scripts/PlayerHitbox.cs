@@ -8,5 +8,6 @@ public class PlayerHitbox : MonoBehaviour, IAttacker
         DamageInfo damageInfo = new DamageInfo(PlayerManager.Instance.GetAttackDamage());
 
         return damageInfo;
+        Debug.Log("holy it works???");
     }
 }
