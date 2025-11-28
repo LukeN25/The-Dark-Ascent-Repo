@@ -5,7 +5,7 @@ namespace FOW.Mutations
     public class PlayerMutationHandler : MonoBehaviour
     {
         public static PlayerMutationHandler Instance;
-        
+        [SerializeField] private PlayerManager PlayerManager;        
 
         public float damageMultiplier = 1f;
         public float rangeMultiplier = 1f;
@@ -21,6 +21,8 @@ namespace FOW.Mutations
 
             damageMultiplier *= mutation.damageMultiplier;
             rangeMultiplier *= mutation.rangeMultiplier;
+
+            PlayerManager.UpdateAttackDamage();
 
             Debug.Log("Applied mutation: " + mutation.mutationName);
         }

@@ -46,7 +46,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    void Update()
+    public void UpdateAttackDamage()
     {
         attackDamage = Mathf.RoundToInt(attackDamage * m_MutationHandler.damageMultiplier);
     }
