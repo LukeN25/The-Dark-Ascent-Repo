@@ -1090,6 +1090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerManager: {fileID: 4897905082050689364}
+  DamageIndicator: {fileID: 2876029496984740825}
 --- !u!1 &3307510311936432116
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,6 +2194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6698005214168719067}
   - component: {fileID: 3997857747913612870}
+  - component: {fileID: 2876029496984740825}
   m_Layer: 3
   m_Name: Cube.035
   m_TagString: Untagged
@@ -2315,6 +2317,21 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.16120932, y: 0.1265893, z: 0.00000044703484}
     m_Extent: {x: 0.4802213, y: 2.0333562, z: 0.6169183}
   m_DirtyAABB: 0
+--- !u!114 &2876029496984740825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6704603709169646578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d79bb278022e114098df51add992bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColour: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
+  flashDuration: 0.3
+  rend: {fileID: 3997857747913612870}
 --- !u!1 &6879395884636561283
 GameObject:
   m_ObjectHideFlags: 0

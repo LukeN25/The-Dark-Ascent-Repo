@@ -3,6 +3,8 @@ using UnityEngine;
 public class PlayerHurtbox : MonoBehaviour, IHittable
 {
     [SerializeField] PlayerManager playerManager;
+    [SerializeField] DamageIndicator DamageIndicator;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent<IAttacker>(out IAttacker component))
@@ -17,5 +19,6 @@ public class PlayerHurtbox : MonoBehaviour, IHittable
     public void GetHit(DamageInfo damageInfo)
     {
         playerManager.TakeDamage(damageInfo);
+        DamageIndicator.Flash();
     }
 }
