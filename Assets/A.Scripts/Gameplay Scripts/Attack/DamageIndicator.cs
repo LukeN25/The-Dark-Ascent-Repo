@@ -8,14 +8,13 @@ public class DamageIndicator : MonoBehaviour
     [SerializeField]
     [Range(0.01f, 1f)]
     private float flashDuration = 0.3f;
+    [SerializeField] private SkinnedMeshRenderer rend;
 
     private Color originalColour;
-    private Renderer rend;
 
     private void Start()
     {
         originalColour = rend.material.color;
-        rend = GetComponent<MeshRenderer>();
     }
 
     private IEnumerator FlashTimed()

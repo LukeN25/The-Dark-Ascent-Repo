@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 4598217650137680766}
+  DamageIndicator: {fileID: 7340384233439090792}
 --- !u!65 &2726771434618665694
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -530,7 +531,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4598217650137680766}
+    - targetCorrespondingSourceObject: {fileID: -7640558969779515294, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7340384233439090792}
   m_SourcePrefab: {fileID: 100100000, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
+--- !u!137 &3743857693123631294 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -809828480950454423, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
+  m_PrefabInstance: {fileID: 5131345956952567767}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4664755633075390524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
@@ -675,3 +684,23 @@ MonoBehaviour:
     - item: {fileID: 3654389266343195070, guid: 9f2cf952d7d52a244a8fc1ee497fdb4a, type: 3}
       weight: 1
   itemHolder: {fileID: 2284379887174073947}
+--- !u!1 &5963183638497820597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7640558969779515294, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
+  m_PrefabInstance: {fileID: 5131345956952567767}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7340384233439090792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5963183638497820597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d79bb278022e114098df51add992bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColour: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.3
+  rend: {fileID: 3743857693123631294}

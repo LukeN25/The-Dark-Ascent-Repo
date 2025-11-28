@@ -533,6 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 7475678559034782582}
+  DamageIndicator: {fileID: 5855947341052399837}
 --- !u!65 &8905180178637129356
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -596,6 +597,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6202504864241756169}
   - component: {fileID: 8554647195052685342}
+  - component: {fileID: 5855947341052399837}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -690,6 +692,21 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00000023841858, y: 0.5000002, z: 0.00000035762787}
     m_Extent: {x: 2.8200004, y: 1.5000017, z: 2.5217843}
   m_DirtyAABB: 0
+--- !u!114 &5855947341052399837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3504095564088844548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d79bb278022e114098df51add992bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColour: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.3
+  rend: {fileID: 8554647195052685342}
 --- !u!1 &3649702719839676018
 GameObject:
   m_ObjectHideFlags: 0

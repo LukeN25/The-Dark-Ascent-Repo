@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 927735129627493579}
+  DamageIndicator: {fileID: 2413003489000490270}
 --- !u!1 &795809766404943770
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,6 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 927735129627493579}
+  DamageIndicator: {fileID: 5287168298951680727}
 --- !u!1 &2046683656006022462
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,6 +815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 506027832439062793}
   - component: {fileID: 1239386929028986385}
+  - component: {fileID: 2413003489000490270}
   m_Layer: 0
   m_Name: Body Backup
   m_TagString: Untagged
@@ -916,6 +919,21 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.6459489, y: 0.8686061, z: -0.08730239}
     m_Extent: {x: 2.6851892, y: 1.6902761, z: 0.91793317}
   m_DirtyAABB: 0
+--- !u!114 &2413003489000490270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4766957728007261554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d79bb278022e114098df51add992bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColour: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.3
+  rend: {fileID: 1239386929028986385}
 --- !u!1 &4974541332262185693
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5564690289767620509}
   - component: {fileID: 7735217452645430910}
+  - component: {fileID: 982072517667309523}
   m_Layer: 0
   m_Name: Body Backup.001
   m_TagString: Untagged
@@ -1029,6 +1048,21 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.007242739, y: 0.010114431, z: -0.016990244}
     m_Extent: {x: 0.78630286, y: 0.38796714, z: 0.819791}
   m_DirtyAABB: 0
+--- !u!114 &982072517667309523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4974541332262185693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d79bb278022e114098df51add992bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColour: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.3
+  rend: {fileID: 7735217452645430910}
 --- !u!1 &5269224192514346758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,6 +1234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6624174129512706179}
   - component: {fileID: 1927780005702123793}
+  - component: {fileID: 5287168298951680727}
   m_Layer: 0
   m_Name: Body Backup.002
   m_TagString: Untagged
@@ -1303,6 +1338,21 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00002798438, y: 0.68743044, z: 0.2058751}
     m_Extent: {x: 0.8332876, y: 0.85990614, z: 0.88994867}
   m_DirtyAABB: 0
+--- !u!114 &5287168298951680727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5651292859573060686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d79bb278022e114098df51add992bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColour: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.3
+  rend: {fileID: 1927780005702123793}
 --- !u!1 &5815254454291025904
 GameObject:
   m_ObjectHideFlags: 0
