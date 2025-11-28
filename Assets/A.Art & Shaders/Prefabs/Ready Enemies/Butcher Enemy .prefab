@@ -465,7 +465,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c78af948052824d93c22c84c08dd65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SamplePoints: []
+  SamplePoints:
+  - {fileID: 7220255970475896733}
   PermanentlyReveal: 0
   MaxDistBetweenSamplePoints: 0
   NumObservers: 0
