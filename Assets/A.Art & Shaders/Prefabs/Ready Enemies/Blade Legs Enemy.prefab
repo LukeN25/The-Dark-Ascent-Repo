@@ -1,5 +1,72 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &315765492037075036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 662759022733719170}
+  - component: {fileID: 3751409344574779239}
+  - component: {fileID: 2726771434618665694}
+  m_Layer: 0
+  m_Name: HurtBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &662759022733719170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315765492037075036}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4664755633075390524}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3751409344574779239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315765492037075036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca3797c7d3743a49a55e613b283803d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyManager: {fileID: 4598217650137680766}
+--- !u!65 &2726771434618665694
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315765492037075036}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.5, y: 9, z: 2}
+  m_Center: {x: 0, y: 4.5, z: 0.1}
 --- !u!1 &880408127223619065
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +387,37 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 7
   m_Center: {x: 0, y: 5, z: 0}
+--- !u!1 &6453059828024007212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2284379887174073947}
+  m_Layer: 0
+  m_Name: LootHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2284379887174073947
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453059828024007212}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4664755633075390524}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5131345956952567767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -407,6 +505,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
       insertIndex: 4
       addedObject: {fileID: 170756159253372204}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2284379887174073947}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 662759022733719170}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
       insertIndex: -1
@@ -425,13 +529,7 @@ PrefabInstance:
       addedObject: {fileID: 5125001214790596728}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7696558304806870766}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 4598217650137680766}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6138899680982277946}
   m_SourcePrefab: {fileID: 100100000, guid: ee4cd65c1d1c7d1499b6f0583d64b5bc, type: 3}
 --- !u!4 &4664755633075390524 stripped
 Transform:
@@ -558,27 +656,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.5, y: 9, z: 2}
   m_Center: {x: 0, y: 4.5, z: 0.1}
---- !u!65 &7696558304806870766
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5473942983089214086}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.5, y: 9, z: 2}
-  m_Center: {x: 0, y: 4.5, z: 0.1}
 --- !u!114 &4598217650137680766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,18 +671,7 @@ MonoBehaviour:
   damage: 1
   health: 3
   lootTable:
-    list: []
-  itemHolder: {fileID: 0}
---- !u!114 &6138899680982277946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5473942983089214086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ca3797c7d3743a49a55e613b283803d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyManager: {fileID: 4598217650137680766}
+    list:
+    - item: {fileID: 3654389266343195070, guid: 9f2cf952d7d52a244a8fc1ee497fdb4a, type: 3}
+      weight: 1
+  itemHolder: {fileID: 2284379887174073947}

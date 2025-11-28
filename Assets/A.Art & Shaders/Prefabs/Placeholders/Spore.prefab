@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 3744488020616960281}
   - component: {fileID: 5288713604700348666}
   - component: {fileID: 2723694982858562326}
+  - component: {fileID: -7952729428831929883}
   - component: {fileID: 1874096018234975404}
   - component: {fileID: 8125273326270358767}
   - component: {fileID: 6937576357190175632}
+  - component: {fileID: 3615339132496328636}
   m_Layer: 0
   m_Name: Spore
   m_TagString: Untagged
@@ -89,7 +91,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1874096018234975404
+--- !u!135 &-7952729428831929883
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,6 +111,27 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &1874096018234975404
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4687922865874707156}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8125273326270358767
 Rigidbody:
@@ -149,5 +172,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1218544c7efcb2248b2ab39dd54beeca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyManager: {fileID: 3534299640013340162, guid: ce709c83562cb9a4bafee37bd1c265ef, type: 3}
   AutoDestroyTime: 2
-  Force: 500
+  Force: 650
+--- !u!114 &3615339132496328636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4687922865874707156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a222740dd8b722448113df44de0e480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyManager: {fileID: 3534299640013340162, guid: ce709c83562cb9a4bafee37bd1c265ef, type: 3}

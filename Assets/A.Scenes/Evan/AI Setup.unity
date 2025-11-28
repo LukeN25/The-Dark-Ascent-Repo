@@ -353,7 +353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857011601673404949, guid: a39f449d27d4d1e4385d51aadb788df9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2023485422064736012, guid: a39f449d27d4d1e4385d51aadb788df9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -933,7 +933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5473942983089214086, guid: 8e0250e62dcf3164b83847301dec246c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7696558304806870766, guid: 8e0250e62dcf3164b83847301dec246c, type: 3}
       propertyPath: m_Size.z
@@ -2389,7 +2389,7 @@ GameObject:
   - component: {fileID: 4917261763464109810}
   m_Layer: 3
   m_Name: Armature
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3307,6 +3307,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 4.71
       objectReference: {fileID: 0}
+    - target: {fileID: 8905180178637129356, guid: 9be8a4862af913e4abc7d400a25249e9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3830,7 +3834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7231561571359708260, guid: ce709c83562cb9a4bafee37bd1c265ef, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3959,7 +3963,7 @@ GameObject:
   - component: {fileID: 2520831018239175465}
   m_Layer: 3
   m_Name: Player Anim Controller
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

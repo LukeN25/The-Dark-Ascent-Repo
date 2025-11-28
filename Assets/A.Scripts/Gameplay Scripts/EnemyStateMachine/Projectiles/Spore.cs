@@ -5,8 +5,10 @@ namespace EnemyAI.UnityHFSM
 {
     [RequireComponent(typeof(Rigidbody), typeof(Collider))]
 
-    public class Spore : MonoBehaviour
+    public class Spore : MonoBehaviour, IAttacker
     {
+        [SerializeField] EnemyManager enemyManager;
+
         private void OnEnable()
         {
             StopAllCoroutines();
@@ -25,7 +27,7 @@ namespace EnemyAI.UnityHFSM
             Rigidbody.AddForce(transform.forward * Force);
 
             yield return Wait;
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
 
         private void OnDisable()
@@ -41,10 +43,15 @@ namespace EnemyAI.UnityHFSM
 
         private void OnTriggerEnter(Collider other)
         {
-            // apply damage here as well.
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
 
+        public DamageInfo ReturnDamageInfo()
+        {
+            DamageInfo damageInfo = enemyManager.GetDamageInfo();
+
+            return damageInfo;
+        }
 
         [SerializeField]
         private float AutoDestroyTime = 1f;
