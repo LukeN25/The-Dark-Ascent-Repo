@@ -36899,6 +36899,30 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5344768522150918137, guid: 110d8564a0ea06449a0869f726118386, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344768522150918137, guid: 110d8564a0ea06449a0869f726118386, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344768522150918137, guid: 110d8564a0ea06449a0869f726118386, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344768522150918137, guid: 110d8564a0ea06449a0869f726118386, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344768522150918137, guid: 110d8564a0ea06449a0869f726118386, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344768522150918137, guid: 110d8564a0ea06449a0869f726118386, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7413993416218106068, guid: 110d8564a0ea06449a0869f726118386, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.87
