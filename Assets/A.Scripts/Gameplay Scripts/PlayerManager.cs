@@ -46,8 +46,13 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        attackDamage = Mathf.RoundToInt(attackDamage * m_MutationHandler.damageMultiplier);
+    }
 
-    public int GetAttackDamage() => Mathf.RoundToInt(attackDamage * m_MutationHandler.damageMultiplier);
+
+    public int GetAttackDamage() => attackDamage;
     public float GetMoveSpeed() => moveSpeed;
     public float GetAcceleration() => acceleration;
 
