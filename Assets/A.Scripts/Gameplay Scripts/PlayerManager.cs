@@ -26,6 +26,11 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float acceleration;
 
+    private void Update()
+    {
+        Mathf.Clamp(playerHealth, 0, maxHealth);
+    }
+
     public void TakeDamage(DamageInfo damageInfo)
     {
         playerHealth -= damageInfo.GetDamage();
