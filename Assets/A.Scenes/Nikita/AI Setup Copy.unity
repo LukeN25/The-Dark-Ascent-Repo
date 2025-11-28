@@ -5143,12 +5143,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896036380}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.70710677, y: -0, z: -0, w: 0.7071069}
-  m_LocalPosition: {x: 4.777299, y: 3.1, z: 86.8}
-  m_LocalScale: {x: 196.5349, y: 27.891108, z: 79.107704}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.4999999, w: 0.5000001}
+  m_LocalPosition: {x: 220.48224, y: 8.888809, z: -69.94557}
+  m_LocalScale: {x: 449.20544, y: 70.93656, z: 119.18194}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1065737573}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &910677615
 GameObject:
@@ -5904,6 +5904,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 8
+--- !u!4 &1065737573 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d18bd542634f360479cbfb885290196f, type: 3}
+  m_PrefabInstance: {fileID: 2107673498}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1077122151
 GameObject:
   m_ObjectHideFlags: 0
@@ -6964,7 +6969,7 @@ GameObject:
   - component: {fileID: 1271928919}
   - component: {fileID: 1271928918}
   m_Layer: 0
-  m_Name: GameOverUi
+  m_Name: GameOverUiCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9673,7 +9678,7 @@ GameObject:
   - component: {fileID: 1731773853}
   - component: {fileID: 1731773852}
   m_Layer: 5
-  m_Name: CanvasLogbook
+  m_Name: LogBookCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10110,7 +10115,7 @@ GameObject:
   - component: {fileID: 1789725589}
   - component: {fileID: 1789725588}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HealthUI + Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11351,7 +11356,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d18bd542634f360479cbfb885290196f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 896036384}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d18bd542634f360479cbfb885290196f, type: 3}
       insertIndex: -1
@@ -11955,16 +11963,15 @@ SceneRoots:
   - {fileID: 435519073}
   - {fileID: 1349842546}
   - {fileID: 143530175}
+  - {fileID: 850846477}
   - {fileID: 1271928919}
   - {fileID: 1731773855}
   - {fileID: 40304064}
-  - {fileID: 850846477}
-  - {fileID: 896036384}
+  - {fileID: 1789725591}
   - {fileID: 2085599710}
-  - {fileID: 178474898}
   - {fileID: 2107673498}
+  - {fileID: 178474898}
   - {fileID: 1632011201}
   - {fileID: 1396787265}
   - {fileID: 951102072}
   - {fileID: 930059371}
-  - {fileID: 1789725591}
