@@ -15,8 +15,11 @@ public class HealthPickup : MonoBehaviour
     {
         if(col.tag == "Player")
         {
-            PlayerManager.playerHealth++;
-            Destroy(gameObject);
+            if(PlayerManager.playerHealth < 5)
+            {
+                PlayerManager.playerHealth++;
+                Destroy(gameObject);
+            }
         }
     }
 }
