@@ -3,6 +3,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] Spawnees;
+    private Collider Col;
 
     void OnTriggerEnter(Collider col)
     {
@@ -12,7 +13,8 @@ public class Spawner : MonoBehaviour
             for (int i = 0; i < Spawnees.Length; i++)
             {
                 Spawnees[i].SetActive(true);
-                Destroy(gameObject);
+                Col = (gameObject.GetComponent(typeof(Collider)) as Collider);
+                Col.enabled = false;
             }
         }
     }

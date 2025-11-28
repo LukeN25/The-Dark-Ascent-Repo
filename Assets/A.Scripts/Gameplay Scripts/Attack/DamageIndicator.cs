@@ -18,10 +18,16 @@ public class DamageIndicator : MonoBehaviour
         rend = GetComponent<MeshRenderer>();
     }
 
-    private IEnumerator Flash()
+    private IEnumerator FlashTimed()
     {
         rend.material.color = flashColour;
         yield return new WaitForSeconds(flashDuration);
         rend.material.color = originalColour;
+    }
+
+    public void Flash()
+    {
+        StopAllCoroutines();
+        StartCoroutine(FlashTimed());
     }
 }
