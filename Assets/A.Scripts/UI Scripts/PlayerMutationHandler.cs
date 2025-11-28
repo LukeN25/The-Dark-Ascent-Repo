@@ -5,6 +5,7 @@ namespace FOW.Mutations
     public class PlayerMutationHandler : MonoBehaviour
     {
         public static PlayerMutationHandler Instance;
+        
 
         public float damageMultiplier = 1f;
         public float rangeMultiplier = 1f;

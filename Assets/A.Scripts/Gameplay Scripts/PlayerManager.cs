@@ -1,8 +1,10 @@
 using UnityEngine;
+using FOW.Mutations;
 
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; private set; }
+    [SerializeField] private PlayerMutationHandler m_MutationHandler;
 
     private void Awake()
     {
@@ -44,7 +46,8 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public int GetAttackDamage() => attackDamage;
+
+    public int GetAttackDamage() => Mathf.RoundToInt(attackDamage * m_MutationHandler.damageMultiplier);
     public float GetMoveSpeed() => moveSpeed;
     public float GetAcceleration() => acceleration;
 

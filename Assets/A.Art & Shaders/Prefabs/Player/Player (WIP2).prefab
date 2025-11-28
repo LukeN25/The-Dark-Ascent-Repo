@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 113319711441740473}
   - component: {fileID: 7820633548252322517}
   - component: {fileID: 5129548048794353587}
+  - component: {fileID: 141855370310836057}
   m_Layer: 3
   m_Name: Player (WIP2)
   m_TagString: Player
@@ -267,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7684874c1cd3b448a1bd9af42791e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MutationHandler: {fileID: 141855370310836057}
   playerHealth: 100
   maxHealth: 5
   attackDamage: 1
@@ -389,6 +391,20 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &141855370310836057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760451028646586794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27916b2b58685ca4ab34528c8314ff86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageMultiplier: 1
+  rangeMultiplier: 1
 --- !u!1 &760555550948564769
 GameObject:
   m_ObjectHideFlags: 0
