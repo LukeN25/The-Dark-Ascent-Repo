@@ -43,7 +43,10 @@ namespace EnemyAI.UnityHFSM
 
         private void OnTriggerEnter(Collider other)
         {
-            Destroy(gameObject);
+            if(other.tag == "Player")
+            {
+                Destroy(gameObject);
+            }
         }
 
         public DamageInfo ReturnDamageInfo()
