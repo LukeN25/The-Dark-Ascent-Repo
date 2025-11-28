@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObject: {fileID: 3956215894242553581}
-  cursorObject: {fileID: 5344768522150918137}
+  cursorObject: {fileID: 240459630557045831}
   rotationSpeed: 10
 --- !u!114 &5030079919200218206
 MonoBehaviour:

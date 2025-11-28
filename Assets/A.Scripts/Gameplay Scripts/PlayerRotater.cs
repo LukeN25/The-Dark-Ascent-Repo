@@ -6,7 +6,7 @@ public class PlayerRotater : MonoBehaviour
 
     [SerializeField] Transform playerObject;
 
-    [SerializeField] Transform cursorObject;
+    [SerializeField] GameObject cursorObject;
 
     [SerializeField] float rotationSpeed = 10f;
 
@@ -23,9 +23,9 @@ public class PlayerRotater : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
-        cursorObject.position = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, mainCamera.transform.position.y - playerObject.position.y));
+        cursorObject.transform.position = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, mainCamera.transform.position.y - playerObject.position.y));
 
-        Vector3 lookDir = cursorObject.position - playerObject.position;
+        Vector3 lookDir = cursorObject.transform.position - playerObject.position;
 
         playerObject.rotation = Quaternion.Slerp(playerObject.rotation, Quaternion.LookRotation(lookDir.normalized, Vector3.up), rotationSpeed * Time.deltaTime);
     }
