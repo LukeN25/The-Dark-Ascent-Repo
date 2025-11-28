@@ -85,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
             inputDirection.x += 1;
             speedTarget = WalkingSpeed;
         }
-        if (inputs[4] && canDash && speedTarget > 0 && !inputs[0])
+        if (inputs[4] && canDash && speedTarget > 0)
         {
             isDashing = true;
             Animator.SetBool("isDashing", true);
