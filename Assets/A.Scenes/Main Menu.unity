@@ -17210,7 +17210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e578ce07f8e4294f916d252d79222c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  sceneToLoad: Vertical Slice Build
   sceneToLoad2: 
 --- !u!1 &2041605051
 GameObject:
