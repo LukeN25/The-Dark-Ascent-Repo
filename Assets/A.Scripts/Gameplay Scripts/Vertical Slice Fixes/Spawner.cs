@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     {
         if (col.tag == "Player")
         {
+            Debug.Log("player has entered room");
             for (int i = 0; i < Spawnees.Length; i++)
             {
                 Spawnees[i].SetActive(true);
