@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 772015178058308202}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bone.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 411017460149010425}
   - component: {fileID: 315195950588241826}
   - component: {fileID: 3005556391646418597}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 7076616150491371278}
   - component: {fileID: 4629827543407474794}
   - component: {fileID: 4280263066007568401}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: MeleeRangeSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5974702193059611174}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LootHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4645658225374507407}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bone.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,9 @@ GameObject:
   - component: {fileID: 1589180756081565751}
   - component: {fileID: 334576755336106361}
   - component: {fileID: 7475678559034782582}
-  m_Layer: 0
+  - component: {fileID: 6907159967950231538}
+  - component: {fileID: 3794904899192760770}
+  m_Layer: 11
   m_Name: Crawler Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,6 +457,38 @@ MonoBehaviour:
     - item: {fileID: 3654389266343195070, guid: 9f2cf952d7d52a244a8fc1ee497fdb4a, type: 3}
       weight: 1
   itemHolder: {fileID: 5974702193059611174}
+--- !u!114 &6907159967950231538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445378099590311750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c78af948052824d93c22c84c08dd65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SamplePoints: []
+  PermanentlyReveal: 0
+  MaxDistBetweenSamplePoints: 0
+  NumObservers: 0
+  Observers: []
+  CachedTransform: {fileID: 0}
+--- !u!114 &3794904899192760770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445378099590311750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd2966c16df4fa4cba52ea99b2698d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectsToHide:
+  - {fileID: 8554647195052685342}
 --- !u!1 &1541957269903567254
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2061163476050002929}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Back Left Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +532,7 @@ GameObject:
   - component: {fileID: 6906436590510712175}
   - component: {fileID: 7376804507187951049}
   - component: {fileID: 8905180178637129356}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HurtBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +598,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2383803659159482250}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Middle Right Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +632,7 @@ GameObject:
   - component: {fileID: 6202504864241756169}
   - component: {fileID: 8554647195052685342}
   - component: {fileID: 5855947341052399837}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -716,7 +750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5109720456505244819}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -748,7 +782,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4179296554578289870}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Front Right Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -780,7 +814,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4331252171829195043}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Middle Left Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -812,7 +846,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4425256937903748775}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Brain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849,7 +883,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8989327180353349663}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Back Right Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -881,7 +915,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1401589953780223652}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Front Left Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,7 +947,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8420098094543274043}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bone.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -946,7 +980,7 @@ GameObject:
   - component: {fileID: 906228428974153904}
   - component: {fileID: 6321339506717755940}
   - component: {fileID: 757208028022545840}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: ChasePlayerSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1010,7 +1044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 885189330897107911}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bone.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1041,7 +1075,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4359448523232944431}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bone.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1072,7 +1106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 538944674347381286}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bone.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}

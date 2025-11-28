@@ -2270,7 +2270,7 @@ MonoBehaviour:
   AllowBleeding: 0
   SightExtraAmount: 0.01
   MaxFogDistance: 1000
-  PixelateFog: 0
+  PixelateFog: 1
   WorldSpacePixelate: 0
   PixelDensity: 2
   RoundRevealerPosition: 0
@@ -2279,7 +2279,7 @@ MonoBehaviour:
   DitherSize: 20
   InvertFowEffect: 0
   FogFadePower: 1
-  FogAppearance: 3
+  FogAppearance: 1
   UnknownColor: {r: 0.40392157, g: 0.40392157, b: 0.40392157, a: 0.83137256}
   SaturationStrength: 0
   BlurStrength: 1
@@ -5252,7 +5252,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2204681875599990158}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RingR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4837735583256299129}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4530438737736505151}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MiddleR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 5956364763903930337}
   - component: {fileID: 8350128335325211471}
   - component: {fileID: 9177145591677659110}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4338720907462948224}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArmL1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9022953275931572120}
   - component: {fileID: 6003266099042736164}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LeftArmIK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5572765599191462547}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PinkyR2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5701618080941074260}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LegL2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7174181732985732839}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MiddleR2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2339270133468784177}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LegL1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,6 +395,8 @@ GameObject:
   - component: {fileID: 2023485422064736012}
   - component: {fileID: 927735129627493579}
   - component: {fileID: 1467622469598430073}
+  - component: {fileID: 4005314165305084063}
+  - component: {fileID: 904296024337666530}
   m_Layer: 0
   m_Name: 'Butcher Enemy '
   m_TagString: Untagged
@@ -451,6 +453,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 927735129627493579}
   DamageIndicator: {fileID: 5287168298951680727}
+--- !u!114 &4005314165305084063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857011601673404949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c78af948052824d93c22c84c08dd65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SamplePoints: []
+  PermanentlyReveal: 0
+  MaxDistBetweenSamplePoints: 0
+  NumObservers: 0
+  Observers: []
+  CachedTransform: {fileID: 0}
+--- !u!114 &904296024337666530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857011601673404949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd2966c16df4fa4cba52ea99b2698d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectsToHide:
+  - {fileID: 1239386929028986385}
+  - {fileID: 7735217452645430910}
+  - {fileID: 1927780005702123793}
 --- !u!1 &2046683656006022462
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 430307851199409907}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ChestL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +528,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5441962588293140808}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LegR2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,7 +560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2169709132844918378}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LeftArmIK_target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4207992744062594228}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RingR2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,7 +622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5215275107306269195}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LegL3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 46332757319213694}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ShoulderR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7855159766189427141}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,7 +717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4757742069961616237}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArmR2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -716,7 +752,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7747642297035986518}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PinkyR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -750,7 +786,7 @@ GameObject:
   - component: {fileID: 7332242476175126351}
   - component: {fileID: 4795759203810008704}
   - component: {fileID: 6058720702547915578}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: ChasePlayerSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -816,7 +852,7 @@ GameObject:
   - component: {fileID: 506027832439062793}
   - component: {fileID: 1239386929028986385}
   - component: {fileID: 2413003489000490270}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body Backup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -945,7 +981,7 @@ GameObject:
   - component: {fileID: 5564690289767620509}
   - component: {fileID: 7735217452645430910}
   - component: {fileID: 982072517667309523}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body Backup.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1074,7 +1110,7 @@ GameObject:
   - component: {fileID: 4567361501619291747}
   - component: {fileID: 8206281924823625387}
   - component: {fileID: 2604015653165247369}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: MeleeRangeSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1138,7 +1174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4652491883065415881}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArmR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1171,7 +1207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4197199160600483642}
   - component: {fileID: 1830249404037754811}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rig 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1235,7 +1271,7 @@ GameObject:
   - component: {fileID: 6624174129512706179}
   - component: {fileID: 1927780005702123793}
   - component: {fileID: 5287168298951680727}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body Backup.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1362,7 +1398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6460655007268052047}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ShoulderL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1394,7 +1430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2940779576719655005}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArmL2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1425,7 +1461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8575116367088077087}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LootHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1456,7 +1492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9152137816809988382}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ChestR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1488,7 +1524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5550123794170285867}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1522,7 +1558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508889980270297959}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LegR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1554,7 +1590,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5569003611805447449}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spine3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1589,7 +1625,7 @@ GameObject:
   - component: {fileID: 4089275678759798226}
   - component: {fileID: 7616224750295397809}
   - component: {fileID: 7685777575146140841}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1713,7 +1749,7 @@ GameObject:
   - component: {fileID: 5464458510200788177}
   - component: {fileID: 2158168088449506039}
   - component: {fileID: 4858930433876357532}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Butcher Anim Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1894,7 +1930,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4556481816735863195}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: IndexR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1926,7 +1962,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8553889030487600271}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LegR3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1957,7 +1993,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7223422535029488989}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LeftArmIK_hint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1990,7 +2026,7 @@ GameObject:
   - component: {fileID: 6433256421897951459}
   - component: {fileID: 8688257943917088595}
   - component: {fileID: 3864980712076378221}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: DashRangeSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2054,7 +2090,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6730312800805179499}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: IndexR2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
