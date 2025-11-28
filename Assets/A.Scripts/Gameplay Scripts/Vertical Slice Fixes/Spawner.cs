@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
             for (int i = 0; i < Spawnees.Length; i++)
             {
                 Spawnees[i].SetActive(true);
+                Destroy(gameObject);
             }
         }
     }

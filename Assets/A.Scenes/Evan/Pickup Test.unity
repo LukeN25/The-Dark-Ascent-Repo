@@ -479,6 +479,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1639180727}
+    - target: {fileID: 6957837875121629905, guid: ce709c83562cb9a4bafee37bd1c265ef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7231561571359708260, guid: ce709c83562cb9a4bafee37bd1c265ef, type: 3}
       propertyPath: m_Name
       value: Mushroom Enemy
