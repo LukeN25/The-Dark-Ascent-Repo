@@ -829,7 +829,7 @@ MonoBehaviour:
   IsInChaseRange: 0
   CanThrow: 0
   LastAttackTime: 0
-  AttackCooldown: 5
+  AttackCooldown: 3
 --- !u!54 &5055577437266587378
 Rigidbody:
   m_ObjectHideFlags: 0
