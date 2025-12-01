@@ -150,6 +150,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6847887690274537559}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &106872155
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 29d4634fcb6e8b64f8654d00fea155f5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 202.88393
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 29d4634fcb6e8b64f8654d00fea155f5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 36.657173
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 29d4634fcb6e8b64f8654d00fea155f5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -75.301506
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 29d4634fcb6e8b64f8654d00fea155f5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 29d4634fcb6e8b64f8654d00fea155f5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 29d4634fcb6e8b64f8654d00fea155f5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 29d4634fcb6e8b64f8654d00fea155f5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 29d4634fcb6e8b64f8654d00fea155f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 29d4634fcb6e8b64f8654d00fea155f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 29d4634fcb6e8b64f8654d00fea155f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7377385338288389855, guid: 29d4634fcb6e8b64f8654d00fea155f5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -74.02585
+      objectReference: {fileID: 0}
+    - target: {fileID: -316598237727293225, guid: 29d4634fcb6e8b64f8654d00fea155f5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -58.241497
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 29d4634fcb6e8b64f8654d00fea155f5, type: 3}
+      propertyPath: m_Name
+      value: SteamPunkWall 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29d4634fcb6e8b64f8654d00fea155f5, type: 3}
 --- !u!1 &188975536
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +389,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: de8a971710c5eda4bba117d7e18e33b1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 115.392715
+      value: 112.392715
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de8a971710c5eda4bba117d7e18e33b1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -362,6 +427,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8633474279373035782, guid: de8a971710c5eda4bba117d7e18e33b1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -76.09079
+      objectReference: {fileID: 0}
     - target: {fileID: -316598237727293225, guid: de8a971710c5eda4bba117d7e18e33b1, type: 3}
       propertyPath: m_LocalPosition.z
       value: -45.641502
@@ -369,6 +438,18 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: de8a971710c5eda4bba117d7e18e33b1, type: 3}
       propertyPath: m_Name
       value: SteamPunkWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490625522564147758, guid: de8a971710c5eda4bba117d7e18e33b1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 117.11923
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490625522564147758, guid: de8a971710c5eda4bba117d7e18e33b1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.619348
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490625522564147758, guid: de8a971710c5eda4bba117d7e18e33b1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -58.25057
       objectReference: {fileID: 0}
     - target: {fileID: 6490625522564147758, guid: de8a971710c5eda4bba117d7e18e33b1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16281,3 +16362,4 @@ SceneRoots:
   - {fileID: 1701793589}
   - {fileID: 543450653413334995}
   - {fileID: 658199901}
+  - {fileID: 106872155}
