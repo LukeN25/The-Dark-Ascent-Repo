@@ -16,6 +16,7 @@ public class HurtBox : MonoBehaviour, IHittable
     public void GetHit(DamageInfo damageInfo)
     {
         enemyManager.TakeDamage(damageInfo);
-        DamageIndicator.Flash();
+        if (DamageIndicator != null)
+            DamageIndicator.Flash();
     }
 }
