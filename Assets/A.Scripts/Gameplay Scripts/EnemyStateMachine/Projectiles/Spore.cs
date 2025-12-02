@@ -5,7 +5,7 @@ namespace EnemyAI.UnityHFSM
 {
     [RequireComponent(typeof(Rigidbody), typeof(Collider))]
 
-    public class Spore : MonoBehaviour, IAttacker
+    public class Spore : MonoBehaviour
     {
         [SerializeField] EnemyManager enemyManager;
 

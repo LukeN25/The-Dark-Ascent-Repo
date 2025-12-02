@@ -10,4 +10,9 @@ public class EnemyHitbox : MonoBehaviour, IAttacker
 
         return damageInfo;
     }
+
+    public Vector3 GetAttackerPosition()
+    {
+        return enemyManager.gameObject.transform.position;
+    }
 }

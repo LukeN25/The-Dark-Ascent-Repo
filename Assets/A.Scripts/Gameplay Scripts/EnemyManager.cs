@@ -9,9 +9,11 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private WeightedRandomList<Transform> lootTable;
     [SerializeField] private Transform itemHolder; 
 
+    [SerializeField] KnockbackHandler knockbackHandler;
+
     public DamageInfo GetDamageInfo()
     {
-        return new DamageInfo(damage);
+        return new DamageInfo(damage, 0f);
     }
 
     public void TakeDamage(DamageInfo damageInfo)
@@ -21,6 +23,21 @@ public class EnemyManager : MonoBehaviour
         {
             Die();
         }
+        else
+        {
+            ProcessKnockback(damageInfo);
+        }
+    }
+
+    private void ProcessKnockback(DamageInfo damageInfo)
+    {
+        // move object in direction of knockback
+        Vector3 knockbackDirection = damageInfo.GetKnockbackDirection();
+        knockbackDirection.y = 0; // ignore vertical component
+        float knockbackForce = damageInfo.GetKnockbackForce();
+
+        Vector3 knockBackEndPosition = transform.position + knockbackDirection.normalized * knockbackForce;
+        knockbackHandler.ApplyKnockBack(knockBackEndPosition);
     }
 
     private void Die()

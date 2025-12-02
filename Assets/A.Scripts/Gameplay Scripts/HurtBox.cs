@@ -9,7 +9,15 @@ public class HurtBox : MonoBehaviour, IHittable
     {
         if (other.TryGetComponent<IAttacker>(out IAttacker component))
         {
-            GetHit(component.ReturnDamageInfo());
+            DamageInfo damageInfo = component.ReturnDamageInfo();
+
+            // Get the direction the cube was hit from
+            Vector3 hitDirection = enemyManager.transform.position - component.GetAttackerPosition();
+
+            Debug.Log("Hit Direction: " + hitDirection.normalized);
+            damageInfo.AddKnockbackDirection(hitDirection.normalized);
+
+            GetHit(damageInfo);
         }
     }
 

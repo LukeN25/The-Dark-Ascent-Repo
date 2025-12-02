@@ -132,8 +132,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, Vector3.Distance(transform.position, newPos)))
         {
             // If we hit something, stop dashing
-            isDashing = false;
-            Animator.SetBool("isDashing", false);
+            StopDashing();
             return;
         }
 
@@ -141,11 +140,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (Vector3.Distance(transform.position, dashDestination) < 0.1f)
         {
-            isDashing = false;
-            Animator.SetBool("isDashing", false);
+            StopDashing();
         }
     }
 
+    void StopDashing()
+    {
+        isDashing = false;
+        Animator.SetBool("isDashing", false);
+    }
     private void DashTimer()
     {
         if (!canDash)

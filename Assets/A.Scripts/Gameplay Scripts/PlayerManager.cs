@@ -23,6 +23,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private int maxHealth = 5;
 
     [SerializeField] private int attackDamage;
+    [SerializeField] private float knockbackForce;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float acceleration;
 
@@ -58,6 +59,7 @@ public class PlayerManager : MonoBehaviour
 
 
     public int GetAttackDamage() => attackDamage;
+    public float GetKnockbackForce() => knockbackForce;
     public float GetMoveSpeed() => moveSpeed;
     public float GetAcceleration() => acceleration;
 
