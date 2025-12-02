@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -9,6 +9,13 @@ public class PlayerAttack : MonoBehaviour
     bool isHolding = false;
     bool isCharging = false;
     float holdTimer = 0f;
+
+    // ⭐ ADDED — Slash VFX prefab
+    [Header("Slash VFX")]
+    public GameObject slashVFXPrefab;
+
+    // ⭐ ADDED — Optional spawn point (empty object in front of player)
+    public Transform slashSpawnPoint;
 
     void Awake()
     {
@@ -44,16 +51,38 @@ public class PlayerAttack : MonoBehaviour
                 // Charged attack
                 playerAnimator.SetBool("IsCharging", false);
                 playerAnimator.SetTrigger("Attack");
+
+               
+                SpawnSlashVFX();
             }
             else
             {
                 // Quick attack
                 playerAnimator.SetTrigger("Attack");
+
+                
+                SpawnSlashVFX();
             }
 
             isHolding = false;
             isCharging = false;
             holdTimer = 0f;
         }
+    }
+
+    
+    private void SpawnSlashVFX()
+    {
+        if (slashVFXPrefab == null)
+        {
+            Debug.LogWarning("Slash VFX Prefab is not assigned.");
+            return;
+        }
+
+        
+        Vector3 spawnPos = slashSpawnPoint ? slashSpawnPoint.position : transform.position + transform.forward * 1f;
+        Quaternion spawnRot = slashSpawnPoint ? slashSpawnPoint.rotation : transform.rotation;
+
+        Instantiate(slashVFXPrefab, spawnPos, spawnRot);
     }
 }
