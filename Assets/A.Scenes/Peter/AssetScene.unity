@@ -739,7 +739,7 @@ Transform:
   m_GameObject: {fileID: 1295762577}
   serializedVersion: 2
   m_LocalRotation: {x: -0.70710677, y: 0, z: 0, w: 0.70710677}
-  m_LocalPosition: {x: -23.83, y: 0, z: -11.565632}
+  m_LocalPosition: {x: -23.63704, y: 0, z: -11.565632}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1518,7 +1518,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: eecba2c5d25a8934a8d2c9d8eaf7efac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5592713
+      value: -1.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eecba2c5d25a8934a8d2c9d8eaf7efac, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1568,14 +1568,26 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 85bc619a6d66b104cadd49aeeed099a6, type: 2}
+    - target: {fileID: -7377385338288389855, guid: eecba2c5d25a8934a8d2c9d8eaf7efac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.82
+      objectReference: {fileID: 0}
     - target: {fileID: -5363424281805771908, guid: eecba2c5d25a8934a8d2c9d8eaf7efac, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 85bc619a6d66b104cadd49aeeed099a6, type: 2}
+    - target: {fileID: -3243602521655207705, guid: eecba2c5d25a8934a8d2c9d8eaf7efac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26.806982
+      objectReference: {fileID: 0}
     - target: {fileID: -2947538861075970057, guid: eecba2c5d25a8934a8d2c9d8eaf7efac, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 85bc619a6d66b104cadd49aeeed099a6, type: 2}
+    - target: {fileID: -681207621799261623, guid: eecba2c5d25a8934a8d2c9d8eaf7efac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.62
+      objectReference: {fileID: 0}
     - target: {fileID: 466608246689542871, guid: eecba2c5d25a8934a8d2c9d8eaf7efac, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
