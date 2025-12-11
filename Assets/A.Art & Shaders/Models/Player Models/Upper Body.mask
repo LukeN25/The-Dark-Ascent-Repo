@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Upper Body
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 0
+  - m_Path: Armature/Hip
+    m_Weight: 0
+  - m_Path: Armature/Hip/Spine
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L/Forearm.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L/Forearm.L/Palm.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L/Forearm.L/Palm.L/Index 1.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L/Forearm.L/Palm.L/Index 1.L/Index 2.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L/Forearm.L/Palm.L/Index 1.L/Index 2.L/Index
+      3.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L/Forearm.L/Palm.L/Middle 1.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L/Forearm.L/Palm.L/Middle 1.L/Middle 2.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L/Forearm.L/Palm.L/Middle 1.L/Middle 2.L/Middle
+      3.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L/Forearm.L/Palm.L/Pinky 1.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L/Forearm.L/Palm.L/Pinky 1.L/Pinky 2.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L/Forearm.L/Palm.L/Pinky 1.L/Pinky 2.L/Pinky
+      3.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L/Forearm.L/Palm.L/Ring 1.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L/Forearm.L/Palm.L/Ring 1.L/Ring 2.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L/Forearm.L/Palm.L/Ring 1.L/Ring 2.L/Ring 3.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L/Forearm.L/Palm.L/Thumb 1.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.L/Forearm.L/Palm.L/Thumb 1.L/Thumb 2.L
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R/Forearm.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R/Forearm.R/Palm.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R/Forearm.R/Palm.R/Index 1.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R/Forearm.R/Palm.R/Index 1.R/Index 2.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R/Forearm.R/Palm.R/Index 1.R/Index 2.R/Index
+      3.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R/Forearm.R/Palm.R/Middle 1.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R/Forearm.R/Palm.R/Middle 1.R/Middle 2.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R/Forearm.R/Palm.R/Middle 1.R/Middle 2.R/Middle
+      3.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R/Forearm.R/Palm.R/Pinky 1.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R/Forearm.R/Palm.R/Pinky 1.R/Pinky 2.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R/Forearm.R/Palm.R/Pinky 1.R/Pinky 2.R/Pinky
+      3.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R/Forearm.R/Palm.R/Ring 1.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R/Forearm.R/Palm.R/Ring 1.R/Ring 2.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R/Forearm.R/Palm.R/Ring 1.R/Ring 2.R/Ring 3.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R/Forearm.R/Palm.R/Thumb 1.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Bicep.R/Forearm.R/Palm.R/Thumb 1.R/Thumb 2.R
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Neck
+    m_Weight: 1
+  - m_Path: Armature/Hip/Spine/Neck/Head
+    m_Weight: 1
+  - m_Path: Armature/Hip/Thigh.L
+    m_Weight: 0
+  - m_Path: Armature/Hip/Thigh.L/Calf.L
+    m_Weight: 0
+  - m_Path: Armature/Hip/Thigh.L/Calf.L/Foot.L
+    m_Weight: 0
+  - m_Path: Armature/Hip/Thigh.R
+    m_Weight: 0
+  - m_Path: Armature/Hip/Thigh.R/Calf.R
+    m_Weight: 0
+  - m_Path: Armature/Hip/Thigh.R/Calf.R/Foot.R
+    m_Weight: 0
+  - m_Path: Cube.035
+    m_Weight: 1
