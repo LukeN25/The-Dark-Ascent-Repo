@@ -13358,6 +13358,7 @@ GameObject:
   - component: {fileID: 611284092}
   - component: {fileID: 611284094}
   - component: {fileID: 611284093}
+  - component: {fileID: 611284095}
   m_Layer: 0
   m_Name: SteamPunkDesk.004
   m_TagString: Untagged
@@ -13434,6 +13435,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611284091}
+  m_Mesh: {fileID: -8578772059177294915, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &611284095
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611284091}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -8578772059177294915, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &614439767
 GameObject:
@@ -41973,6 +41996,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4776763509609320405, guid: 110d8564a0ea06449a0869f726118386, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6f674f6a802c5274fbba2ddc46f1905c, type: 2}
     - target: {fileID: 4897905082050689364, guid: 110d8564a0ea06449a0869f726118386, type: 3}
       propertyPath: playerHealth
       value: 5
