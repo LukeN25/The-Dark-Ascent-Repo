@@ -569,6 +569,7 @@ GameObject:
   - component: {fileID: 12598352}
   - component: {fileID: 12598354}
   - component: {fileID: 12598353}
+  - component: {fileID: 12598355}
   m_Layer: 0
   m_Name: SteamPunkDesk.002
   m_TagString: Untagged
@@ -644,6 +645,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12598351}
+  m_Mesh: {fileID: -1032974829673470030, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &12598355
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12598351}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1032974829673470030, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &14107809
 GameObject:
@@ -1584,6 +1607,7 @@ GameObject:
   - component: {fileID: 53197369}
   - component: {fileID: 53197371}
   - component: {fileID: 53197370}
+  - component: {fileID: 53197372}
   m_Layer: 0
   m_Name: SteamPunkDesk.014
   m_TagString: Untagged
@@ -1660,6 +1684,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 53197368}
+  m_Mesh: {fileID: -2300249217123695390, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &53197372
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53197368}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2300249217123695390, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &54014174
 GameObject:
@@ -3698,6 +3744,7 @@ GameObject:
   - component: {fileID: 163641559}
   - component: {fileID: 163641561}
   - component: {fileID: 163641560}
+  - component: {fileID: 163641562}
   m_Layer: 0
   m_Name: SteamPunkChair.001
   m_TagString: Untagged
@@ -3773,6 +3820,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163641558}
+  m_Mesh: {fileID: 6373063740804976053, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &163641562
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163641558}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 6373063740804976053, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &166130977
 GameObject:
@@ -4247,6 +4316,7 @@ GameObject:
   - component: {fileID: 183269198}
   - component: {fileID: 183269200}
   - component: {fileID: 183269199}
+  - component: {fileID: 183269201}
   m_Layer: 0
   m_Name: SteamPunkDesk.008
   m_TagString: Untagged
@@ -4323,6 +4393,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183269197}
+  m_Mesh: {fileID: -2137567924029887015, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &183269201
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183269197}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2137567924029887015, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &183440339
 GameObject:
@@ -5989,6 +6081,7 @@ GameObject:
   - component: {fileID: 249954460}
   - component: {fileID: 249954462}
   - component: {fileID: 249954461}
+  - component: {fileID: 249954463}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -6064,6 +6157,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249954459}
+  m_Mesh: {fileID: -7387706064836869012, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &249954463
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249954459}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -7387706064836869012, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &249956317
 GameObject:
@@ -7369,6 +7484,7 @@ GameObject:
   - component: {fileID: 325819825}
   - component: {fileID: 325819827}
   - component: {fileID: 325819826}
+  - component: {fileID: 325819828}
   m_Layer: 0
   m_Name: SteamPunkDesk
   m_TagString: Untagged
@@ -7444,6 +7560,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325819824}
+  m_Mesh: {fileID: 1570821412106097810, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &325819828
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325819824}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 1570821412106097810, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1001 &326688440
 PrefabInstance:
@@ -7854,6 +7992,7 @@ GameObject:
   - component: {fileID: 342464212}
   - component: {fileID: 342464214}
   - component: {fileID: 342464213}
+  - component: {fileID: 342464215}
   m_Layer: 0
   m_Name: SteamPunkDesk.016
   m_TagString: Untagged
@@ -7930,6 +8069,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 342464211}
+  m_Mesh: {fileID: -4957561613574242124, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &342464215
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342464211}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -4957561613574242124, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &342573610
 GameObject:
@@ -8708,6 +8869,7 @@ GameObject:
   - component: {fileID: 396585872}
   - component: {fileID: 396585874}
   - component: {fileID: 396585873}
+  - component: {fileID: 396585875}
   m_Layer: 0
   m_Name: SteamPunkChair
   m_TagString: Untagged
@@ -8783,6 +8945,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396585871}
+  m_Mesh: {fileID: 5533313440489177013, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &396585875
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396585871}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 5533313440489177013, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &401381755
 GameObject:
@@ -11892,6 +12076,7 @@ GameObject:
   - component: {fileID: 549341590}
   - component: {fileID: 549341592}
   - component: {fileID: 549341591}
+  - component: {fileID: 549341593}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -11967,6 +12152,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549341589}
+  m_Mesh: {fileID: -4026644384297347843, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &549341593
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549341589}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -4026644384297347843, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &551017129
 GameObject:
@@ -12592,6 +12799,7 @@ GameObject:
   - component: {fileID: 574935535}
   - component: {fileID: 574935537}
   - component: {fileID: 574935536}
+  - component: {fileID: 574935538}
   m_Layer: 0
   m_Name: SteamPunkChair.013
   m_TagString: Untagged
@@ -12667,6 +12875,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574935534}
+  m_Mesh: {fileID: -5886507549652538018, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &574935538
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574935534}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -5886507549652538018, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &577215347
 GameObject:
@@ -13093,6 +13323,7 @@ GameObject:
   - component: {fileID: 599742070}
   - component: {fileID: 599742072}
   - component: {fileID: 599742071}
+  - component: {fileID: 599742073}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -13169,6 +13400,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599742069}
   m_Mesh: {fileID: 8691780276856062721, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &599742073
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599742069}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8691780276856062721, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &602387353
 GameObject:
   m_ObjectHideFlags: 0
@@ -13180,6 +13433,7 @@ GameObject:
   - component: {fileID: 602387354}
   - component: {fileID: 602387356}
   - component: {fileID: 602387355}
+  - component: {fileID: 602387357}
   m_Layer: 0
   m_Name: SteamPunkChair.014
   m_TagString: Untagged
@@ -13255,6 +13509,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602387353}
+  m_Mesh: {fileID: 6898054645209705286, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &602387357
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602387353}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 6898054645209705286, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1001 &605467870
 PrefabInstance:
@@ -13763,6 +14039,7 @@ GameObject:
   - component: {fileID: 635460766}
   - component: {fileID: 635460768}
   - component: {fileID: 635460767}
+  - component: {fileID: 635460769}
   m_Layer: 0
   m_Name: SteamPunkChair.003
   m_TagString: Untagged
@@ -13838,6 +14115,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635460765}
+  m_Mesh: {fileID: -3476464457125134019, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &635460769
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635460765}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -3476464457125134019, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &636499036
 GameObject:
@@ -14166,6 +14465,7 @@ GameObject:
   - component: {fileID: 654397104}
   - component: {fileID: 654397106}
   - component: {fileID: 654397105}
+  - component: {fileID: 654397107}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -14241,6 +14541,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654397103}
+  m_Mesh: {fileID: 3390558720134950976, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &654397107
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654397103}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 3390558720134950976, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &659432991
 GameObject:
@@ -14492,6 +14814,7 @@ GameObject:
   - component: {fileID: 669256599}
   - component: {fileID: 669256601}
   - component: {fileID: 669256600}
+  - component: {fileID: 669256602}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -14567,6 +14890,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669256598}
+  m_Mesh: {fileID: 3313900681326472401, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &669256602
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669256598}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 3313900681326472401, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &677355240
 GameObject:
@@ -14936,6 +15281,7 @@ GameObject:
   - component: {fileID: 697347691}
   - component: {fileID: 697347693}
   - component: {fileID: 697347692}
+  - component: {fileID: 697347694}
   m_Layer: 0
   m_Name: SteamPunkChair.012
   m_TagString: Untagged
@@ -15011,6 +15357,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697347690}
+  m_Mesh: {fileID: -5202136265746083468, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &697347694
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697347690}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -5202136265746083468, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1001 &705727758
 PrefabInstance:
@@ -15246,6 +15614,7 @@ GameObject:
   - component: {fileID: 714465328}
   - component: {fileID: 714465330}
   - component: {fileID: 714465329}
+  - component: {fileID: 714465331}
   m_Layer: 0
   m_Name: SteamPunkDesk.015
   m_TagString: Untagged
@@ -15321,6 +15690,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714465327}
+  m_Mesh: {fileID: 3545409526035603694, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &714465331
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714465327}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 3545409526035603694, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &720516515
 GameObject:
@@ -17420,6 +17811,7 @@ GameObject:
   - component: {fileID: 843639003}
   - component: {fileID: 843639005}
   - component: {fileID: 843639004}
+  - component: {fileID: 843639006}
   m_Layer: 0
   m_Name: SteamPunkDesk.011
   m_TagString: Untagged
@@ -17495,6 +17887,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843639002}
+  m_Mesh: {fileID: 5453248172853962480, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &843639006
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843639002}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 5453248172853962480, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &846871221 stripped
 GameObject:
@@ -18031,6 +18445,7 @@ GameObject:
   - component: {fileID: 864567371}
   - component: {fileID: 864567373}
   - component: {fileID: 864567372}
+  - component: {fileID: 864567374}
   m_Layer: 0
   m_Name: SteamPunkChair.002
   m_TagString: Untagged
@@ -18106,6 +18521,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864567370}
+  m_Mesh: {fileID: 7000384027513539871, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &864567374
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864567370}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 7000384027513539871, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &866426460
 GameObject:
@@ -19898,6 +20335,7 @@ GameObject:
   - component: {fileID: 937026199}
   - component: {fileID: 937026201}
   - component: {fileID: 937026200}
+  - component: {fileID: 937026202}
   m_Layer: 0
   m_Name: SteamPunkDesk.012
   m_TagString: Untagged
@@ -19974,6 +20412,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937026198}
+  m_Mesh: {fileID: 4834539319581816262, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &937026202
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937026198}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4834539319581816262, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1001 &944284070
 PrefabInstance:
@@ -20203,6 +20663,7 @@ GameObject:
   - component: {fileID: 957644054}
   - component: {fileID: 957644056}
   - component: {fileID: 957644055}
+  - component: {fileID: 957644057}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -20278,6 +20739,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957644053}
+  m_Mesh: {fileID: -8344823704121574938, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &957644057
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957644053}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -8344823704121574938, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1001 &959964237
 PrefabInstance:
@@ -21191,6 +21674,7 @@ GameObject:
   - component: {fileID: 1038464222}
   - component: {fileID: 1038464224}
   - component: {fileID: 1038464223}
+  - component: {fileID: 1038464225}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -21266,6 +21750,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038464221}
+  m_Mesh: {fileID: -7837719880912021321, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &1038464225
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038464221}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -7837719880912021321, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &1044979454
 GameObject:
@@ -22579,6 +23085,7 @@ GameObject:
   - component: {fileID: 1144669900}
   - component: {fileID: 1144669902}
   - component: {fileID: 1144669901}
+  - component: {fileID: 1144669903}
   m_Layer: 0
   m_Name: Shelf
   m_TagString: Untagged
@@ -22653,6 +23160,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144669899}
+  m_Mesh: {fileID: -5198267681279241171, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &1144669903
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144669899}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -5198267681279241171, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1001 &1146113718
 PrefabInstance:
@@ -25637,6 +26166,7 @@ GameObject:
   - component: {fileID: 1291384057}
   - component: {fileID: 1291384059}
   - component: {fileID: 1291384058}
+  - component: {fileID: 1291384060}
   m_Layer: 0
   m_Name: SteamPunkDesk.001
   m_TagString: Untagged
@@ -25714,6 +26244,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291384056}
   m_Mesh: {fileID: -8510739467988220223, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &1291384060
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291384056}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8510739467988220223, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &1291632044
 GameObject:
   m_ObjectHideFlags: 0
@@ -25756,6 +26308,7 @@ GameObject:
   - component: {fileID: 1297101956}
   - component: {fileID: 1297101958}
   - component: {fileID: 1297101957}
+  - component: {fileID: 1297101959}
   m_Layer: 0
   m_Name: SteamPunkDesk.005
   m_TagString: Untagged
@@ -25831,6 +26384,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297101955}
+  m_Mesh: {fileID: -2992964073311450545, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &1297101959
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297101955}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2992964073311450545, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1001 &1300555628
 PrefabInstance:
@@ -27218,6 +27793,7 @@ GameObject:
   - component: {fileID: 1346132879}
   - component: {fileID: 1346132881}
   - component: {fileID: 1346132880}
+  - component: {fileID: 1346132882}
   m_Layer: 0
   m_Name: SteamPunkChair.008
   m_TagString: Untagged
@@ -27293,6 +27869,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1346132878}
+  m_Mesh: {fileID: 8262483254563977922, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &1346132882
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346132878}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 8262483254563977922, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &1349049533
 GameObject:
@@ -29568,6 +30166,7 @@ GameObject:
   - component: {fileID: 1452501275}
   - component: {fileID: 1452501277}
   - component: {fileID: 1452501276}
+  - component: {fileID: 1452501278}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -29643,6 +30242,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452501274}
+  m_Mesh: {fileID: 6791245462303577121, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &1452501278
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452501274}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 6791245462303577121, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &1454760044
 GameObject:
@@ -31983,6 +32604,7 @@ GameObject:
   - component: {fileID: 1563386427}
   - component: {fileID: 1563386429}
   - component: {fileID: 1563386428}
+  - component: {fileID: 1563386430}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -32058,6 +32680,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563386426}
+  m_Mesh: {fileID: 6255687079079774844, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &1563386430
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563386426}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 6255687079079774844, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1001 &1564072106
 PrefabInstance:
@@ -33843,6 +34487,7 @@ GameObject:
   - component: {fileID: 1631203541}
   - component: {fileID: 1631203543}
   - component: {fileID: 1631203542}
+  - component: {fileID: 1631203544}
   m_Layer: 0
   m_Name: SteamPunkDesk.003
   m_TagString: Untagged
@@ -33919,6 +34564,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631203540}
+  m_Mesh: {fileID: 1181372406657379698, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &1631203544
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631203540}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 1181372406657379698, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &1631482493
 GameObject:
@@ -35665,6 +36332,7 @@ GameObject:
   - component: {fileID: 1717121270}
   - component: {fileID: 1717121272}
   - component: {fileID: 1717121271}
+  - component: {fileID: 1717121273}
   m_Layer: 0
   m_Name: SteamPunkChair.011
   m_TagString: Untagged
@@ -35740,6 +36408,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717121269}
+  m_Mesh: {fileID: 3560877810892567026, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &1717121273
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717121269}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 3560877810892567026, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &1717521371
 GameObject:
@@ -38562,6 +39252,7 @@ GameObject:
   - component: {fileID: 1827434194}
   - component: {fileID: 1827434196}
   - component: {fileID: 1827434195}
+  - component: {fileID: 1827434197}
   m_Layer: 0
   m_Name: SteamPunkDesk.010
   m_TagString: Untagged
@@ -38637,6 +39328,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827434193}
+  m_Mesh: {fileID: 158648181746927505, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &1827434197
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827434193}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 158648181746927505, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &1839740547
 GameObject:
@@ -39403,6 +40116,7 @@ GameObject:
   - component: {fileID: 1868447393}
   - component: {fileID: 1868447395}
   - component: {fileID: 1868447394}
+  - component: {fileID: 1868447396}
   m_Layer: 0
   m_Name: SteamPunkDesk.013
   m_TagString: Untagged
@@ -39478,6 +40192,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868447392}
+  m_Mesh: {fileID: -2530641016699827525, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &1868447396
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868447392}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2530641016699827525, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &1870459264
 GameObject:
@@ -39682,6 +40418,7 @@ GameObject:
   - component: {fileID: 1879192376}
   - component: {fileID: 1879192378}
   - component: {fileID: 1879192377}
+  - component: {fileID: 1879192379}
   m_Layer: 0
   m_Name: SteamPunkDesk.006
   m_TagString: Untagged
@@ -39758,6 +40495,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879192375}
+  m_Mesh: {fileID: -682433327622660801, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &1879192379
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879192375}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -682433327622660801, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!4 &1882524893 stripped
 Transform:
@@ -40122,6 +40881,7 @@ GameObject:
   - component: {fileID: 1906264883}
   - component: {fileID: 1906264885}
   - component: {fileID: 1906264884}
+  - component: {fileID: 1906264886}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -40197,6 +40957,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906264882}
+  m_Mesh: {fileID: 6239881831769578202, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &1906264886
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906264882}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 6239881831769578202, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &1909977993
 GameObject:
@@ -40700,6 +41482,7 @@ GameObject:
   - component: {fileID: 1926887123}
   - component: {fileID: 1926887125}
   - component: {fileID: 1926887124}
+  - component: {fileID: 1926887126}
   m_Layer: 0
   m_Name: SteamPunkDesk.009
   m_TagString: Untagged
@@ -40775,6 +41558,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926887122}
+  m_Mesh: {fileID: 3222478547898260414, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &1926887126
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926887122}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 3222478547898260414, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &1928760883
 GameObject:
@@ -41734,6 +42539,7 @@ GameObject:
   - component: {fileID: 1971121585}
   - component: {fileID: 1971121587}
   - component: {fileID: 1971121586}
+  - component: {fileID: 1971121588}
   m_Layer: 0
   m_Name: Generator
   m_TagString: Untagged
@@ -41816,6 +42622,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971121584}
+  m_Mesh: {fileID: -2698757342573874753, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &1971121588
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971121584}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2698757342573874753, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1001 &1972217372
 PrefabInstance:
@@ -42472,6 +43300,7 @@ GameObject:
   - component: {fileID: 2017213661}
   - component: {fileID: 2017213663}
   - component: {fileID: 2017213662}
+  - component: {fileID: 2017213664}
   m_Layer: 0
   m_Name: SteamPunkChair.010
   m_TagString: Untagged
@@ -42547,6 +43376,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017213660}
+  m_Mesh: {fileID: 6187919833872474134, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &2017213664
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017213660}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 6187919833872474134, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!4 &2019385872 stripped
 Transform:
@@ -42963,6 +43814,7 @@ GameObject:
   - component: {fileID: 2029165921}
   - component: {fileID: 2029165923}
   - component: {fileID: 2029165922}
+  - component: {fileID: 2029165924}
   m_Layer: 0
   m_Name: SteamPunkDesk.017
   m_TagString: Untagged
@@ -43038,6 +43890,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029165920}
+  m_Mesh: {fileID: 2035556004359065917, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &2029165924
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029165920}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 2035556004359065917, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &2034754665
 GameObject:
@@ -43627,6 +44501,7 @@ GameObject:
   - component: {fileID: 2053530565}
   - component: {fileID: 2053530567}
   - component: {fileID: 2053530566}
+  - component: {fileID: 2053530568}
   m_Layer: 0
   m_Name: Shelf
   m_TagString: Untagged
@@ -43702,6 +44577,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053530564}
+  m_Mesh: {fileID: -362046790695249943, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &2053530568
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053530564}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -362046790695249943, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &2053885013 stripped
 GameObject:
@@ -44352,6 +45249,7 @@ GameObject:
   - component: {fileID: 2087934357}
   - component: {fileID: 2087934359}
   - component: {fileID: 2087934358}
+  - component: {fileID: 2087934360}
   m_Layer: 0
   m_Name: SteamPunkChair.009
   m_TagString: Untagged
@@ -44427,6 +45325,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087934356}
+  m_Mesh: {fileID: 6700741410745321582, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &2087934360
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087934356}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 6700741410745321582, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &2096592921
 GameObject:
@@ -45573,6 +46493,7 @@ GameObject:
   - component: {fileID: 2135758821}
   - component: {fileID: 2135758823}
   - component: {fileID: 2135758822}
+  - component: {fileID: 2135758824}
   m_Layer: 0
   m_Name: SteamPunkChair.007
   m_TagString: Untagged
@@ -45648,6 +46569,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135758820}
+  m_Mesh: {fileID: 714001412318969360, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &2135758824
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135758820}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 714001412318969360, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!4 &2136131439 stripped
 Transform:
@@ -45840,6 +46783,8 @@ GameObject:
   - component: {fileID: 2140618995}
   - component: {fileID: 2140618997}
   - component: {fileID: 2140618996}
+  - component: {fileID: 2140618999}
+  - component: {fileID: 2140618998}
   m_Layer: 0
   m_Name: SteamPunkDesk.007
   m_TagString: Untagged
@@ -45915,6 +46860,50 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140618994}
+  m_Mesh: {fileID: 6567053621937809980, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &2140618998
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140618994}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6567053621937809980, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
+--- !u!64 &2140618999
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140618994}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 6567053621937809980, guid: 6c21a0f7818f66141b1c6e7e9899005f, type: 3}
 --- !u!1 &2144354492
 GameObject:
