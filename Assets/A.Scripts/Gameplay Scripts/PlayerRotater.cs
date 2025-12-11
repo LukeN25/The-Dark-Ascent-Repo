@@ -21,7 +21,7 @@ public class PlayerRotater : MonoBehaviour
     {
         if (Cursor.lockState != CursorLockMode.None)
         {
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Confined;
         }
         cursorObject.transform.position = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, mainCamera.transform.position.y - playerObject.position.y));
 
