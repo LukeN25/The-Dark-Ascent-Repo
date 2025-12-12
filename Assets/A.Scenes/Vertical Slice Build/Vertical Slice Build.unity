@@ -3581,7 +3581,7 @@ GameObject:
   - component: {fileID: 158681445}
   - component: {fileID: 158681444}
   - component: {fileID: 158681448}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Enemy Spawn Trigger (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7554,7 +7554,7 @@ GameObject:
   - component: {fileID: 331874665}
   - component: {fileID: 331874664}
   - component: {fileID: 331874668}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Enemy Spawn Trigger (1) Done
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8883,7 +8883,7 @@ GameObject:
   - component: {fileID: 403981746}
   - component: {fileID: 403981745}
   - component: {fileID: 403981749}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Enemy Spawn Trigger (13) Done
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9496,7 +9496,7 @@ GameObject:
   - component: {fileID: 437211188}
   - component: {fileID: 437211187}
   - component: {fileID: 437211191}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Enemy Spawn Trigger (10) Done
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11176,7 +11176,7 @@ GameObject:
   - component: {fileID: 530991949}
   - component: {fileID: 530991948}
   - component: {fileID: 530991952}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Enemy Spawn Trigger (3) Done
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11718,7 +11718,7 @@ GameObject:
   - component: {fileID: 546090760}
   - component: {fileID: 546090759}
   - component: {fileID: 546090763}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Enemy Spawn Trigger (9) Done
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12148,7 +12148,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551017129}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &551017133
 Camera:
   m_ObjectHideFlags: 0
@@ -15762,7 +15762,7 @@ GameObject:
   - component: {fileID: 749147341}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19244,7 +19244,7 @@ GameObject:
   - component: {fileID: 917697157}
   - component: {fileID: 917697156}
   - component: {fileID: 917697160}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Enemy Spawn Trigger Done
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20337,7 +20337,7 @@ GameObject:
   - component: {fileID: 965879860}
   - component: {fileID: 965879859}
   - component: {fileID: 965879863}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Enemy Spawn Trigger (11) Done
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20740,7 +20740,7 @@ GameObject:
   - component: {fileID: 1020161728}
   - component: {fileID: 1020161727}
   - component: {fileID: 1020161731}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Enemy Spawn Trigger (6) Done
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23021,7 +23021,7 @@ GameObject:
   - component: {fileID: 1169307194}
   - component: {fileID: 1169307193}
   - component: {fileID: 1169307197}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Enemy Spawn Trigger (12) Done
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24982,7 +24982,7 @@ GameObject:
   - component: {fileID: 1274176687}
   - component: {fileID: 1274176686}
   - component: {fileID: 1274176685}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Enemy Spawn Trigger (15) Done
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28448,7 +28448,7 @@ GameObject:
   - component: {fileID: 1389353156}
   m_Layer: 0
   m_Name: Camera (1)
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28650,7 +28650,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389353154}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!4 &1389353158
 Transform:
   m_ObjectHideFlags: 0
@@ -29994,7 +29994,7 @@ GameObject:
   - component: {fileID: 1467758304}
   - component: {fileID: 1467758303}
   - component: {fileID: 1467758307}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Enemy Spawn Trigger (4) Done
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30832,6 +30832,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 812219287}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1502469954 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3661693660108086785, guid: 110d8564a0ea06449a0869f726118386, type: 3}
+  m_PrefabInstance: {fileID: 1978486088}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1505863674
 GameObject:
   m_ObjectHideFlags: 0
@@ -31248,7 +31253,7 @@ GameObject:
   - component: {fileID: 1526571548}
   - component: {fileID: 1526571547}
   - component: {fileID: 1526571551}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Enemy Spawn Trigger (2) Done
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31712,7 +31717,7 @@ GameObject:
   - component: {fileID: 1545616330}
   - component: {fileID: 1545616329}
   - component: {fileID: 1545616333}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Enemy Spawn Trigger (7) Done
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32490,7 +32495,7 @@ GameObject:
   - component: {fileID: 1580259672}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32730,7 +32735,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580259670}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!4 &1580259675
 Transform:
   m_ObjectHideFlags: 0
@@ -41069,7 +41074,7 @@ GameObject:
   - component: {fileID: 1960529627}
   - component: {fileID: 1960529626}
   - component: {fileID: 1960529630}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Enemy Spawn Trigger (8) Done
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41869,6 +41874,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 641692938772264066, guid: 110d8564a0ea06449a0869f726118386, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 232489956}
     - target: {fileID: 760451028646586794, guid: 110d8564a0ea06449a0869f726118386, type: 3}
       propertyPath: m_Name
       value: Player (WIP2)
@@ -41913,6 +41922,14 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5030079919200218206, guid: 110d8564a0ea06449a0869f726118386, type: 3}
+      propertyPath: slashVFXPrefab
+      value: 
+      objectReference: {fileID: 6577391485475539284, guid: 7e5f86cda640fbd4997aeda9a632772b, type: 3}
+    - target: {fileID: 5030079919200218206, guid: 110d8564a0ea06449a0869f726118386, type: 3}
+      propertyPath: slashSpawnPoint
+      value: 
+      objectReference: {fileID: 1502469954}
     - target: {fileID: 5344768522150918137, guid: 110d8564a0ea06449a0869f726118386, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.15
@@ -43210,7 +43227,7 @@ GameObject:
   - component: {fileID: 2046759616}
   - component: {fileID: 2046759615}
   - component: {fileID: 2046759619}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Enemy Spawn Trigger (5) Done
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44484,7 +44501,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096592921}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &2096592925
 Camera:
   m_ObjectHideFlags: 0

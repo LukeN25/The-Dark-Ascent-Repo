@@ -6,13 +6,13 @@ public class PlayerRotater : MonoBehaviour
     [SerializeField] GameObject cursorObject;
     [SerializeField] float rotationSpeed = 10f;
 
-    Camera mainCamera;
+    public Camera mainCamera;
     Plane groundPlane;
     bool isInitialized = false;
 
     private void Start()
     {
-        mainCamera = Camera.main;
+        //mainCamera = Camera.main;
 
         if (mainCamera != null && playerObject != null)
         {
