@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2690286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,6 +517,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 22d387e8ec1e5aa41b2f5834ee6881c4, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 22d387e8ec1e5aa41b2f5834ee6881c4, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 22d387e8ec1e5aa41b2f5834ee6881c4, type: 3}
       propertyPath: m_Name
@@ -1256,7 +1260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 26e558d89742c4e4eab3a7d550598f3e, type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 26e558d89742c4e4eab3a7d550598f3e, type: 3}
       propertyPath: m_Controller
@@ -1289,6 +1293,10 @@ PrefabInstance:
     - target: {fileID: 6394910398343809397, guid: 26e558d89742c4e4eab3a7d550598f3e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -63.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663737150208420782, guid: 26e558d89742c4e4eab3a7d550598f3e, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6880327899117533126, guid: 26e558d89742c4e4eab3a7d550598f3e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1752,7 +1760,6 @@ GameObject:
   m_Component:
   - component: {fileID: 796412214}
   - component: {fileID: 796412217}
-  - component: {fileID: 796412216}
   - component: {fileID: 796412215}
   m_Layer: 0
   m_Name: Camera
@@ -1915,14 +1922,6 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
---- !u!81 &796412216
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796412213}
-  m_Enabled: 1
 --- !u!20 &796412217
 Camera:
   m_ObjectHideFlags: 0
