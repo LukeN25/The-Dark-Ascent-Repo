@@ -2,8 +2,10 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class FirstPersonMovement : MonoBehaviour
+public class FirstPersonController : MonoBehaviour
 {
+    public static FirstPersonController Instance { get; private set; }
+
     private CharacterController controller;
     private Transform cam;
     AudioSource audioSource;
@@ -44,6 +46,15 @@ public class FirstPersonMovement : MonoBehaviour
 
     void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+
         controller = GetComponent<CharacterController>();
         cam = transform.Find("Camera Holder");
         audioSource = GetComponent<AudioSource>();
@@ -60,6 +71,10 @@ public class FirstPersonMovement : MonoBehaviour
         isGrounded = controller.isGrounded;
 
         controller.Move(Time.deltaTime * speed * (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")));
+
+        velocity.y += gravity * Time.deltaTime;
+        if (isGrounded && velocity.y < 0)
+            velocity.y = -2f;
 
         velocity = controller.velocity;
 
@@ -186,5 +201,7 @@ public class FirstPersonMovement : MonoBehaviour
         currentAnimationState = newState;
         animator.CrossFadeInFixedTime(currentAnimationState, 0.2f);
     }
+
+    public int GetAttackDamage() => attackDamage;
 
 }

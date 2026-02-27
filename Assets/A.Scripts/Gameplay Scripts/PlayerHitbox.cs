@@ -5,7 +5,7 @@ public class PlayerHitbox : MonoBehaviour, IAttacker
 {
     public DamageInfo ReturnDamageInfo()
     {
-        DamageInfo damageInfo = new DamageInfo(PlayerManager.Instance.GetAttackDamage());
+        DamageInfo damageInfo = new DamageInfo(FirstPersonController.Instance.GetAttackDamage());
 
         return damageInfo;
     }
