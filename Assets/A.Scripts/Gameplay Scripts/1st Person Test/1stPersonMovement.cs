@@ -36,6 +36,7 @@ public class FirstPersonMovement : MonoBehaviour
     public const string RUN = "Run";
     public const string ATTACK1 = "Attack 1";
     public const string ATTACK2 = "Attack 2";
+    public const string HEAVYATTACK = "Heavy Attack";
 
     string currentAnimationState;
 
@@ -67,6 +68,12 @@ public class FirstPersonMovement : MonoBehaviour
         {
             Debug.Log("Left Click");
             Attack();
+        }
+        
+        if (Input.GetMouseButton(1))
+        {
+            Debug.Log("Right Click");
+            HeavyAttack();
         }
 
         SetAnimations();
@@ -115,6 +122,20 @@ public class FirstPersonMovement : MonoBehaviour
             ChangeAnimationState(ATTACK2);
             attackCount = 0;
         }
+    }
+
+    public void HeavyAttack()
+    {
+        if(!canAttack || attacking) return;
+
+        canAttack = false;
+        attacking = true;
+
+        Invoke(nameof (ResetAttack), attackSpeed);
+        Invoke(nameof (AttackRaycast), attackDelay);
+
+        audioSource.pitch = Random.Range(1.1f, 1.3f);
+        audioSource.PlayOneShot(swingSound);
     }
 
     public void ResetAttack()

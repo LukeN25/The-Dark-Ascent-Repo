@@ -11,7 +11,7 @@ namespace EnemyAI.UnityHFSM
     public class MushroomAI : Enemy
     {
         [Header("References")]
-        [SerializeField] protected PlayerManager player;
+        [SerializeField] protected GameObject player;
         [SerializeField] private Spore SporePrefab;
 
         [Header("Sensors")]
@@ -34,6 +34,7 @@ namespace EnemyAI.UnityHFSM
             Agent = GetComponent<NavMeshAgent>();
             Animator = GetComponent<Animator>();
             EnemyFSM = new StateMachine<EnemyState, StateEvent>();
+            player = GameObject.FindWithTag("Player");
 
             // States
             EnemyFSM.AddState(name: EnemyState.Idle, new IdleState(needsExitTime: false, Enemy: this));
