@@ -7,6 +7,8 @@ public class PlayerLook : MonoBehaviour
     public float mouseSensitivity = 100f;
 
     private GameObject playerBody;
+    [SerializeField] private int positiveValue = 75;
+    [SerializeField] private int negativeValue = -75;
 
     float xRotation = 0f;
 
@@ -23,7 +25,7 @@ public class PlayerLook : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, negativeValue, positiveValue);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.transform.Rotate(Vector3.up * mouseX);
