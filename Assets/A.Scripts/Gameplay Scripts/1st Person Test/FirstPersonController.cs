@@ -33,6 +33,13 @@ public class FirstPersonController : MonoBehaviour
     bool canAttack = true;
     int attackCount;
 
+    [Header("Dodging")]
+    public float dodgeSpeed;
+    public float dodgeCooldown;
+    public float dodgeLength;
+
+    bool isDodging = false;
+
     //ANIMATIONS
     public const string IDLE = "Idle";
     public const string RUN = "Run";
@@ -70,8 +77,11 @@ public class FirstPersonController : MonoBehaviour
     {
         isGrounded = controller.isGrounded;
 
-        controller.Move(Time.deltaTime * speed * (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")));
-
+        if (!isDodging)
+        {
+            controller.Move(Time.deltaTime * speed * (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")));
+        }
+        
         velocity.y += gravity * Time.deltaTime;
         if (isGrounded && velocity.y < 0)
             velocity.y = -2f;
@@ -91,24 +101,14 @@ public class FirstPersonController : MonoBehaviour
             HeavyAttack();
         }
 
+        // Dodge Input
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            StartCoroutine(Dodge());
+        }
+
         SetAnimations();
     }
-
-    /*void MoveInput()
-    {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        controller.Move(transform.TransformDirection(move) * speed * Time.deltaTime);
-        velocity.y += gravity * Time.deltaTime;
-        if (isGrounded && velocity.y < 0)
-            velocity.y = -2f;
-        controller.Move(velocity * Time.deltaTime);
-    }
-    */
-
 
     //--------------
     //Attack Methods
@@ -174,6 +174,35 @@ public class FirstPersonController : MonoBehaviour
 
         GameObject HIT = Instantiate(hitEffect, pos, Quaternion.identity);
         Destroy(HIT, 20);
+    }
+
+    //--------------
+    //DODGE METHODS
+    //--------------
+
+    IEnumerator Dodge()
+    {
+        float timer = 0;
+
+        while(timer < dodgeLength)
+        {
+            isDodging = true;
+
+            // Get movement input direction
+            Vector3 moveDir = transform.forward * Input.GetAxisRaw("Vertical") +
+                              transform.right * Input.GetAxisRaw("Horizontal");
+
+            // If no input, dodge forward
+            if (moveDir == Vector3.zero)
+                moveDir = transform.forward;
+
+            moveDir.Normalize();
+
+            controller.Move(moveDir * dodgeSpeed * Time.deltaTime);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        isDodging = false;
     }
 
     void SetAnimations()

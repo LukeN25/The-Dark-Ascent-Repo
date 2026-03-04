@@ -247,6 +247,9 @@ MonoBehaviour:
   swingEffect: {fileID: 0}
   hitSound: {fileID: 0}
   swingSound: {fileID: 0}
+  dodgeSpeed: 30
+  dodgeCooldown: 2
+  dodgeLength: 0.5
 --- !u!82 &204245930
 AudioSource:
   m_ObjectHideFlags: 0
