@@ -35,7 +35,7 @@ namespace FOW.Mutations
             AutoEquipIfPossible(mutation);
             RecalculatePlayerStats();
 
-            MutationInventoryUI ui = FindObjectOfType<MutationInventoryUI>();
+            MutationInventoryUI ui = FindFirstObjectByType<MutationInventoryUI>();
             if (ui != null)
                 ui.RefreshSlots();
         }
@@ -69,7 +69,7 @@ namespace FOW.Mutations
             equippedMutations[slot] = mutation;
             RecalculatePlayerStats();
 
-            MutationInventoryUI ui = FindObjectOfType<MutationInventoryUI>();
+            MutationInventoryUI ui = FindFirstObjectByType<MutationInventoryUI>();
             if (ui != null)
                 ui.RefreshSlots();
         }
@@ -81,7 +81,7 @@ namespace FOW.Mutations
 
             RecalculatePlayerStats();
 
-            MutationInventoryUI ui = FindObjectOfType<MutationInventoryUI>();
+            MutationInventoryUI ui = FindFirstObjectByType<MutationInventoryUI>();
             if (ui != null)
                 ui.RefreshSlots();
         }

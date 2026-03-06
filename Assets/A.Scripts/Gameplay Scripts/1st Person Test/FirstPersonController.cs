@@ -91,7 +91,6 @@ public class FirstPersonController : MonoBehaviour
         // Attack Input
         if (Input.GetMouseButton(0))
         {
-            Debug.Log("Left Click");
             Attack();
         }
         

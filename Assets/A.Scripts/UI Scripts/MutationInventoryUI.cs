@@ -74,7 +74,7 @@ namespace FOW.Mutations
 
             RefreshSlots();
 
-            var cam = FindObjectOfType<MenuCameraController>();
+            var cam = FindFirstObjectByType<MenuCameraController>();
             cam?.ReturnToDefault();
 
             Cursor.visible = true;
@@ -89,7 +89,7 @@ namespace FOW.Mutations
             detailPanelRoot?.SetActive(false);
             slotsRoot?.SetActive(false);
 
-            var cam = FindObjectOfType<MenuCameraController>();
+            var cam = FindFirstObjectByType<MenuCameraController>();
             cam?.ReturnToDefault();
 
             Cursor.visible = false;
@@ -133,13 +133,13 @@ namespace FOW.Mutations
             detailPanelRoot?.SetActive(false);
             slotsRoot?.SetActive(true);
 
-            var cam = FindObjectOfType<MenuCameraController>();
+            var cam = FindFirstObjectByType<MenuCameraController>();
             cam?.ReturnToDefault();
         }
 
         private void FocusCameraOnSlot(MutationSlotType slotType)
         {
-            var cam = FindObjectOfType<MenuCameraController>();
+            var cam = FindFirstObjectByType<MenuCameraController>();
             if (cam == null) return;
 
             Transform target = slotType switch

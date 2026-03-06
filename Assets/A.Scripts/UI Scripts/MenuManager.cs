@@ -102,7 +102,7 @@ public class MenuManager : MonoBehaviour
         mutationDetailPanel.SetActive(false);
         mutationSlotPanel.SetActive(true);
 
-        var cam = FindObjectOfType<MenuCameraController>();
+        var cam = FindFirstObjectByType<MenuCameraController>();
         if (cam != null)
             cam.ReturnToDefault();
     }
