@@ -11,6 +11,10 @@ public class FirstPersonController : MonoBehaviour
     AudioSource audioSource;
     Animator animator;
 
+    [Header("Health")]
+    [SerializeField] public int playerHealth = 5;
+    [SerializeField] private int maxHealth = 5;
+
     [Header("Movement")]
     [SerializeField] private float speed = 10f;
     [SerializeField] private float gravity = -9.81f;
@@ -231,6 +235,33 @@ public class FirstPersonController : MonoBehaviour
         animator.CrossFadeInFixedTime(currentAnimationState, 0.2f);
     }
 
+    //---------------------------
+    // Sending + Receiving Damage
+    //---------------------------
+
     public int GetAttackDamage() => attackDamage;
+
+    public int GetHealth() => playerHealth;
+    public int GetMaxHealth() => maxHealth;
+
+    public void TakeDamage(DamageInfo damageInfo)
+    {
+        playerHealth -= damageInfo.GetDamage();
+
+        if (playerHealth < 0)
+            playerHealth = 0;
+
+        if (playerHealth <= 0)
+        {
+            if (GameOverUI.Instance != null)
+            {
+                GameOverUI.Instance.ShowGameOver();
+            }
+            else
+            {
+                Debug.LogError("GameOverUI.Instance is NULL!");
+            }
+        }
+    }
 
 }

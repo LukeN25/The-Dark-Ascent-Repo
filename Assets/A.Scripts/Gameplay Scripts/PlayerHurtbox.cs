@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class PlayerHurtbox : MonoBehaviour, IHittable
 {
-    [SerializeField] PlayerManager playerManager;
-    [SerializeField] DamageIndicator DamageIndicator;
+    [SerializeField] FirstPersonController firstPersonController;
 
     void OnTriggerEnter(Collider other)
     {
@@ -18,7 +17,6 @@ public class PlayerHurtbox : MonoBehaviour, IHittable
 
     public void GetHit(DamageInfo damageInfo)
     {
-        playerManager.TakeDamage(damageInfo);
-        DamageIndicator.Flash();
+        firstPersonController.TakeDamage(damageInfo);
     }
 }

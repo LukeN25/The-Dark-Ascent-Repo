@@ -436,7 +436,7 @@ MonoBehaviour:
   health: 3
   lootTable:
     list:
-    - item: {fileID: 3654389266343195070, guid: 9f2cf952d7d52a244a8fc1ee497fdb4a, type: 3}
+    - item: {fileID: 5141044313136312385, guid: a6174adfdf4d24d4884bb04f863efb95, type: 3}
       weight: 4
     - item: {fileID: 2153573555709904030, guid: 477d2065b9e0b5a48bcf471e759abd6f, type: 3}
       weight: 1
