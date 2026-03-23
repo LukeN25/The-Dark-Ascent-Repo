@@ -395,11 +395,9 @@ GameObject:
   - component: {fileID: 2023485422064736012}
   - component: {fileID: 927735129627493579}
   - component: {fileID: 1467622469598430073}
-  - component: {fileID: 4005314165305084063}
-  - component: {fileID: 904296024337666530}
   m_Layer: 0
   m_Name: 'Butcher Enemy '
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -455,41 +453,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 927735129627493579}
   DamageIndicator: {fileID: 5287168298951680727}
---- !u!114 &4005314165305084063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1857011601673404949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06c78af948052824d93c22c84c08dd65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SamplePoints:
-  - {fileID: 7220255970475896733}
-  PermanentlyReveal: 0
-  MaxDistBetweenSamplePoints: 0
-  NumObservers: 0
-  Observers: []
-  CachedTransform: {fileID: 0}
---- !u!114 &904296024337666530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1857011601673404949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bd2966c16df4fa4cba52ea99b2698d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectsToHide:
-  - {fileID: 1239386929028986385}
-  - {fileID: 7735217452645430910}
-  - {fileID: 1927780005702123793}
 --- !u!1 &2046683656006022462
 GameObject:
   m_ObjectHideFlags: 0

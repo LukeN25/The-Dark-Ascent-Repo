@@ -81,16 +81,26 @@ public class FirstPersonController : MonoBehaviour
     {
         isGrounded = controller.isGrounded;
 
+        if (!isGrounded)
+        {
+            Debug.Log("Not Grounded");
+        }
+
         if (!isDodging)
         {
             controller.Move(Time.deltaTime * speed * (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")));
         }
-        
-        velocity.y += gravity * Time.deltaTime;
-        if (isGrounded && velocity.y < 0)
-            velocity.y = -2f;
 
         velocity = controller.velocity;
+
+        if (!isGrounded)
+        {
+            velocity.y += gravity * Time.deltaTime;
+        }
+        else if (isGrounded)
+        {
+            velocity.y = 2.0f;
+        }
 
         // Attack Input
         if (Input.GetMouseButton(0))
