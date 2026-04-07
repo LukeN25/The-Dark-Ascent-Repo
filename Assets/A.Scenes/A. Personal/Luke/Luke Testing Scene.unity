@@ -1893,7 +1893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26e558d89742c4e4eab3a7d550598f3e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.98
+      value: 1.59
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26e558d89742c4e4eab3a7d550598f3e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5029,6 +5029,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2335751251223409185, guid: 22ef1a8ebacfba541b567978b468187e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2335751251223409185, guid: 22ef1a8ebacfba541b567978b468187e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -5048,9 +5052,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -218787130599282080, guid: 22ef1a8ebacfba541b567978b468187e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0000003674068
+      objectReference: {fileID: 0}
+    - target: {fileID: -218787130599282080, guid: 22ef1a8ebacfba541b567978b468187e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00000005414461
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 22ef1a8ebacfba541b567978b468187e, type: 3}
       propertyPath: m_Name
       value: Mushroom Enemy Textured
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584698791845077036, guid: 22ef1a8ebacfba541b567978b468187e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0000003674068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584698791845077036, guid: 22ef1a8ebacfba541b567978b468187e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00000005414461
       objectReference: {fileID: 0}
     - target: {fileID: 8879528566716807029, guid: 22ef1a8ebacfba541b567978b468187e, type: 3}
       propertyPath: m_LocalPosition.x
