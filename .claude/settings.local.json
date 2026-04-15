@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash([ -f \"$PETER/$f\" ])",
+      "Bash([ -f \"$PETER/$f.meta\" ])",
+      "Bash([ -d \"$PETER/$cat\" ])",
+      "Bash(cp -r '/home/arthurlopes/Documents/GitHub/The-Dark-Ascent-Repo/Assets/A.Scenes/A. Personal/Peter/MaterialImages/__TRACKED_VAR__/.' '/home/arthurlopes/Documents/GitHub/The-Dark-Ascent-Repo/Assets/A.Art & Shaders/Materials/Steampunk/__TRACKED_VAR__/')",
+      "Bash([ -d \"$EVAN/$scene\" ])",
+      "Bash(mv '/home/arthurlopes/Documents/GitHub/The-Dark-Ascent-Repo/Assets/A.Scenes/A. Personal/Evan/__TRACKED_VAR__' /home/arthurlopes/Documents/GitHub/The-Dark-Ascent-Repo/Assets/A.Scenes/Testing/)",
+      "Bash(mv '/home/arthurlopes/Documents/GitHub/The-Dark-Ascent-Repo/Assets/A.Scenes/A. Personal/Evan/__TRACKED_VAR__.meta' /home/arthurlopes/Documents/GitHub/The-Dark-Ascent-Repo/Assets/A.Scenes/Testing/)",
+      "Bash(grep -v \"\\\\.meta$\")",
+      "Bash(du -sh /home/arthurlopes/Documents/GitHub/The-Dark-Ascent-Repo/Assets/*)",
+      "Bash(du -sh /home/arthurlopes/Documents/GitHub/The-Dark-Ascent-Repo/*)",
+      "Bash(ls -d /home/arthurlopes/Documents/GitHub/The-Dark-Ascent-Repo/Assets/*/)",
+      "Bash(ls -1d */)",
+      "Bash(ls -1d A.*)",
+      "Bash(mkdir:*)"
+    ]
+  }
+}
