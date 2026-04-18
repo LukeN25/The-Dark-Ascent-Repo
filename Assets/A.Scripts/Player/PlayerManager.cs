@@ -1,38 +1,29 @@
 using UnityEngine;
-using FOW.Mutations;
 
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; private set; }
-    [SerializeField] private PlayerMutationHandler m_MutationHandler;
 
-    private void Awake()
+    [Header("Health")]
+    public int playerHealth = 5;
+    [SerializeField] private int maxHealth = 5;
+
+    void Awake()
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
+            return;
         }
-        else
-        {
-            Instance = this;
-        }
+        Instance = this;
     }
 
-    [SerializeField] public int playerHealth = 5;
-
-    [SerializeField] private int maxHealth = 5;
-
-    [SerializeField] private int attackDamage;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float acceleration;
-
-    private void Update()
-    {
-        Mathf.Clamp(playerHealth, 0, maxHealth);
-    }
+    public int GetHealth() => playerHealth;
+    public int GetMaxHealth() => maxHealth;
 
     public void TakeDamage(DamageInfo damageInfo)
     {
+        Debug.Log($"Player took {damageInfo.GetDamage()} damage!");
         playerHealth -= damageInfo.GetDamage();
 
         if (playerHealth < 0)
@@ -41,26 +32,15 @@ public class PlayerManager : MonoBehaviour
         if (playerHealth <= 0)
         {
             if (GameOverUI.Instance != null)
-            {
                 GameOverUI.Instance.ShowGameOver();
-            }
             else
-            {
                 Debug.LogError("GameOverUI.Instance is NULL!");
-            }
         }
     }
 
-    public void UpdateAttackDamage()
-    {
-        attackDamage = Mathf.RoundToInt(attackDamage * m_MutationHandler.damageMultiplier);
-    }
+    // Placeholder — damage system TBD
+    public int GetAttackDamage() => 0;
 
-
-    public int GetAttackDamage() => attackDamage;
-    public float GetMoveSpeed() => moveSpeed;
-    public float GetAcceleration() => acceleration;
-
-    public int GetHealth() => playerHealth;
-    public int GetMaxHealth() => maxHealth;
+    // Placeholder — called by PlayerMutationHandler after multipliers change
+    public void UpdateAttackDamage() { }
 }

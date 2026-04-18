@@ -2,160 +2,47 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    float WalkingSpeed = 5;
-    float Acceleration = 25;
+    [Header("Movement")]
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float gravity = -20f;
 
-    [SerializeField]
-    float dashDistance = 5f;
-    [SerializeField]
-    float dashCooldown = 3f;
-    float dashCooldownTimer = 0f;
-    bool canDash = true;
-    bool isDashing = false;
+    private CharacterController controller;
+    private PlayerDodge playerDodge;
 
-    private CharacterController cc;
-    private Animator Animator;
+    private float verticalVelocity;
 
-    private void Awake()
+    // Used by PlayerAnimator to determine idle vs run state
+    public Vector3 Velocity => controller.velocity;
+
+    void Awake()
     {
-        cc = GetComponent<CharacterController>();
-        Animator = GetComponentInChildren<Animator>();
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
-    }
-
-    private void Start()
-    {
-        WalkingSpeed = PlayerManager.Instance.GetMoveSpeed();
-        Acceleration = PlayerManager.Instance.GetAcceleration();
+        controller = GetComponent<CharacterController>();
+        playerDodge = GetComponent<PlayerDodge>();
     }
 
     void Update()
     {
-        DashTimer();
-        if (!isDashing)
-        {
-            SetInput();
-            Move();
-        }
-        else
-        {
-            Dash();
-        }
-        Animator.SetFloat("Speed", speedTarget);
-        
+        HandleMovement();
+        HandleGravity();
     }
 
-    Vector2 inputDirection = Vector2.zero;
-    Vector2 velocityXZ = Vector2.zero;
-    Vector3 velocity = Vector3.zero;
-    float speedTarget;
-
-
-    public void SetInput()
+    private void HandleMovement()
     {
-        bool[] inputs = new bool[]
-            {
-                Input.GetKey(KeyCode.W),
-                Input.GetKey(KeyCode.A),
-                Input.GetKey(KeyCode.S),
-                Input.GetKey(KeyCode.D),
-                Input.GetKey(KeyCode.Space)
-            };
+        if (playerDodge.IsDodging) return;
 
-        speedTarget = 0;
-        inputDirection = Vector2.zero;
-        if (inputs[0])
-        {
-            inputDirection.y += 1;
-            speedTarget = WalkingSpeed;
-        }
-        if (inputs[1])
-        {
-            inputDirection.x -= 1;
-            speedTarget = WalkingSpeed;
-        }
-        if (inputs[2])
-        {
-            inputDirection.y -= 1;
-            speedTarget = WalkingSpeed;
-        }
-        if (inputs[3])
-        {
-            inputDirection.x += 1;
-            speedTarget = WalkingSpeed;
-        }
-        if (inputs[4] && canDash && speedTarget > 0)
-        {
-            isDashing = true;
-            Animator.SetBool("isDashing", true);
-            canDash = false;
-            speedTarget = WalkingSpeed;
-        }
-    }
-    void Move()
-    {
-        if (cc.isGrounded)
-        {
-            velocity.y = 0;
-        }
-        Vector2 forward = new Vector2(transform.forward.x, transform.forward.z);
-        Vector2 right = new Vector2(transform.right.x, transform.right.z);
-        Vector2 inputDir = Vector3.Normalize(right * inputDirection.x + forward * inputDirection.y);
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
 
-        velocityXZ = Vector2.MoveTowards(velocityXZ, inputDir.normalized * speedTarget, Time.deltaTime * Acceleration);
-        velocity.x = velocityXZ.x * Time.deltaTime;
-        velocity.z = velocityXZ.y * Time.deltaTime;
-        velocity.y += -9.81f * Time.deltaTime * Time.deltaTime;
-
-        cc.enabled = true;
-        cc.Move(velocity);
-        cc.enabled = false;
-
-        // If dashing, set dash destination
-        if (isDashing)
-        {
-            dashDestination = transform.position + new Vector3(velocityXZ.x, 0, velocityXZ.y).normalized * dashDistance;
-
-            Debug.DrawRay(transform.position, (dashDestination - transform.position), Color.red, 5f);
-        }
+        Vector3 move = transform.right * h + transform.forward * v;
+        controller.Move(move * speed * Time.deltaTime);
     }
 
-    Vector3 dashDestination = Vector3.zero;
-    void Dash()
+    private void HandleGravity()
     {
-        // Get new position towards dash destination
-        Vector3 newPos = Vector3.MoveTowards(transform.position, dashDestination, WalkingSpeed * dashDistance * Time.deltaTime);
+        if (controller.isGrounded && verticalVelocity < 0f)
+            verticalVelocity = -2f;
 
-        // Check for collisions
-        Ray ray = new Ray(transform.position, (dashDestination - transform.position).normalized);
-        if (Physics.Raycast(ray, out RaycastHit hit, Vector3.Distance(transform.position, newPos)))
-        {
-            // If we hit something, stop dashing
-            isDashing = false;
-            Animator.SetBool("isDashing", false);
-            return;
-        }
-
-        transform.position = newPos;
-
-        if (Vector3.Distance(transform.position, dashDestination) < 0.1f)
-        {
-            isDashing = false;
-            Animator.SetBool("isDashing", false);
-        }
-    }
-
-    private void DashTimer()
-    {
-        if (!canDash)
-        {
-            dashCooldownTimer += Time.fixedDeltaTime;
-            if (dashCooldownTimer >= dashCooldown)
-            {
-                canDash = true;
-                dashCooldownTimer = 0f;
-            }
-        }
+        verticalVelocity += gravity * Time.deltaTime;
+        controller.Move(Vector3.up * verticalVelocity * Time.deltaTime);
     }
 }
