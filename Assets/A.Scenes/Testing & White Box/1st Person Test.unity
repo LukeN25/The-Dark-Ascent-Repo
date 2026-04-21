@@ -381,11 +381,6 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_Version: 13
-  m_ObsoleteShadowResolutionTier: 1
-  m_ObsoleteUseShadowQualitySettings: 0
-  m_ObsoleteCustomShadowResolution: 512
-  m_ObsoleteContactShadows: 0
   m_InnerSpotPercent: 0
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
@@ -504,6 +499,11 @@ MonoBehaviour:
   m_AreaLightEmissiveMeshShadowCastingMode: 0
   m_AreaLightEmissiveMeshMotionVectorGenerationMode: 0
   m_AreaLightEmissiveMeshLayer: -1
+  m_Version: 13
+  m_ObsoleteShadowResolutionTier: 1
+  m_ObsoleteUseShadowQualitySettings: 0
+  m_ObsoleteCustomShadowResolution: 512
+  m_ObsoleteContactShadows: 0
 --- !u!1 &1392571951
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +900,18 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1392571952}
+    - target: {fileID: 6244346329832692517, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
+      propertyPath: dodgeSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244346329832692517, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
+      propertyPath: dodgeLength
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244346329832692517, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
+      propertyPath: dodgeCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7816912315194612823, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
       propertyPath: m_Name
       value: Player
