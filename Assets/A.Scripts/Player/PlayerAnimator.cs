@@ -10,6 +10,7 @@ public class PlayerAnimator : MonoBehaviour
     public const string HEAVYATTACK  = "Heavy Attack";
     public const string DODGELEFT    = "Dodge Left";
     public const string DODGERIGHT   = "Dodge Right";
+    public const string THROW   = "Throw";
 
     private string currentAnimationState;
     private Animator animator;

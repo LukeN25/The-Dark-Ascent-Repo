@@ -7,6 +7,7 @@ public class Throwing : MonoBehaviour
     private Transform cam;
     private Transform attackOrigin;
     public GameObject objectToThrow;
+    private PlayerAnimator playerAnimator;
 
     [Header("Settings")]
     [SerializeField] private int totalThrows;
@@ -23,6 +24,7 @@ public class Throwing : MonoBehaviour
     {
         cam = transform.Find("Camera Holder");
         attackOrigin = cam.Find("Throw Origin");
+        playerAnimator = GetComponent<PlayerAnimator>();
     }
 
     private void Start()
@@ -41,6 +43,7 @@ public class Throwing : MonoBehaviour
     private void Throw()
     {
         readyToThrow = false;
+        playerAnimator.ChangeAnimationState(PlayerAnimator.THROW);
 
         // Instantiate throwable
         GameObject projectile = Instantiate(objectToThrow, attackOrigin.position, cam.rotation);
