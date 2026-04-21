@@ -1,0 +1,30 @@
+using UnityEngine;
+
+public class PlayerCombat : MonoBehaviour
+{
+    [SerializeField]
+    AudioClip attackSound;
+    [SerializeField]
+    AudioSource audioSource;
+
+    [SerializeField] private Animator armsAnimator;
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            LightAttack();
+        }
+    }
+
+    void LightAttack()
+    {
+        armsAnimator.SetInteger("LightAtkVar", Random.Range(0, 2));
+        armsAnimator.SetTrigger("LightAtk");
+    }
+
+    public void PlayAttackSound()
+    {
+        audioSource.PlayOneShot(attackSound);
+    }
+}
