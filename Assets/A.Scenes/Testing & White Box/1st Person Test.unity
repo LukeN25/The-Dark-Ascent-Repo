@@ -902,11 +902,11 @@ PrefabInstance:
       objectReference: {fileID: 1392571952}
     - target: {fileID: 6244346329832692517, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
       propertyPath: dodgeSpeed
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6244346329832692517, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
       propertyPath: dodgeLength
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6244346329832692517, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
       propertyPath: dodgeCooldown
