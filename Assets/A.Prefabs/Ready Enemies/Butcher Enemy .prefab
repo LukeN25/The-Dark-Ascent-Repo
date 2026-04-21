@@ -1858,12 +1858,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  ChasePlayerSensor: {fileID: 4795759203810008704}
   MeleeRangeSensor: {fileID: 8206281924823625387}
   DashRangeSensor: {fileID: 8688257943917088595}
   IsInMeleeRange: 0
   IsInDashRange: 0
-  IsInChaseRange: 0
+  IsInChaseRange: 1
   LastAttackTime: 0
   LastDashTime: 0
   AttackCooldown: 5
