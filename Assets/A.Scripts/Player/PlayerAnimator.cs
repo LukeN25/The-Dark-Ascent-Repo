@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
-    public const string IDLE         = "Idle";
-    public const string IDLEINSPECT  = "Idle Inspect";
+    public const string IDLE         = "Idle Arms";
+    public const string IDLEINSPECT  = "Weapon Inspect";
     public const string RUN          = "Run";
-    public const string ATTACK1      = "Attack 1";
-    public const string ATTACK2      = "Attack 2";
+    public const string ATTACK1      = "Light Attack 1";
+    public const string ATTACK2      = "Light Attack 2";
     public const string HEAVYATTACK  = "Heavy Attack";
     public const string DODGELEFT    = "Dodge Left";
     public const string DODGERIGHT   = "Dodge Right";
