@@ -754,8 +754,6 @@ GameObject:
   - component: {fileID: 5055577437266587378}
   - component: {fileID: 6625455034474747213}
   - component: {fileID: 3534299640013340162}
-  - component: {fileID: 4289847136278236307}
-  - component: {fileID: 4210876022115622975}
   m_Layer: 11
   m_Name: Mushroom Enemy
   m_TagString: Untagged
@@ -845,7 +843,7 @@ MonoBehaviour:
   ChasePlayerSensor: {fileID: 3081398345602241181}
   ProjectileRangeSensor: {fileID: 1544183180106934573}
   IsInProjectileRange: 0
-  IsInChaseRange: 0
+  IsInChaseRange: 1
   CanThrow: 0
   LastAttackTime: 0
   AttackCooldown: 3
@@ -916,38 +914,6 @@ MonoBehaviour:
     - item: {fileID: 5141044313136312385, guid: a6174adfdf4d24d4884bb04f863efb95, type: 3}
       weight: 1
   itemHolder: {fileID: 4241444656633313882}
---- !u!114 &4289847136278236307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7231561571359708260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06c78af948052824d93c22c84c08dd65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SamplePoints: []
-  PermanentlyReveal: 0
-  MaxDistBetweenSamplePoints: 0
-  NumObservers: 0
-  Observers: []
-  CachedTransform: {fileID: 0}
---- !u!114 &4210876022115622975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7231561571359708260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bd2966c16df4fa4cba52ea99b2698d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectsToHide:
-  - {fileID: 285985341342898972}
 --- !u!1 &7424140476309255775
 GameObject:
   m_ObjectHideFlags: 0

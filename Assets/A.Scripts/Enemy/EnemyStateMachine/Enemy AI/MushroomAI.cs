@@ -77,8 +77,8 @@ namespace EnemyAI.UnityHFSM
 
         private void Start()
         {
-            ChasePlayerSensor.OnPlayerEnter += ChasePlayerSensor_OnPlayerEnter;
-            ChasePlayerSensor.OnPlayerExit += ChasePlayerSensor_OnPlayerExit;
+            //ChasePlayerSensor.OnPlayerEnter += ChasePlayerSensor_OnPlayerEnter;
+            //ChasePlayerSensor.OnPlayerExit += ChasePlayerSensor_OnPlayerExit;
             ProjectileRangeSensor.OnPlayerEnter += ProjectileRangeSensor_OnPlayerEnter;
             ProjectileRangeSensor.OnPlayerExit += ProjectileRangeSensor_OnPlayerExit;
         }
@@ -90,7 +90,7 @@ namespace EnemyAI.UnityHFSM
             LastAttackTime + AttackCooldown <= Time.time
                    && IsInProjectileRange && CanThrow;
 
-        private void ChasePlayerSensor_OnPlayerExit(Vector3 LastKnownPosition)
+        /*private void ChasePlayerSensor_OnPlayerExit(Vector3 LastKnownPosition)
         {
             EnemyFSM.Trigger(StateEvent.PlayerLost);
             IsInChaseRange = false;
@@ -100,7 +100,7 @@ namespace EnemyAI.UnityHFSM
         {
             EnemyFSM.Trigger(StateEvent.PlayerDetected);
             IsInChaseRange = true;
-        }
+        }*/
 
         private bool IsWithinIdleRange(Transition<EnemyState> Transition) =>
             Agent.remainingDistance <= Agent.stoppingDistance;

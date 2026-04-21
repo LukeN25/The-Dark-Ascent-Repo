@@ -296,8 +296,6 @@ GameObject:
   - component: {fileID: 1589180756081565751}
   - component: {fileID: 334576755336106361}
   - component: {fileID: 7475678559034782582}
-  - component: {fileID: 6907159967950231538}
-  - component: {fileID: 3794904899192760770}
   m_Layer: 11
   m_Name: Crawler Enemy
   m_TagString: Untagged
@@ -388,7 +386,7 @@ MonoBehaviour:
   ChasePlayerSensor: {fileID: 6321339506717755940}
   MeleeRangeSensor: {fileID: 4629827543407474794}
   IsInMeleeRange: 0
-  IsInChaseRange: 0
+  IsInChaseRange: 1
   LastAttackTime: 0
   LeapCooldown: 5
 --- !u!54 &1589180756081565751
@@ -458,38 +456,6 @@ MonoBehaviour:
     - item: {fileID: 5141044313136312385, guid: a6174adfdf4d24d4884bb04f863efb95, type: 3}
       weight: 1
   itemHolder: {fileID: 5974702193059611174}
---- !u!114 &6907159967950231538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445378099590311750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06c78af948052824d93c22c84c08dd65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SamplePoints: []
-  PermanentlyReveal: 0
-  MaxDistBetweenSamplePoints: 0
-  NumObservers: 0
-  Observers: []
-  CachedTransform: {fileID: 0}
---- !u!114 &3794904899192760770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445378099590311750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bd2966c16df4fa4cba52ea99b2698d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectsToHide:
-  - {fileID: 8554647195052685342}
 --- !u!1 &1541957269903567254
 GameObject:
   m_ObjectHideFlags: 0
