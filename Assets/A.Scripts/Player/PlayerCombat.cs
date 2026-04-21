@@ -8,6 +8,12 @@ public class PlayerCombat : MonoBehaviour
     AudioSource audioSource;
 
     [SerializeField] private Animator armsAnimator;
+    private PlayerAnimator playerAnimator;
+
+    private void Awake()
+    {
+        playerAnimator = GetComponent<PlayerAnimator>();
+    }
 
     void Update()
     {

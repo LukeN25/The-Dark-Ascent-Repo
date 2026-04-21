@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+//using static Unity.Cinemachine.InputAxisControllerBase<T>;
 
 public class Throwing : MonoBehaviour
 {
@@ -18,7 +20,12 @@ public class Throwing : MonoBehaviour
     [SerializeField] private float throwForce;
     [SerializeField] private float throwUpwardForce;
 
+    public float throwSpeed;
+    public float throwCooldown1;
+    public float throwLength;
+
     bool readyToThrow;
+    public bool IsThrowing { get; private set; }
 
     void Awake()
     {
@@ -36,10 +43,10 @@ public class Throwing : MonoBehaviour
     {
         if(Input.GetKeyDown(throwKey) && readyToThrow && totalThrows > 0)
         {
+            //StartCoroutine(Throw());
             Throw();
         }
     }
-
     private void Throw()
     {
         readyToThrow = false;
@@ -64,4 +71,34 @@ public class Throwing : MonoBehaviour
     {
         readyToThrow = true;
     }
+    /*
+    private IEnumerator Throw()
+    {
+        float timer = 0;
+
+        while (timer < throwLength)
+        {
+            IsThrowing = true;
+
+            readyToThrow = false;
+            playerAnimator.ChangeAnimationState(PlayerAnimator.THROW);
+
+            // Instantiate throwable
+            GameObject projectile = Instantiate(objectToThrow, attackOrigin.position, cam.rotation);
+
+            Rigidbody projectileRB = projectile.GetComponent<Rigidbody>();
+
+            Vector3 forceToAdd = cam.transform.forward * throwForce + transform.up * throwUpwardForce;
+
+            projectileRB.AddForce(forceToAdd, ForceMode.Impulse);
+
+            totalThrows--;
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        IsThrowing = false;
+    }
+    */
 }
