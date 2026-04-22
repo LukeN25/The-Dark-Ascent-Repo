@@ -3,7 +3,8 @@ namespace EnemyAI.UnityHFSM
     public enum StateEvent
     {
         PlayerDetected,
-        PlayerLost
+        PlayerLost,
+        Parried
     }
 }
 

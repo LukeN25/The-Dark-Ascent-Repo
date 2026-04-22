@@ -18,6 +18,11 @@ public class PlayerManager : MonoBehaviour
         Instance = this;
     }
 
+    public bool IsParrying { get; private set; }
+    public void ToggleParrying()
+    {
+        IsParrying = !IsParrying;
+    }
     public int GetHealth() => playerHealth;
     public int GetMaxHealth() => maxHealth;
 

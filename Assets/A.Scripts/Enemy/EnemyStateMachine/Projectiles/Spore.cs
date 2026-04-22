@@ -5,7 +5,7 @@ namespace EnemyAI.UnityHFSM
 {
     [RequireComponent(typeof(Rigidbody), typeof(Collider))]
 
-    public class Spore : MonoBehaviour, IAttacker
+    public class Spore : MonoBehaviour, IAttacker, IParriable
     {
         [SerializeField] EnemyManager enemyManager;
 
@@ -51,9 +51,12 @@ namespace EnemyAI.UnityHFSM
 
         public DamageInfo ReturnDamageInfo()
         {
-            DamageInfo damageInfo = enemyManager.GetDamageInfo();
+            return enemyManager.GetDamageInfo();
+        }
 
-            return damageInfo;
+        public void Parried()
+        {
+            enemyManager.Parried();
         }
 
         [SerializeField]

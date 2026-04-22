@@ -37,6 +37,8 @@ namespace EnemyAI.UnityHFSM
         {
             return StartCoroutine(routine);
         }
+
+        public void TriggerParried() => EnemyFSM.Trigger(StateEvent.Parried);
     }
 }
 

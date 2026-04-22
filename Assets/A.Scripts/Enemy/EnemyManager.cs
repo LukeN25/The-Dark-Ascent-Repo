@@ -1,4 +1,5 @@
 using UnityEngine;
+using EnemyAI.UnityHFSM;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -7,11 +8,17 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] int health = 3;
 
     [SerializeField] private WeightedRandomList<Transform> lootTable;
-    [SerializeField] private Transform itemHolder; 
+    [SerializeField] private Transform itemHolder;
+    [SerializeField] private DamageIndicator damageIndicator;
 
     public DamageInfo GetDamageInfo()
     {
         return new DamageInfo(damage);
+    }
+
+    public void Parried()
+    {
+        damageIndicator?.FlashWithColour(Color.blue);
     }
 
     public void TakeDamage(DamageInfo damageInfo)

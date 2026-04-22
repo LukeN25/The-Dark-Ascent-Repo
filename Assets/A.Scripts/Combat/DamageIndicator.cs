@@ -17,9 +17,9 @@ public class DamageIndicator : MonoBehaviour
         originalColour = rend.material.color;
     }
 
-    private IEnumerator FlashTimed()
+    private IEnumerator FlashTimed(Color colour)
     {
-        rend.material.color = flashColour;
+        rend.material.color = colour;
         yield return new WaitForSeconds(flashDuration);
         rend.material.color = originalColour;
     }
@@ -27,6 +27,12 @@ public class DamageIndicator : MonoBehaviour
     public void Flash()
     {
         StopAllCoroutines();
-        StartCoroutine(FlashTimed());
+        StartCoroutine(FlashTimed(flashColour));
+    }
+
+    public void FlashWithColour(Color colour)
+    {
+        StopAllCoroutines();
+        StartCoroutine(FlashTimed(colour));
     }
 }

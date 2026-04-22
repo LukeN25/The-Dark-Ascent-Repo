@@ -44,6 +44,7 @@ namespace EnemyAI.UnityHFSM
             EnemyFSM.AddState(name: EnemyState.Chase, new ChaseState(needsExitTime: true, Enemy: this, player.transform));
             EnemyFSM.AddState(name: EnemyState.Attack, new AttackState(needsExitTime: true, Enemy: this, OnAttack));
             EnemyFSM.AddState(name: EnemyState.Dash, new DashState(needsExitTime: true, Enemy: this, OnDash));
+            EnemyFSM.AddState(name: EnemyState.Stun, new StunState(needsExitTime: true, Enemy: this, ExitTime: 2f));
 
             // Transitions
 
@@ -70,6 +71,10 @@ namespace EnemyAI.UnityHFSM
             EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Idle, EnemyState.Attack, ShouldMelee, forceInstantly: true));
             EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Attack, EnemyState.Chase, IsNotWithinIdleRange));
             EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Attack, EnemyState.Idle, IsWithinIdleRange));
+
+            // Stun (parry)
+            EnemyFSM.AddTriggerTransitionFromAny(StateEvent.Parried, new Transition<EnemyState>(EnemyState.Stun, EnemyState.Stun, forceInstantly: true));
+            EnemyFSM.AddTransition(new TransitionAfter<EnemyState>(EnemyState.Stun, EnemyState.Idle, 2f));
 
             EnemyFSM.SetStartState(name: EnemyState.Idle);
 

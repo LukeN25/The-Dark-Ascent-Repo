@@ -1,13 +1,19 @@
 using UnityEngine;
+using EnemyAI.UnityHFSM;
 
-public class EnemyHitbox : MonoBehaviour, IAttacker
+public class EnemyHitbox : MonoBehaviour, IAttacker, IParriable
 {
     [SerializeField]
     EnemyManager enemyManager;
+
     public DamageInfo ReturnDamageInfo()
     {
-        DamageInfo damageInfo = enemyManager.GetDamageInfo();
+        return enemyManager.GetDamageInfo();
+    }
 
-        return damageInfo;
+    public void Parried()
+    {
+        enemyManager.Parried();
+        GetComponentInParent<Enemy>()?.TriggerParried();
     }
 }

@@ -1464,7 +1464,7 @@ Transform:
   m_GameObject: {fileID: 7479608718755734900}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.0039997, z: 0.04979825}
+  m_LocalPosition: {x: 0, y: 2.004, z: 0.049797773}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1665,6 +1665,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7e7bdaa25dce2a8ae2f5b53add1563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
   armsAnimator: {fileID: 3688201116223723707}
 --- !u!114 &865225612823311249
 MonoBehaviour:
@@ -1696,6 +1698,9 @@ MonoBehaviour:
   throwKey: 113
   throwForce: 80
   throwUpwardForce: 1
+  throwSpeed: 0
+  throwCooldown1: 0
+  throwLength: 0
 --- !u!143 &1673010256967592762
 CharacterController:
   m_ObjectHideFlags: 0

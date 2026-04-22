@@ -15,7 +15,8 @@
       "Bash(ls -d /home/arthurlopes/Documents/GitHub/The-Dark-Ascent-Repo/Assets/*/)",
       "Bash(ls -1d */)",
       "Bash(ls -1d A.*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(xargs ls *)"
     ]
   }
 }

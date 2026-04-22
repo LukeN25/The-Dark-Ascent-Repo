@@ -6,15 +6,21 @@ public class PlayerHurtbox : MonoBehaviour, IHittable
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<IAttacker>(out IAttacker component))
+        if (other.TryGetComponent<IAttacker>(out IAttacker attacker))
         {
             if (other.tag != "Player")
-                GetHit(component.ReturnDamageInfo());
+            {
+                if (PlayerManager.Instance.IsParrying && other.TryGetComponent<IParriable>(out IParriable parriable))
+                    parriable.Parried();
+                else
+                    GetHit(attacker.ReturnDamageInfo());
+            }
         }
     }
 
     public void GetHit(DamageInfo damageInfo)
     {
+        Debug.Log($"Player hit with {damageInfo.GetDamage()} damage!");
         playerManager.TakeDamage(damageInfo);
     }
 }

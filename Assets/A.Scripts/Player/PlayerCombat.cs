@@ -21,6 +21,10 @@ public class PlayerCombat : MonoBehaviour
         {
             LightAttack();
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Parry();
+        }
     }
 
     void LightAttack()
@@ -32,5 +36,10 @@ public class PlayerCombat : MonoBehaviour
     public void PlayAttackSound()
     {
         audioSource.PlayOneShot(attackSound);
+    }
+
+    void Parry()
+    {
+        armsAnimator.SetTrigger("Parry");
     }
 }
