@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 8905180178637129356}
   m_Layer: 11
   m_Name: HurtBox
-  m_TagString: Untagged
+  m_TagString: EnemyHitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
