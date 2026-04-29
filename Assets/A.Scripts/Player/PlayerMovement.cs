@@ -41,8 +41,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (controller.isGrounded && verticalVelocity < 0f)
             verticalVelocity = -2f;
+        else if (!controller.isGrounded)
+            verticalVelocity += gravity * Time.deltaTime;
 
-        verticalVelocity += gravity * Time.deltaTime;
         controller.Move(Vector3.up * verticalVelocity * Time.deltaTime);
     }
 }
