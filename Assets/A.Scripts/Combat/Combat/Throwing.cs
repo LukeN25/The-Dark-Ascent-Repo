@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class Throwing : MonoBehaviour
 {
@@ -6,10 +7,11 @@ public class Throwing : MonoBehaviour
     [SerializeField] private Transform attackOrigin;
     [SerializeField] private Transform cameraHolder;
     [SerializeField] private GameObject objectToThrow;
+    [SerializeField] private TextMeshProUGUI grenadeNumber;
     private PlayerAnimator playerAnimator;
-
+    
     [Header("Settings")]
-    [SerializeField] private int totalThrows;
+    public int totalThrows;
     [SerializeField] private float throwCooldown;
     [SerializeField] private KeyCode throwKey = KeyCode.Mouse1;
 
@@ -35,6 +37,7 @@ public class Throwing : MonoBehaviour
     {
         if (Input.GetKeyDown(throwKey) && readyToThrow && totalThrows > 0)
             Throw();
+        grenadeNumber.text = totalThrows.ToString();
     }
 
     private void Throw()
