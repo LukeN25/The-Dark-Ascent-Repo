@@ -545,6 +545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom Retexture
       objectReference: {fileID: 0}
+    - target: {fileID: 4800692532622922715, guid: ca91062e37dbba9428ccced587b73ae8, type: 3}
+      propertyPath: m_TagString
+      value: EnemyHitBox
+      objectReference: {fileID: 0}
     - target: {fileID: 5320067003693418849, guid: ca91062e37dbba9428ccced587b73ae8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8869753
@@ -586,8 +590,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8059561048392769910, guid: ca91062e37dbba9428ccced587b73ae8, type: 3}
+      propertyPath: AttackCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059561048392769910, guid: ca91062e37dbba9428ccced587b73ae8, type: 3}
       propertyPath: IsInChaseRange
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465049972632745959, guid: ca91062e37dbba9428ccced587b73ae8, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1241,7 +1253,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 35
+  m_Radius: 50
   m_Center: {x: 0, y: 7, z: 0}
 --- !u!114 &1244829373926834612 stripped
 MonoBehaviour:

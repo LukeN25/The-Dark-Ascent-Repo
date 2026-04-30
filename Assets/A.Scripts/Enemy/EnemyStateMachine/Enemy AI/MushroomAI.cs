@@ -15,7 +15,7 @@ namespace EnemyAI.UnityHFSM
         [SerializeField] private Spore SporePrefab;
 
         [Header("Sensors")]
-        //[SerializeField] protected PlayerSensor ChasePlayerSensor;
+        [SerializeField] protected PlayerSensor MeleeRangeSensor;
         [SerializeField] protected PlayerSensor ProjectileRangeSensor;
 
         [Header("Debug Info")]
@@ -27,8 +27,11 @@ namespace EnemyAI.UnityHFSM
 
         [Header("Attack Config")]
         [SerializeField]
-        [Range(0.1f, 5f)]
-        protected float AttackCooldown = 2;
+        [Range(0.1f, 10f)]
+        protected float AttackCooldown = 8;
+        [SerializeField]
+        [Range(1, 20f)]
+        protected float ThrowCooldown = 2;
 
         private void Awake()
         {
@@ -76,8 +79,9 @@ namespace EnemyAI.UnityHFSM
             //Ranged Attack
             EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Chase, EnemyState.RangedAttack, ShouldAttack, forceInstantly: true));
             EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Idle, EnemyState.RangedAttack, ShouldAttack, forceInstantly: true));
-            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Attack, EnemyState.Chase, IsNotWithinIdleRange));
-            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.Attack, EnemyState.Idle, IsWithinIdleRange));
+            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.RangedAttack, EnemyState.Chase, IsNotWithinIdleRange));
+            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.RangedAttack, EnemyState.Idle, IsWithinIdleRange));
+            EnemyFSM.AddTransition(new Transition<EnemyState>(EnemyState.RangedAttack, EnemyState.Gather, ShouldGather));
 
             EnemyFSM.SetStartState(name: EnemyState.Idle);
 
@@ -86,8 +90,8 @@ namespace EnemyAI.UnityHFSM
 
         private void Start()
         {
-            //ChasePlayerSensor.OnPlayerEnter += ChasePlayerSensor_OnPlayerEnter;
-            //ChasePlayerSensor.OnPlayerExit += ChasePlayerSensor_OnPlayerExit;
+            MeleeRangeSensor.OnPlayerEnter += MeleeRangeSensor_OnPlayerEnter;
+            MeleeRangeSensor.OnPlayerExit += MeleeRangeSensor_OnPlayerExit;
             ProjectileRangeSensor.OnPlayerEnter += ProjectileRangeSensor_OnPlayerEnter;
             ProjectileRangeSensor.OnPlayerExit += ProjectileRangeSensor_OnPlayerExit;
         }
@@ -96,7 +100,7 @@ namespace EnemyAI.UnityHFSM
             !CanThrow;
 
         private bool ShouldShoot(Transition<EnemyState> Transition) =>
-            LastAttackTime + AttackCooldown <= Time.time
+            LastAttackTime + ThrowCooldown <= Time.time
                    && IsInProjectileRange && CanThrow;
 
         private bool ShouldAttack(Transition<EnemyState> Transition) =>
@@ -132,6 +136,10 @@ namespace EnemyAI.UnityHFSM
             LastAttackTime = Time.time;
             CanThrow = false;
         }
+
+        private void MeleeRangeSensor_OnPlayerExit(Vector3 LastKnownPosition) => IsInMeleeRange = false;
+
+        private void MeleeRangeSensor_OnPlayerEnter(Transform Player) => IsInMeleeRange = true;
 
         private void ProjectileRangeSensor_OnPlayerExit(Vector3 LastKnownPosition) => IsInProjectileRange = false;
 
