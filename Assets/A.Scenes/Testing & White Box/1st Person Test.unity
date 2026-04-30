@@ -597,6 +597,10 @@ PrefabInstance:
       propertyPath: IsInChaseRange
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8059561048392769910, guid: ca91062e37dbba9428ccced587b73ae8, type: 3}
+      propertyPath: MeleeRangeSensor
+      value: 
+      objectReference: {fileID: 2138714695}
     - target: {fileID: 8465049972632745959, guid: ca91062e37dbba9428ccced587b73ae8, type: 3}
       propertyPath: m_Layer
       value: 11
