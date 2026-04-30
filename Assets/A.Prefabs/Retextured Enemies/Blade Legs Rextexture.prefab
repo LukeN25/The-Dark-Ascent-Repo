@@ -675,8 +675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a23b63b4736325438b6a91b8120acdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  ChasePlayerSensor: {fileID: 2672326434577360914}
+  player: {fileID: 7816912315194612823, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
   MeleeRangeSensor: {fileID: 3387145176351424033}
   DashRangeSensor: {fileID: 7470342162677521530}
   IsInMeleeRange: 0

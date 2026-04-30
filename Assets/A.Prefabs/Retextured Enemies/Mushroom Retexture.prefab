@@ -66,6 +66,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86978da262c62294baf605439831c796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &915147277748735422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3296716578184635727}
+  - component: {fileID: 4719501540909179081}
+  - component: {fileID: 5904543504849935396}
+  m_Layer: 11
+  m_Name: MeleeRangeSensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3296716578184635727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915147277748735422}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -49.85658, y: 0, z: -6.3857517}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5320067003693418849}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &4719501540909179081
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915147277748735422}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 50
+  m_Center: {x: 0, y: 7, z: 0}
+--- !u!114 &5904543504849935396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915147277748735422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86978da262c62294baf605439831c796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3869342976108441632
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,15 +501,18 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 22ef1a8ebacfba541b567978b468187e, type: 3}
       insertIndex: 0
-      addedObject: {fileID: 4484685045981543036}
+      addedObject: {fileID: 3296716578184635727}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 22ef1a8ebacfba541b567978b468187e, type: 3}
       insertIndex: 1
-      addedObject: {fileID: 6563776500337207838}
+      addedObject: {fileID: 4484685045981543036}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 22ef1a8ebacfba541b567978b468187e, type: 3}
       insertIndex: 2
-      addedObject: {fileID: 506108906576842792}
+      addedObject: {fileID: 6563776500337207838}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 22ef1a8ebacfba541b567978b468187e, type: 3}
       insertIndex: 3
+      addedObject: {fileID: 506108906576842792}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 22ef1a8ebacfba541b567978b468187e, type: 3}
+      insertIndex: 4
       addedObject: {fileID: 998407679194456637}
     - targetCorrespondingSourceObject: {fileID: -4636597846980925355, guid: 22ef1a8ebacfba541b567978b468187e, type: 3}
       insertIndex: -1
@@ -532,15 +601,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10926c15ed3b30f4c9bf89cc69557800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 7816912315194612823, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
   SporePrefab: {fileID: 6937576357190175632, guid: 99b451b81487b154686f8a7a3a7a66c5, type: 3}
-  ChasePlayerSensor: {fileID: 593488462555323005}
+  MeleeRangeSensor: {fileID: 5904543504849935396}
   ProjectileRangeSensor: {fileID: 1443059853216000206}
   IsInProjectileRange: 0
+  IsInMeleeRange: 0
   IsInChaseRange: 0
   CanThrow: 0
   LastAttackTime: 0
   AttackCooldown: 3
+  ThrowCooldown: 2
 --- !u!54 &7548386487657503300
 Rigidbody:
   m_ObjectHideFlags: 0
