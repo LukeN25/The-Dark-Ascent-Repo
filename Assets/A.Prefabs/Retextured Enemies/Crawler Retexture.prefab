@@ -630,7 +630,7 @@ GameObject:
   - component: {fileID: 2822022551847118077}
   m_Layer: 11
   m_Name: Crawler Retexture
-  m_TagString: Enemy
+  m_TagString: EnemyHitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
