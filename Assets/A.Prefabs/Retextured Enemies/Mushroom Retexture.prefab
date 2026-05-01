@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7816912315194612823, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
-  SporePrefab: {fileID: 6937576357190175632, guid: 99b451b81487b154686f8a7a3a7a66c5, type: 3}
+  SporePrefab: {fileID: 873860685692082627, guid: cfd762d6ec99035469c2d49f310bc346, type: 3}
   MeleeRangeSensor: {fileID: 6929988164620293179}
   ProjectileRangeSensor: {fileID: 1443059853216000206}
   IsInProjectileRange: 0

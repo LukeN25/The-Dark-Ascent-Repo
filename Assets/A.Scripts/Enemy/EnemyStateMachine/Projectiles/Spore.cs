@@ -43,7 +43,10 @@ namespace EnemyAI.UnityHFSM
 
         private void OnTriggerEnter(Collider other)
         {
-            if(other.tag == "Player")
+            if (other.CompareTag("EnemyHitBox"))
+                return;
+
+            if (other.tag == "Player")
             {
                 Destroy(gameObject);
             }
