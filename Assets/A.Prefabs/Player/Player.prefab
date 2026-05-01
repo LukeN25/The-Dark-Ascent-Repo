@@ -1051,11 +1051,11 @@ Transform:
   m_GameObject: {fileID: 5919858604070757668}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.593, y: -0.873, z: 1.763}
+  m_LocalPosition: {x: -0.5929985, y: 1.1309998, z: 1.8127975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8677817544100804590}
+  m_Father: {fileID: 2406776230704390461}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6002149673159000705
 GameObject:
@@ -1468,7 +1468,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1270632408201482483}
   - {fileID: 6331350500374241020}
   m_Father: {fileID: 2406776230704390461}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1591,6 +1590,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5263881872529283390}
+  - {fileID: 1270632408201482483}
   - {fileID: 1918910215227537039}
   - {fileID: 8014991667357366122}
   - {fileID: 8677817544100804590}
@@ -1692,6 +1692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67dbc69a38c149a48b8166883514edcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackOrigin: {fileID: 0}
   objectToThrow: {fileID: 4855263859908180639, guid: 25e85514bdf04da46a0d2be4de6480a0, type: 3}
   totalThrows: 100
   throwCooldown: 1
@@ -1748,8 +1749,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

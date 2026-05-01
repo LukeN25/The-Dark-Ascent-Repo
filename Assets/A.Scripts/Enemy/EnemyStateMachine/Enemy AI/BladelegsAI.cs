@@ -12,7 +12,7 @@ namespace EnemyAI.UnityHFSM
         [SerializeField] protected GameObject player;
 
         [Header("Sensors")]
-        [SerializeField] protected PlayerSensor ChasePlayerSensor;
+        //[SerializeField] protected PlayerSensor ChasePlayerSensor;
         [SerializeField] protected PlayerSensor MeleeRangeSensor;
         [SerializeField] protected PlayerSensor DashRangeSensor;
 
@@ -43,7 +43,7 @@ namespace EnemyAI.UnityHFSM
             EnemyFSM.AddState(name: EnemyState.Patrol, new PatrolState(needsExitTime: true, Enemy: this, player.transform));
             EnemyFSM.AddState(name: EnemyState.Chase, new ChaseState(needsExitTime: true, Enemy: this, player.transform));
             EnemyFSM.AddState(name: EnemyState.LegAttack, new LegAttackState(needsExitTime: true, Enemy: this, OnAttack));
-            EnemyFSM.AddState(name: EnemyState.Dash, new DashState(needsExitTime: true, Enemy: this, OnDash));
+            EnemyFSM.AddState(name: EnemyState.Dash, new LegDashState(needsExitTime: true, Enemy: this, OnDash));
             EnemyFSM.AddState(name: EnemyState.Stun, new StunState(needsExitTime: true, Enemy: this, ExitTime: 2f));
 
             // Transitions
@@ -83,8 +83,8 @@ namespace EnemyAI.UnityHFSM
 
         private void Start()
         {
-            ChasePlayerSensor.OnPlayerEnter += ChasePlayerSensor_OnPlayerEnter;
-            ChasePlayerSensor.OnPlayerExit += ChasePlayerSensor_OnPlayerExit;
+            //ChasePlayerSensor.OnPlayerEnter += ChasePlayerSensor_OnPlayerEnter;
+            //ChasePlayerSensor.OnPlayerExit += ChasePlayerSensor_OnPlayerExit;
             MeleeRangeSensor.OnPlayerEnter += MeleeRangeSensor_OnPlayerEnter;
             MeleeRangeSensor.OnPlayerExit += MeleeRangeSensor_OnPlayerExit;
             DashRangeSensor.OnPlayerEnter += DashRangeSensor_OnPlayerEnter;
@@ -99,7 +99,7 @@ namespace EnemyAI.UnityHFSM
             LastAttackTime + AttackCooldown <= Time.time
                    && IsInMeleeRange;
 
-        private void ChasePlayerSensor_OnPlayerExit(Vector3 LastKnownPosition)
+        /*private void ChasePlayerSensor_OnPlayerExit(Vector3 LastKnownPosition)
         {
             EnemyFSM.Trigger(StateEvent.PlayerLost);
             IsInChaseRange = false;
@@ -109,7 +109,7 @@ namespace EnemyAI.UnityHFSM
         {
             EnemyFSM.Trigger(StateEvent.PlayerDetected);
             IsInChaseRange = true;
-        }
+        }*/
 
         private bool IsWithinIdleRange(Transition<EnemyState> Transition) =>
             Agent.remainingDistance <= Agent.stoppingDistance;

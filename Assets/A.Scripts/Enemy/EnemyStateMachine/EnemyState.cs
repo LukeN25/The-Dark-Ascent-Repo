@@ -11,6 +11,7 @@ namespace EnemyAI.UnityHFSM
         Spore,
         Gather,
         LegAttack,
-        Stun
+        Stun,
+        RangedAttack
     }
 }

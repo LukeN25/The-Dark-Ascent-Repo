@@ -10,7 +10,7 @@ public class PlayerAnimator : MonoBehaviour
     public const string HEAVYATTACK  = "Heavy Attack";
     public const string DODGELEFT    = "Dodge Left";
     public const string DODGERIGHT   = "Dodge Right";
-    public const string THROW   = "Throw";
+    public const string THROW        = "Throw";
 
     private string currentAnimationState;
     private Animator animator;
@@ -18,6 +18,7 @@ public class PlayerAnimator : MonoBehaviour
 
     private float idleTimer = 0f;
     private bool idleInspect = false;
+    private bool isActionLocked = false;
 
     void Awake()
     {
@@ -39,6 +40,7 @@ public class PlayerAnimator : MonoBehaviour
 
     private void SetAnimations()
     {
+        if (isActionLocked) return;
         Vector3 vel = playerMovement.Velocity;
         if (vel.x == 0 && vel.z == 0)
         {
@@ -59,5 +61,19 @@ public class PlayerAnimator : MonoBehaviour
         if (currentAnimationState == newState) return;
         currentAnimationState = newState;
         animator.CrossFadeInFixedTime(currentAnimationState, 0.2f);
+    }
+
+    public void LockActionAnimation(float duration)
+    {
+        isActionLocked = true;
+        currentAnimationState = string.Empty;
+        CancelInvoke(nameof(UnlockActionAnimation));
+        Invoke(nameof(UnlockActionAnimation), duration);
+    }
+
+    private void UnlockActionAnimation()
+    {
+        isActionLocked = false;
+        currentAnimationState = string.Empty;
     }
 }
