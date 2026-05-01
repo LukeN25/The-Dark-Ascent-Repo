@@ -16,7 +16,9 @@
       "Bash(ls -1d */)",
       "Bash(ls -1d A.*)",
       "Bash(mkdir:*)",
-      "Bash(xargs ls *)"
+      "Bash(xargs ls *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
     ]
   }
 }
