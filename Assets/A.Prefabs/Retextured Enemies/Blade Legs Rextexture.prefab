@@ -840,7 +840,7 @@ MonoBehaviour:
   DashRangeSensor: {fileID: 7470342162677521530}
   IsInMeleeRange: 0
   IsInDashRange: 0
-  IsInChaseRange: 0
+  IsInChaseRange: 1
   LastAttackTime: 0
   LastDashTime: 0
   AttackCooldown: 3

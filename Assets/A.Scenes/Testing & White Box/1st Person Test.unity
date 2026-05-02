@@ -199,6 +199,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom Retexture
       objectReference: {fileID: 0}
+    - target: {fileID: 4800692532622922715, guid: ca91062e37dbba9428ccced587b73ae8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5320067003693418849, guid: ca91062e37dbba9428ccced587b73ae8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8869753
@@ -313,6 +317,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 299337186365452627, guid: df81530ce80ef4d4d9fb09b56c790f18, type: 3}
+      propertyPath: IsInChaseRange
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5899892895958634147, guid: df81530ce80ef4d4d9fb09b56c790f18, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.375578
@@ -359,7 +367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6533440998402905113, guid: df81530ce80ef4d4d9fb09b56c790f18, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -483,11 +491,6 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_Version: 13
-  m_ObsoleteShadowResolutionTier: 1
-  m_ObsoleteUseShadowQualitySettings: 0
-  m_ObsoleteCustomShadowResolution: 512
-  m_ObsoleteContactShadows: 0
   m_InnerSpotPercent: 0
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
@@ -606,6 +609,11 @@ MonoBehaviour:
   m_AreaLightEmissiveMeshShadowCastingMode: 0
   m_AreaLightEmissiveMeshMotionVectorGenerationMode: 0
   m_AreaLightEmissiveMeshLayer: -1
+  m_Version: 13
+  m_ObsoleteShadowResolutionTier: 1
+  m_ObsoleteUseShadowQualitySettings: 0
+  m_ObsoleteCustomShadowResolution: 512
+  m_ObsoleteContactShadows: 0
 --- !u!1 &1392571951
 GameObject:
   m_ObjectHideFlags: 0

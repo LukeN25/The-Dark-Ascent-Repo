@@ -6,11 +6,7 @@ namespace EnemyAI.UnityHFSM
 {
     public class LegDashState : EnemyStateBase
     {
-        public LegDashState(
-            bool needsExitTime,
-            Enemy Enemy,
-            Action<State<EnemyState, StateEvent>> onEnter,
-            float ExitTime = 6.5f) : base(needsExitTime, Enemy, ExitTime, onEnter) { }
+        public LegDashState(bool needsExitTime, Enemy Enemy, Action<State<EnemyState, StateEvent>> onEnter, float ExitTime = 6.5f) : base(needsExitTime, Enemy, ExitTime, onEnter) { }
 
         public override void OnEnter()
         {
