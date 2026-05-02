@@ -7,15 +7,23 @@ public class PlayerManager : MonoBehaviour
     [Header("Health")]
     public int playerHealth = 5;
     [SerializeField] private int maxHealth = 5;
+    private Animator playerAnimator;
 
     void Awake()
     {
+        playerAnimator = GetComponent<Animator>();
+
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
         Instance = this;
+    }
+
+    void Update()
+    {
+        playerAnimator.SetInteger("playerHealth", playerHealth);
     }
 
     public int GetHealth() => playerHealth;
@@ -31,6 +39,8 @@ public class PlayerManager : MonoBehaviour
 
         if (playerHealth <= 0)
         {
+            playerAnimator.SetTrigger("isDead");
+
             if (GameOverUI.Instance != null)
                 GameOverUI.Instance.ShowGameOver();
             else
