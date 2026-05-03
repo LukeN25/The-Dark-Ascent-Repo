@@ -119,6 +119,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &67842915 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8677817544100804590, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
+  m_PrefabInstance: {fileID: 2960673583257916878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &122568664 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1270632408201482483, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
+  m_PrefabInstance: {fileID: 2960673583257916878}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &155394640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,8 +1036,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 102199930407722092, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 102199930407722092, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
+      propertyPath: attackOrigin
+      value: 
+      objectReference: {fileID: 122568664}
+    - target: {fileID: 102199930407722092, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
+      propertyPath: cameraHolder
+      value: 
+      objectReference: {fileID: 67842915}
     - target: {fileID: 2406776230704390461, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.41
