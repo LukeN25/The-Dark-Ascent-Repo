@@ -314,6 +314,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Butcher Retexture
       objectReference: {fileID: 0}
+    - target: {fileID: 4696269915363942219, guid: 5acb4f58562d3d4498ca9f2ee2aba045, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -772,7 +776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4781791884464633798, guid: a3547259f3e67cd428847ebf96d4a18f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6473831161646318516, guid: a3547259f3e67cd428847ebf96d4a18f, type: 3}
       propertyPath: m_LocalPosition.x
