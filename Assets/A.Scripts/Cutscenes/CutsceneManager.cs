@@ -3,8 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class CutsceneManager : MonoBehaviour
 {
+
+    public string nameOfScene;
+
     public void OnCutsceneEnd()
     {
-        SceneManager.LoadScene("Playtest"); // or use build index
+        SceneManager.LoadScene(nameOfScene); // or use build index
     }
 }
