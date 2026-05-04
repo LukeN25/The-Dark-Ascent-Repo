@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
     public int playerHealth = 5;
     [SerializeField] private int maxHealth = 5;
     private Animator playerAnimator;
+    [SerializeField] private GameObject[] healthUI;
 
     void Awake()
     {
@@ -21,9 +22,12 @@ public class PlayerManager : MonoBehaviour
         Instance = this;
     }
 
-    void Update()
+    public void SetActiveCount(int healthToKeep)
     {
-        playerAnimator.SetInteger("playerHealth", playerHealth);
+        for (int i = 0; i < healthUI.Length; i++)
+        {
+            healthUI[i].SetActive(i < healthToKeep);
+        }
     }
 
     public int GetHealth() => playerHealth;
@@ -46,6 +50,8 @@ public class PlayerManager : MonoBehaviour
             else
                 Debug.LogError("GameOverUI.Instance is NULL!");
         }
+        
+        SetActiveCount(playerHealth);
     }
 
     // Placeholder — damage system TBD

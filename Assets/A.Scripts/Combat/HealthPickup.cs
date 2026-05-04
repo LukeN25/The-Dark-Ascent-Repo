@@ -18,6 +18,7 @@ public class HealthPickup : MonoBehaviour
             if(PlayerManager.playerHealth < 5)
             {
                 PlayerManager.playerHealth++;
+                PlayerManager.SetActiveCount(PlayerManager.playerHealth);
                 Destroy(gameObject);
             }
         }
