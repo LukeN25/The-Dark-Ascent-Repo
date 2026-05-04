@@ -377,7 +377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6533440998402905113, guid: df81530ce80ef4d4d9fb09b56c790f18, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -769,6 +769,10 @@ PrefabInstance:
     - target: {fileID: 4781791884464633798, guid: a3547259f3e67cd428847ebf96d4a18f, type: 3}
       propertyPath: m_Name
       value: Crawler Retexture
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781791884464633798, guid: a3547259f3e67cd428847ebf96d4a18f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6473831161646318516, guid: a3547259f3e67cd428847ebf96d4a18f, type: 3}
       propertyPath: m_LocalPosition.x

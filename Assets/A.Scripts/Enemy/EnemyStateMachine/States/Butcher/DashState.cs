@@ -10,7 +10,7 @@ namespace EnemyAI.UnityHFSM
             bool needsExitTime,
             Enemy Enemy,
             Action<State<EnemyState, StateEvent>> onEnter,
-            float ExitTime = 2.1f) : base(needsExitTime, Enemy, ExitTime, onEnter) { }
+            float ExitTime = 1.05f) : base(needsExitTime, Enemy, ExitTime, onEnter) { }
 
         public override void OnEnter()
         {
