@@ -7,7 +7,8 @@ public class LevelTimer : MonoBehaviour
     private float timer = 600;
     public float minutes;
     private float seconds;
-
+    
+    [SerializeField] private Animator elevatorAnimator;
     [SerializeField] private TextMeshProUGUI timerText;
 
     void Start()
@@ -23,5 +24,11 @@ public class LevelTimer : MonoBehaviour
         seconds = Mathf.FloorToInt(timer - minutes * 60);
 
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        if(timer == 0f)
+        {
+            //play animation for elevator
+            elevatorAnimator.SetTrigger("Open");
+        }
     }
 }
