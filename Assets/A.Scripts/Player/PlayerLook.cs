@@ -7,6 +7,7 @@ public class PlayerLook : MonoBehaviour
     [SerializeField] private Transform cameraHolder;
 
     private float xRotation = 0f;
+    public float yRotation;
 
     void Awake()
     {
@@ -21,7 +22,7 @@ public class PlayerLook : MonoBehaviour
 
         // Accumulate and clamp vertical rotation
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -yRotation, yRotation);
 
         // Vertical tilt on the camera holder, horizontal turn on the player body
         cameraHolder.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
