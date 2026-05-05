@@ -1407,7 +1407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2311833884865038559
 Transform:
   m_ObjectHideFlags: 0
@@ -1487,6 +1487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  knockbackStrength: 50
   health: 3
   lootTable:
     list:
@@ -1529,7 +1530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06086870161f1ba45b797a389c83cbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7816912315194612823, guid: cebd905d3f22c05088da5649adf4a6b1, type: 3}
+  player: {fileID: 0}
   MeleeRangeSensor: {fileID: 6670852558407677626}
   DashRangeSensor: {fileID: 5841441861232082658}
   IsInMeleeRange: 0

@@ -4,6 +4,6 @@ public class PlayerHitbox : MonoBehaviour, IAttacker
 {
     public DamageInfo ReturnDamageInfo()
     {
-        return new DamageInfo(PlayerManager.Instance.GetAttackDamage(), 0f);
+        return new DamageInfo(PlayerManager.Instance.GetAttackDamage(), PlayerManager.Instance.GetPlayerKnockbackStrength());
     }
 }
