@@ -9,6 +9,8 @@ public class PlayerDodge : MonoBehaviour
     public float dodgeLength;
 
     public bool IsDodging { get; private set; }
+    bool canDodge = true;
+    float cooldownTimer;
 
     private CharacterController controller;
     private PlayerAnimator playerAnimator;
@@ -21,8 +23,18 @@ public class PlayerDodge : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDodge)
+        {
             StartCoroutine(Dodge());
+            cooldownTimer = 0f;
+        }
+
+        cooldownTimer += Time.deltaTime;
+
+        if(cooldownTimer >= dodgeCooldown) 
+        {
+            canDodge = true;
+        }
     }
 
     private IEnumerator Dodge()
@@ -31,6 +43,7 @@ public class PlayerDodge : MonoBehaviour
 
         while (timer < dodgeLength)
         {
+            canDodge = false;
             IsDodging = true;
 
             Vector3 moveDir = transform.forward * Input.GetAxisRaw("Vertical") +
