@@ -16,7 +16,7 @@ public class SpawnerInstance : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        timeBetweenSpawns = levelTimer.minutes * 2;
+        timeBetweenSpawns = levelTimer.scalingTime;
         if (timer >= timeBetweenSpawns)
         {
             timer = 0;
