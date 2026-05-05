@@ -12,8 +12,8 @@ public class PlayerAnimator : MonoBehaviour
     public const string DODGERIGHT   = "Dodge Right";
     public const string THROW        = "Throw";
 
+    [SerializeField] private Animator armsAnimator;
     private string currentAnimationState;
-    private Animator animator;
     private PlayerMovement playerMovement;
 
     private float idleTimer = 0f;
@@ -22,7 +22,6 @@ public class PlayerAnimator : MonoBehaviour
 
     void Awake()
     {
-        animator = GetComponentInChildren<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
     }
 
@@ -41,8 +40,10 @@ public class PlayerAnimator : MonoBehaviour
     private void SetAnimations()
     {
         if (isActionLocked) return;
-        Vector3 vel = playerMovement.Velocity;
-        if (vel.x == 0 && vel.z == 0)
+        bool moving = playerMovement.IsMoving;
+        armsAnimator.SetBool("isRunning", moving);
+
+        if (!moving)
         {
             ChangeAnimationState(IDLE);
 
@@ -60,7 +61,14 @@ public class PlayerAnimator : MonoBehaviour
     {
         if (currentAnimationState == newState) return;
         currentAnimationState = newState;
-        animator.CrossFadeInFixedTime(currentAnimationState, 0.2f);
+        armsAnimator.CrossFadeInFixedTime(currentAnimationState, 0.2f);
+    }
+
+    public void TriggerLightAttack(float lockDuration)
+    {
+        LockActionAnimation(lockDuration);
+        string attackState = Random.Range(0, 2) == 0 ? ATTACK1 : ATTACK2;
+        ChangeAnimationState(attackState);
     }
 
     public void LockActionAnimation(float duration)

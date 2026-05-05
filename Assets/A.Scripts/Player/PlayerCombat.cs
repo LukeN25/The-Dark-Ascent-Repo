@@ -7,8 +7,9 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField]
     AudioSource audioSource;
 
-    [SerializeField] private Animator armsAnimator;
+    [SerializeField] private float attackCooldown = 0.5f;
     private PlayerAnimator playerAnimator;
+    private float lastAttackTime = -Mathf.Infinity;
 
     private void Awake()
     {
@@ -17,7 +18,7 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.time >= lastAttackTime + attackCooldown)
         {
             LightAttack();
         }
@@ -25,8 +26,8 @@ public class PlayerCombat : MonoBehaviour
 
     void LightAttack()
     {
-        armsAnimator.SetInteger("LightAtkVar", Random.Range(0, 2));
-        armsAnimator.SetTrigger("LightAtk");
+        lastAttackTime = Time.time;
+        playerAnimator.TriggerLightAttack(attackCooldown);
     }
 
     public void PlayAttackSound()

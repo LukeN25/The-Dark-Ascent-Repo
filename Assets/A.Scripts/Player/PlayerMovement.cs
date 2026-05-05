@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     private float verticalVelocity;
 
-    // Used by PlayerAnimator to determine idle vs run state
     public Vector3 Velocity => controller.velocity;
+    public bool IsMoving => Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0;
 
     void Awake()
     {
