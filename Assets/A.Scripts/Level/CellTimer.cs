@@ -29,6 +29,7 @@ public class CellTimer : MonoBehaviour
 
             //play animation for elevator
             cellAnimator.SetTrigger("Open");
+            timerText.text = "";
         }
     }
 }

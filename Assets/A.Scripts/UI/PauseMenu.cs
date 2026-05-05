@@ -8,9 +8,11 @@ public class PauseMenu : MonoBehaviour
 
     bool paused = false;
 
-    void Start()
+    void Awake()
     {
         pauseMenu.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -36,7 +38,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
         paused = true;
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
     
     public void Resume()
