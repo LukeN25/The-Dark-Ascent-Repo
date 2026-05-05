@@ -16,9 +16,9 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] public bool knockbackEnabled = true;
 
     [Header("Knockback Collision")]
-    [SerializeField] private LayerMask knockbackCollisionMask = 1;
     [SerializeField] private float navMeshSnapRadius = 2f;
 
+    private LayerMask knockbackCollisionMask;
     private NavMeshAgent agent;
     private Enemy enemyBase;
     private CapsuleCollider bodyCollider;
@@ -28,6 +28,7 @@ public class EnemyManager : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         enemyBase = GetComponent<Enemy>();
+        knockbackCollisionMask = LayerMask.GetMask("Default", "Wall");
         foreach (var col in GetComponents<CapsuleCollider>())
         {
             if (!col.isTrigger) { bodyCollider = col; break; }
