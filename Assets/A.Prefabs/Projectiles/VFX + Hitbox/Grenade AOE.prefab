@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3898880683117773339}
   - component: {fileID: 5055024034254974656}
-  - component: {fileID: -5906485746323544359}
   - component: {fileID: -2449389549531375573}
+  - component: {fileID: 7156793939283687866}
   m_Layer: 0
   m_Name: Grenade AOE
   m_TagString: Untagged
@@ -56,18 +56,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-5906485746323544359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6047741692037280333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c5924197fefd8bcc88632122c1ff40a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-2449389549531375573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +69,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lifetime: 0.5
+--- !u!114 &7156793939283687866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6047741692037280333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d499b70ad03d84c418a7765909553697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9151233093791362333
 GameObject:
   m_ObjectHideFlags: 0

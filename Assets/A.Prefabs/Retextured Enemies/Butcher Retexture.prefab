@@ -299,6 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7872798543954813861}
   - component: {fileID: 1235632390082904000}
+  - component: {fileID: 8255496299282027201}
   - component: {fileID: 5809010645498523482}
   m_Layer: 11
   m_Name: Hurtbox
@@ -338,6 +339,29 @@ CapsuleCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.1267458
+  m_Height: 3.6417584
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.29, z: 0.07089555}
+--- !u!136 &8255496299282027201
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475956456734730320}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1504,6 +1528,8 @@ GameObject:
   - component: {fileID: 6655482675516871511}
   - component: {fileID: 422995651371189391}
   - component: {fileID: 3401538262016822465}
+  - component: {fileID: 1002544535196654008}
+  - component: {fileID: 4520096723383289609}
   m_Layer: 11
   m_Name: Butcher Retexture
   m_TagString: EnemyHitBox
@@ -1643,6 +1669,54 @@ MonoBehaviour:
   LastDashTime: 0
   AttackCooldown: 2
   DashCooldown: 19.57
+--- !u!65 &1002544535196654008
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4696269915363942219}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.33, y: 3.5, z: 1.77}
+  m_Center: {x: 0, y: 1.49, z: 0}
+--- !u!54 &4520096723383289609
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4696269915363942219}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5149369088401742911
 GameObject:
   m_ObjectHideFlags: 0

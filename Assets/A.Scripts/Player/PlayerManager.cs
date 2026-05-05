@@ -56,6 +56,8 @@ public class PlayerManager : MonoBehaviour
 
     // Placeholder — damage system TBD
     public int GetAttackDamage() => 1;
+    
+    public int GetGrenadeDamage() => 5;
 
     // Placeholder — called by PlayerMutationHandler after multipliers change
     public void UpdateAttackDamage() { }
