@@ -9,7 +9,13 @@ public class PlayerHurtbox : MonoBehaviour, IHittable
         if (other.TryGetComponent<IAttacker>(out IAttacker component))
         {
             if (other.tag != "Player")
-                GetHit(component.ReturnDamageInfo());
+            {
+                DamageInfo damageInfo = component.ReturnDamageInfo();
+                Vector3 raw = transform.position - other.transform.position;
+                raw.y = 0f;
+                damageInfo.SetKnockbackDirection(raw.normalized);
+                GetHit(damageInfo);
+            }
         }
     }
 

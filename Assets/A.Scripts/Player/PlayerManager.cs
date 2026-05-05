@@ -9,6 +9,11 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private int maxHealth = 5;
     private Animator playerAnimator;
     [SerializeField] private GameObject[] healthUI;
+    [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private HeadBobController headBobController;
+    [SerializeField] public bool knockbackEnabled = true;
+    [SerializeField] private float playerKnockbackStrength = 5f;
+    public float GetPlayerKnockbackStrength() => playerKnockbackStrength;
 
     void Awake()
     {
@@ -52,6 +57,10 @@ public class PlayerManager : MonoBehaviour
         }
         
         SetActiveCount(playerHealth);
+        if (knockbackEnabled)
+            playerMovement.ApplyKnockback(damageInfo.GetKnockbackDirection(), damageInfo.GetKnockbackStrength());
+        if (playerHealth > 0 && headBobController != null)
+            headBobController.TriggerHitShake();
     }
 
     // Placeholder — damage system TBD

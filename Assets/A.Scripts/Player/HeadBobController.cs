@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class HeadBobController : MonoBehaviour
@@ -6,11 +7,36 @@ public class HeadBobController : MonoBehaviour
     [SerializeField, Range(1f, 50f)] private float Frequency = 10.0f;
     [SerializeField, Range(1f, 100f)] private float Smooth = 10.0f;
 
+    [Header("Hit Shake")]
+    [SerializeField] private float hitShakeAmount = 0.008f;
+    [SerializeField] private float hitShakeFrequency = 30f;
+    [SerializeField] private float hitShakeDuration = 0.25f;
+
     Vector3 StartPos;
+    private float originalAmount;
+    private float originalFrequency;
 
     void Start()
     {
         StartPos = transform.localPosition;
+        originalAmount = Amount;
+        originalFrequency = Frequency;
+    }
+
+    public void TriggerHitShake()
+    {
+        Debug.Log("Hit shake triggered");   
+        StopAllCoroutines();
+        StartCoroutine(HitShakeRoutine());
+    }
+
+    private IEnumerator HitShakeRoutine()
+    {
+        Amount = hitShakeAmount;
+        Frequency = hitShakeFrequency;
+        yield return new WaitForSeconds(hitShakeDuration);
+        Amount = originalAmount;
+        Frequency = originalFrequency;
     }
 
     void Update()

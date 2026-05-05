@@ -7,12 +7,15 @@ public class HurtBox : MonoBehaviour, IHittable
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("EnemyHitBox"))
-            return;
+        if (other.CompareTag("EnemyHitBox")) return;
 
         if (other.TryGetComponent<IAttacker>(out IAttacker component))
         {
-            GetHit(component.ReturnDamageInfo());
+            DamageInfo damageInfo = component.ReturnDamageInfo();
+            Vector3 raw = transform.position - other.transform.position;
+            raw.y = 0f;
+            damageInfo.SetKnockbackDirection(raw.normalized);
+            GetHit(damageInfo);
         }
     }
 
