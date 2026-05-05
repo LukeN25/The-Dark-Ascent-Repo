@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1509518435320550168}
   m_Layer: 11
   m_Name: HitboxLeg
-  m_TagString: Untagged
+  m_TagString: EnemyHitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 5004611294490845740}
   m_Layer: 11
   m_Name: Hitbox Arms
-  m_TagString: Untagged
+  m_TagString: EnemyHitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
