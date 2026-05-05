@@ -7,7 +7,7 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField]
     AudioSource audioSource;
 
-    [SerializeField] private float attackCooldown = 0.5f;
+    [SerializeField] public float attackCooldown = 0.5f;
     private PlayerAnimator playerAnimator;
     private float lastAttackTime = -Mathf.Infinity;
 
