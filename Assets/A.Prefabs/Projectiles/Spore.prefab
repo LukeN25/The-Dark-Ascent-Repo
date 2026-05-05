@@ -174,4 +174,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 8709481611013167259, guid: ca91062e37dbba9428ccced587b73ae8, type: 3}
   AutoDestroyTime: 2
-  Force: 650
+  Force: 850
