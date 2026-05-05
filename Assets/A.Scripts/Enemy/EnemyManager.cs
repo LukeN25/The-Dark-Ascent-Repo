@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using EnemyAI.UnityHFSM;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -19,12 +20,14 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private float navMeshSnapRadius = 2f;
 
     private NavMeshAgent agent;
+    private Enemy enemyBase;
     private CapsuleCollider bodyCollider;
     private Coroutine knockbackCoroutine;
 
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        enemyBase = GetComponent<Enemy>();
         foreach (var col in GetComponents<CapsuleCollider>())
         {
             if (!col.isTrigger) { bodyCollider = col; break; }
@@ -58,6 +61,11 @@ public class EnemyManager : MonoBehaviour
     private IEnumerator KnockbackRoutine(Vector3 direction, float strength)
     {
         agent.enabled = false;
+        if (enemyBase != null)
+        {
+            enemyBase.IsKnockedBack = true;
+            enemyBase.StopAllCoroutines();
+        }
         Vector3 knockbackVelocity = direction * strength;
         float decay = 10f;
 
@@ -104,6 +112,7 @@ public class EnemyManager : MonoBehaviour
         if (NavMesh.SamplePosition(transform.position, out NavMeshHit navHit, navMeshSnapRadius, NavMesh.AllAreas))
             agent.Warp(navHit.position);
 
+        if (enemyBase != null) enemyBase.IsKnockedBack = false;
         agent.enabled = true;
     }
 

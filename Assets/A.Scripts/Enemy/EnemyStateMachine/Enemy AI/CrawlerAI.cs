@@ -104,9 +104,5 @@ namespace EnemyAI.UnityHFSM
 
         private void MeleeRangeSensor_OnPlayerEnter(Transform Player) => IsInMeleeRange = true;
 
-        private void Update()
-        {
-            EnemyFSM.OnLogic();
-        }
     }
 }

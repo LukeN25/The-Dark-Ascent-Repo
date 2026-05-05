@@ -145,9 +145,5 @@ namespace EnemyAI.UnityHFSM
 
         private void ProjectileRangeSensor_OnPlayerEnter(Transform Player) => IsInProjectileRange = true;
 
-        private void Update()
-        {
-            EnemyFSM.OnLogic();
-        }
     }
 }

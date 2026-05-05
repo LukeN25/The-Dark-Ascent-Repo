@@ -133,9 +133,5 @@ namespace EnemyAI.UnityHFSM
 
         private void DashRangeSensor_OnPlayerEnter(Transform Player) => IsInDashRange = true;
 
-        private void Update()
-        {
-            EnemyFSM.OnLogic();
-        }
     }
 }

@@ -28,9 +28,12 @@ namespace EnemyAI.UnityHFSM
             
         }
 
+        public bool IsKnockedBack { get; set; }
+
         private void Update()
         {
-            EnemyFSM.OnLogic();
+            if (!IsKnockedBack)
+                EnemyFSM.OnLogic();
         }
 
         public Coroutine RunCoroutine(IEnumerator routine)
