@@ -149,9 +149,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 5
+  MaxDistance: 80
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -163,6 +163,15 @@ AudioSource:
       value: 1
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.94287133
+      value: 0.5921911
+      inSlope: -1.4323664
+      outSlope: -1.4323664
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -184,7 +193,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -911,12 +920,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  knockbackStrength: 5
   health: 3
   lootTable:
     list:
     - item: {fileID: 5141044313136312385, guid: a6174adfdf4d24d4884bb04f863efb95, type: 3}
       weight: 1
   itemHolder: {fileID: 7325327841528661992}
+  knockbackEnabled: 1
+  knockbackCollisionMask:
+    serializedVersion: 2
+    m_Bits: 1
+  navMeshSnapRadius: 2
 --- !u!1 &5308464724827882116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,9 +1244,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 5
+  MaxDistance: 80
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1243,6 +1258,15 @@ AudioSource:
       value: 1
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.94287133
+      value: 0.5921911
+      inSlope: -1.4323664
+      outSlope: -1.4323664
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -1264,7 +1288,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

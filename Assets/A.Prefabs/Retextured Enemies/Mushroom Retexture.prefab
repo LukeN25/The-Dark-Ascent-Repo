@@ -89,7 +89,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -218,7 +218,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -347,7 +347,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1032,12 +1032,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  knockbackStrength: 5
   health: 3
   lootTable:
     list:
     - item: {fileID: 5141044313136312385, guid: a6174adfdf4d24d4884bb04f863efb95, type: 3}
       weight: 1
   itemHolder: {fileID: 506108906576842792}
+  knockbackEnabled: 1
+  knockbackCollisionMask:
+    serializedVersion: 2
+    m_Bits: 1
+  navMeshSnapRadius: 2
 --- !u!4 &5320067003693418849 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 22ef1a8ebacfba541b567978b468187e, type: 3}
