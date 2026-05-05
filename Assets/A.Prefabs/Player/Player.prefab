@@ -1747,6 +1747,7 @@ MonoBehaviour:
   headBobController: {fileID: 5606874051369038070}
   knockbackEnabled: 1
   playerKnockbackStrength: 50
+  healthUI: []
 --- !u!114 &2075295105127666570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1764,6 +1765,8 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   walkSound: {fileID: 0}
   knockbackDecay: 10
+  audioSource: {fileID: 0}
+  walkSound: {fileID: 0}
 --- !u!114 &6244346329832692517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1793,6 +1796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
   cameraHolder: {fileID: 8677817544100804590}
+  yRotation: 0
   yRotation: 0
 --- !u!114 &3818037574928214395
 MonoBehaviour:
