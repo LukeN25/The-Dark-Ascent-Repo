@@ -19,6 +19,7 @@ public class PlayerAnimator : MonoBehaviour
     private float idleTimer = 0f;
     private bool idleInspect = false;
     private bool isActionLocked = false;
+    private bool isInspecting = false;
 
     void Awake()
     {
@@ -27,7 +28,11 @@ public class PlayerAnimator : MonoBehaviour
 
     void Update()
     {
-        idleTimer += Time.deltaTime;
+        if (!playerMovement.IsMoving && !isActionLocked)
+            idleTimer += Time.deltaTime;
+        else
+            idleTimer = 0f;
+
         if (idleTimer >= 10f)
         {
             idleTimer = 0f;
@@ -39,16 +44,33 @@ public class PlayerAnimator : MonoBehaviour
 
     private void SetAnimations()
     {
-        if (isActionLocked) return;
         bool moving = playerMovement.IsMoving;
+
+        if (isInspecting && moving)
+        {
+            isInspecting = false;
+            isActionLocked = false;
+            currentAnimationState = string.Empty;
+            CancelInvoke(nameof(UnlockActionAnimation));
+        }
+
+        if (isActionLocked) return;
+
         armsAnimator.SetBool("isRunning", moving);
 
         if (!moving)
         {
-            ChangeAnimationState(IDLE);
-
             if (idleInspect)
+            {
+                idleInspect = false;
                 ChangeAnimationState(IDLEINSPECT);
+                LockActionAnimation(8f);
+                isInspecting = true;
+            }
+            else
+            {
+                ChangeAnimationState(IDLE);
+            }
         }
         else
         {
@@ -74,6 +96,7 @@ public class PlayerAnimator : MonoBehaviour
     public void LockActionAnimation(float duration)
     {
         isActionLocked = true;
+        isInspecting = false;
         currentAnimationState = string.Empty;
         CancelInvoke(nameof(UnlockActionAnimation));
         Invoke(nameof(UnlockActionAnimation), duration);
@@ -82,6 +105,7 @@ public class PlayerAnimator : MonoBehaviour
     private void UnlockActionAnimation()
     {
         isActionLocked = false;
+        isInspecting = false;
         currentAnimationState = string.Empty;
     }
 }

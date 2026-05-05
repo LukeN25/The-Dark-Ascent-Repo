@@ -18,7 +18,8 @@
       "Bash(mkdir:*)",
       "Bash(xargs ls *)",
       "Bash(grep -E \"\\\\.cs$\")",
-      "Bash(grep -E \"\\\\.\\(cs\\)$\")"
+      "Bash(grep -E \"\\\\.\\(cs\\)$\")",
+      "Bash(grep -E \"\\\\.\\(controller|anim\\)$\")"
     ]
   }
 }

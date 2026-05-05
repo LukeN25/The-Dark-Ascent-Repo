@@ -40,6 +40,7 @@ public class PlayerDodge : MonoBehaviour
     private IEnumerator Dodge()
     {
         float timer = 0;
+        playerAnimator.LockActionAnimation(dodgeLength);
 
         while (timer < dodgeLength)
         {
