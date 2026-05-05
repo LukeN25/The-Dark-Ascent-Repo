@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private int maxHealth = 5;
     private Animator playerAnimator;
     [SerializeField] private GameObject[] healthUI;
+    [SerializeField] private PlayerMovement playerMovement;
 
     void Awake()
     {
@@ -52,6 +53,7 @@ public class PlayerManager : MonoBehaviour
         }
         
         SetActiveCount(playerHealth);
+        playerMovement.ApplyKnockback(damageInfo.GetKnockbackDirection(), damageInfo.GetKnockbackStrength());
     }
 
     // Placeholder — damage system TBD

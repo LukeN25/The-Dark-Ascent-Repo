@@ -8,13 +8,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip walkSound;
 
+    [Header("Knockback")]
+    [SerializeField] private float knockbackDecay = 10f;
+
     private CharacterController controller;
     private PlayerDodge playerDodge;
     private Rigidbody rb;
 
-    
-
     private float verticalVelocity;
+    private Vector3 knockbackVelocity;
 
     public Vector3 Velocity => controller.velocity;
     public bool IsMoving => Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0;
@@ -47,6 +49,9 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * h + transform.forward * v;
         controller.Move(move * speed * Time.deltaTime);
+
+        controller.Move(knockbackVelocity * Time.deltaTime);
+        knockbackVelocity = Vector3.Lerp(knockbackVelocity, Vector3.zero, knockbackDecay * Time.deltaTime);
     }
 
     private void HandleGravity()
@@ -57,5 +62,10 @@ public class PlayerMovement : MonoBehaviour
             verticalVelocity += gravity * Time.deltaTime;
 
         controller.Move(Vector3.up * verticalVelocity * Time.deltaTime);
+    }
+
+    public void ApplyKnockback(Vector3 direction, float strength)
+    {
+        knockbackVelocity = direction * strength;
     }
 }
