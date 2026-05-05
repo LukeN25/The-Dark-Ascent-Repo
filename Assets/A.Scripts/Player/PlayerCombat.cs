@@ -31,6 +31,7 @@ public class PlayerCombat : MonoBehaviour
 
     public void PlayAttackSound()
     {
+        audioSource.pitch = Random.Range(0.5f, 1.2f);
         audioSource.PlayOneShot(attackSound);
     }
 }
