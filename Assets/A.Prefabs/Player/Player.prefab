@@ -1610,6 +1610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 5
   maxHealth: 5
+  healthUI: []
 --- !u!114 &2075295105127666570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1624,6 +1625,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   gravity: -9.81
+  audioSource: {fileID: 0}
+  walkSound: {fileID: 0}
 --- !u!114 &6244346329832692517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1653,6 +1656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
   cameraHolder: {fileID: 8677817544100804590}
+  yRotation: 0
 --- !u!114 &3818037574928214395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1667,7 +1671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSound: {fileID: 0}
   audioSource: {fileID: 0}
-  armsAnimator: {fileID: 3688201116223723707}
+  attackCooldown: 0.5
 --- !u!114 &865225612823311249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1680,6 +1684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4eec55053fec87ab571e2fbf34c7f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  armsAnimator: {fileID: 0}
 --- !u!114 &102199930407722092
 MonoBehaviour:
   m_ObjectHideFlags: 0
