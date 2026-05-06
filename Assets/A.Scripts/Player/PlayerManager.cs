@@ -18,6 +18,10 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private HeadBobController headBobController;
     [SerializeField] public bool knockbackEnabled = true;
     [SerializeField] private float playerKnockbackStrength = 5f;
+    [SerializeField] private float heartbeatPitch = 1f;
+    [SerializeField] private AudioSource heartbeat;
+    
+
     public float GetPlayerKnockbackStrength() => playerKnockbackStrength;
 
     void Awake()
@@ -30,6 +34,8 @@ public class PlayerManager : MonoBehaviour
             return;
         }
         Instance = this;
+
+        heartbeat.pitch = heartbeatPitch;
     }
 
     public void SetActiveCount(int healthToKeep)
@@ -47,6 +53,9 @@ public class PlayerManager : MonoBehaviour
     {
         Debug.Log($"Player took {damageInfo.GetDamage()} damage!");
         playerHealth -= damageInfo.GetDamage();
+
+        heartbeatPitch = Mathf.Lerp(0.5f, 1.5f, (float)playerHealth / maxHealth);
+        heartbeat.pitch = heartbeatPitch;
 
         if (playerHealth < 0)
             playerHealth = 0;
