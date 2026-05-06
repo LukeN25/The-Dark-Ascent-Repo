@@ -4,7 +4,7 @@ using TMPro;
 
 public class LevelTimer : MonoBehaviour
 {
-    private float timer = 60;
+    private float timer = 300;
     public float minutes;
     private float seconds;
     public int scalingTime;
