@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
 
     public AudioMixer audioMixer;
+    public PlayerLook playerLook;
 
     bool paused = false;
 
@@ -56,5 +57,10 @@ public class PauseMenu : MonoBehaviour
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("Volume", volume);
+    }
+
+    public void SetSensitivity(float sens)
+    {
+        playerLook.mouseSensitivity = sens;
     }
 }
