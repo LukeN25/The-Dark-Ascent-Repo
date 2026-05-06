@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameOverUI : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class GameOverUI : MonoBehaviour
 
     [Header("UI Root")]
     public GameObject gameOverCanvas;
+    public GameObject pauseCanvas;
 
     private void Awake()
     {
@@ -16,20 +18,17 @@ public class GameOverUI : MonoBehaviour
 
     public void ShowGameOver()
     {
+        StartCoroutine(PlayDeathAnim());
+    }
+
+    IEnumerator PlayDeathAnim()
+    {
+        yield return new WaitForSeconds(2);
+
         gameOverCanvas.SetActive(true);
+        pauseCanvas.SetActive(false);
         Time.timeScale = 0f; 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-    }
-
-    public void Retry()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
     }
 }
