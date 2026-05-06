@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private GameObject pauseMenu;
+
+    public AudioMixer audioMixer;
 
     bool paused = false;
 
@@ -48,5 +51,10 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         paused = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void SetVolume(float volume)
+    {
+        audioMixer.SetFloat("Volume", volume);
     }
 }
