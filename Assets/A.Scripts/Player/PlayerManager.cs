@@ -10,6 +10,11 @@ public class PlayerManager : MonoBehaviour
     private Animator playerAnimator;
     [SerializeField] private GameObject[] healthUI;
     [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private PlayerCombat playerCombat;
+    [SerializeField] private PlayerDodge playerDodge;
+    [SerializeField] private PlayerHurtbox playerHurtbox;
+    [SerializeField] private PlayerAnimator PlayerAnimator;
+    [SerializeField] private Throwing throwing;
     [SerializeField] private HeadBobController headBobController;
     [SerializeField] public bool knockbackEnabled = true;
     [SerializeField] private float playerKnockbackStrength = 5f;
@@ -50,6 +55,13 @@ public class PlayerManager : MonoBehaviour
         {
             playerAnimator.SetTrigger("isDead");
 
+            playerCombat.enabled = false;
+            playerMovement.enabled = false;
+            playerDodge.enabled = false;
+            playerHurtbox.enabled = false;
+            PlayerAnimator.enabled = false;
+            throwing.enabled = false;
+
             if (GameOverUI.Instance != null)
                 GameOverUI.Instance.ShowGameOver();
             else
@@ -57,6 +69,7 @@ public class PlayerManager : MonoBehaviour
         }
         
         SetActiveCount(playerHealth);
+
         if (knockbackEnabled)
             playerMovement.ApplyKnockback(damageInfo.GetKnockbackDirection(), damageInfo.GetKnockbackStrength());
         if (playerHealth > 0 && headBobController != null)
