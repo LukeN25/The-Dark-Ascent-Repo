@@ -24,6 +24,6 @@ public class GlobalTimerSettings : MonoBehaviour
 
     public void FifteenMin()
     {
-        globalTimer = 60;
+        globalTimer = 900;
     }
 }
