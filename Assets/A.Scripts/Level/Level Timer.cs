@@ -4,7 +4,7 @@ using TMPro;
 
 public class LevelTimer : MonoBehaviour
 {
-    private float timer = 300;
+    private float timer = GlobalTimerSettings.globalTimer;
     public float minutes;
     private float seconds;
     public int scalingTime;
@@ -21,15 +21,15 @@ public class LevelTimer : MonoBehaviour
 
         if(minutes >= 7)
         {
-            scalingTime = 20;
+            scalingTime = 30;
         }
         else if(minutes >= 4)
         {
-            scalingTime = 15;
+            scalingTime = 25;
         }
         else if(minutes >= 1)
         {
-            scalingTime = 10;
+            scalingTime = 15;
         }
         
         minutes = Mathf.FloorToInt(timer / 60F);
