@@ -9,7 +9,7 @@ public class GlobalTimerSettings : MonoBehaviour
 
     void Update()
     {
-        timerText.text = "Current Timer = " + globalTimer;
+        timerText.text = "Current Timer = " + globalTimer + " Seconds";
     }
 
     public void FiveMin()
@@ -20,5 +20,10 @@ public class GlobalTimerSettings : MonoBehaviour
     public void TenMin() 
     {
         globalTimer = 600;
+    }
+
+    public void FifteenMin()
+    {
+        globalTimer = 900;
     }
 }
