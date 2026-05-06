@@ -926,6 +926,8 @@ MonoBehaviour:
     list:
     - item: {fileID: 5141044313136312385, guid: a6174adfdf4d24d4884bb04f863efb95, type: 3}
       weight: 1
+    - item: {fileID: 7972785303866195864, guid: 7d36127f329468641847fa640727fdcd, type: 3}
+      weight: 1
   itemHolder: {fileID: 7325327841528661992}
   knockbackEnabled: 1
   navMeshSnapRadius: 2
