@@ -6,6 +6,8 @@ public class PlayerHurtbox : MonoBehaviour, IHittable
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("GrenadeHitbox")) return;
+
         if (other.TryGetComponent<IAttacker>(out IAttacker component))
         {
             if (other.tag != "Player")
